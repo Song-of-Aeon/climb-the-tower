@@ -1,0 +1,9 @@
+x = -9999;
+y = -9999;
+x2 = -9999;
+y2 = -9999;
+enter = c_null;
+stay = c_null;
+leave = c_null;
+active = false;
+step = c_null;

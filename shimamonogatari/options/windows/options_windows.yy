@@ -1,7 +1,7 @@
 {
-  "option_windows_display_name": "firetech sixstep",
+  "option_windows_display_name": "islandgame",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "7.4.9.6",
+  "option_windows_version": "1.1.1.1",
   "option_windows_company_info": "FIRELAND",
   "option_windows_product_info": "this",
   "option_windows_copyright_info": "me",

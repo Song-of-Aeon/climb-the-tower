@@ -8,7 +8,6 @@ function c_shoot(x, y, speed, direction, type, color=c_white, behavior=c_null, d
 	chump.dir = direction;
 	chump.type = type;
 	chump.color = color;
-	chump.additive = additive;
 	
 	with chump {
 		//log(type);

@@ -9,13 +9,13 @@ spd += acc;
 //var xold = x;
 //var yold = y;
 direction = dir;
-speed = spd*global.timescale;
+speed = spd;
 x += hspd;
 y += vspd;
 //var time = get_timer();
 //image_angle = point_direction(xprevious, yprevious, x, y)-90;
 //log(image_angle);
-if !(x==clamp(x, -escapedistance, 290+escapedistance) && y==clamp(y, -escapedistance, 340+escapedistance)) {
+if !(x==clamp(x, -escapedistance, room_width+escapedistance) && y==clamp(y, -escapedistance, room_height+escapedistance)) {
 	instance_destroy();
 }
 //image_angle = point_direction(xold, yold, x, y)-90;

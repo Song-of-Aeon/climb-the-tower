@@ -4,7 +4,7 @@ function st_standard() {
 	weapons[eqwp].step(attack);
 	
     hput = right.hold-left.hold;
-    spd.h = lerp(spd.h, hput*3, .1);
+    spd.h = lerp(spd.h, hput*walkspeed, .1);
     var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
         bbox_right: bbox_right-2,

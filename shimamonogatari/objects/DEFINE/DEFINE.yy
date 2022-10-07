@@ -1,12 +1,12 @@
 {
   "spriteId": {
-    "name": "s_bird",
-    "path": "sprites/s_bird/s_bird.yy",
+    "name": "s_when_im",
+    "path": "sprites/s_when_im/s_when_im.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -32,7 +32,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "REALIZE",
+  "name": "DEFINE",
   "tags": [],
   "resourceType": "GMObject",
 }

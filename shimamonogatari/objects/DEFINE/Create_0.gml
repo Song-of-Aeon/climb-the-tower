@@ -16,8 +16,9 @@ weapons = [
 ]
 eqwp = 0;
 
-jumpspeed = 5.4;
-grav = .2;
+walkspeed = 1.9;
+jumpspeed = 3.2;
+grav = .1;
 leniance = 0;
 lencount = 10;
 
@@ -28,4 +29,4 @@ xdraw = -100;
 ydraw = 310;
 
 global.me = id;
-#macro rz global.me
+#macro df global.me
