@@ -6,5 +6,8 @@ function c_maketrigger(x, y, x2, y2, enter=c_null, stay=c_null, leave=c_null, st
 	chump.stay = stay;
 	chump.leave = leave;
 	chump.step = step;
+	log(x, y, x2, y2);
+	log(chump);
+	global.chump = chump;
 	return chump;
 }

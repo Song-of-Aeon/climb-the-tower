@@ -8,5 +8,6 @@ function map(name_, room_, step_=c_null, draw_=c_null) constructor {
 
 global.maps = [];
 nu map("Sky Corridor", sky_corridor);
+nu map("Gusty Space", gusty_space);
 
 #macro mp global.maps

@@ -12,10 +12,10 @@ function c_newcollision(){
 				x = round(x);
             break;
             case -1:
-                log(xmeeting.x)
-                log(a.bbox_right)
-                log(xmeeting.bbox_left)
-                log(a.bbox_right > xmeeting.bbox_left)
+                //log(xmeeting.x)
+                //log(a.bbox_right)
+                //log(xmeeting.bbox_left)
+                //log(a.bbox_right > xmeeting.bbox_left)
                 x = xmeeting.bbox_right +  sprite_get_xoffset(sprite_index)  -sprite_get_bbox_left(sprite_index);
 				x = round(x);
             break;
