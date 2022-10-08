@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/fuccboi/Objects.yy",
+    "path": "folders/Misc/fuccboi/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_mordecai",

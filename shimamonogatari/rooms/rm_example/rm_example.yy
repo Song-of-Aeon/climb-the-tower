@@ -51,7 +51,7 @@
   },
   "parent": {
     "name": "Rooms",
-    "path": "folders/Example/Rooms.yy",
+    "path": "folders/Misc/Example/Rooms.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_example",

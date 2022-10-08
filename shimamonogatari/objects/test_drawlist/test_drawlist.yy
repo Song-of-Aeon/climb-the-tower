@@ -34,7 +34,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "tests",
-    "path": "folders/Example/tests.yy",
+    "path": "folders/Misc/Example/tests.yy",
   },
   "resourceVersion": "1.0",
   "name": "test_drawlist",

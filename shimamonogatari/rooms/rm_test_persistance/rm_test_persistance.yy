@@ -43,7 +43,7 @@
   },
   "parent": {
     "name": "tests",
-    "path": "folders/Example/Rooms/tests.yy",
+    "path": "folders/Misc/Example/Rooms/tests.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_test_persistance",

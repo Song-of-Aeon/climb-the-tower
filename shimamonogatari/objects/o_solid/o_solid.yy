@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/fuccboi/Objects.yy",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_solid",

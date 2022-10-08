@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Example",
-    "path": "folders/Example.yy",
+    "path": "folders/Misc/Example.yy",
   },
   "resourceVersion": "1.0",
   "name": "example",

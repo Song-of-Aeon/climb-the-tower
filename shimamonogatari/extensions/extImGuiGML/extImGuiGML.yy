@@ -888,7 +888,7 @@
   "tvosCocoaPodDependencies": "",
   "parent": {
     "name": "ImGuiGML",
-    "path": "folders/ImGuiGML.yy",
+    "path": "folders/Misc/ImGuiGML.yy",
   },
   "resourceVersion": "1.2",
   "name": "extImGuiGML",

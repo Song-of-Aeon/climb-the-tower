@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Example/Sprites.yy",
+    "path": "folders/Misc/Example/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "doggo",
