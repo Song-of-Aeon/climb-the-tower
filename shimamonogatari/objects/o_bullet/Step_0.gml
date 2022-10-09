@@ -1,5 +1,7 @@
-acount = min(acount+.04, alpha);
-image_alpha = acount;
+//acount = min(acount+.04, alpha);
+acount = alpha;
+//image_alpha = acount;
+image_alpha = alpha;
 fxxscale = image_xscale*((alpha-acount)*4+1);
 fxyscale = image_yscale*((alpha-acount)*4+1);
 if !simple behaviors();

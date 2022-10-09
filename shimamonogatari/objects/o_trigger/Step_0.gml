@@ -8,6 +8,6 @@ if dude {
 	if active leave();
 	active = false;
 }
-log(x, y, dude, active);
+//log(x, y, dude, active);
 
 

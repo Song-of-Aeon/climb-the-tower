@@ -3,6 +3,10 @@ function st_standard() {
 	//log(weapons[eqwp]);
 	weapons[eqwp].step(attack);
 	
+	if debug.hit {
+		textbox_create(txt_test);
+	}
+	
     hput = right.hold-left.hold;
     spd.h = lerp(spd.h, hput*walkspeed, .1);
     var a = {bbox_left: bbox_left+2,
@@ -35,4 +39,11 @@ function st_standard() {
     c_newcollision();
     x += spd.h;
     y += spd.v;
+	
+	var dude = collision_point(x, y, o_entity, false, false);
+	if dude && !aerial && down.hit {
+		if dude.interactable {
+			dude.interaction();
+		}
+	}
 }
