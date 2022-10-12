@@ -8,14 +8,18 @@ weapongen({
 				if count >= 14 instance_destroy();
 				if collision_point(x, y, o_solid, true, false) instance_destroy();
 			});
+			boul.friendly = true;
 			if ammo == 9 {
 				rescale(boul, 4);
-				boul.damage *= 2;
+				boul.damage *= 3;
 				c_screenshake(10, 10);
+				se_play(se_shoot, .4, 2);
 			} else {
 				rescale(boul, 2);
 				c_screenshake(3, 3);
+				se_play(se_shoot, irandom(.6)+.7);
 			}
+			
 			ammo--;
 		}
 	},

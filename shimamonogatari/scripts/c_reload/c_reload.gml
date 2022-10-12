@@ -8,5 +8,6 @@ function c_reload() {
 		refilled += abs(df.weapons[i].ammo-df.weapons[i].ammomax);
 		df.weapons[i].ammo = df.weapons[i].ammomax;
 	}
+	se_play(se_reload);
 	return refilled;
 }
