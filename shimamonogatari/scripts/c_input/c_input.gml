@@ -17,8 +17,9 @@ function c_inputload() {
 	nu kinput("up", [vk_up, "W"]);
 	nu kinput("right", [vk_right, "D"]);
 	
-	nu kinput("jump", ["Z", vk_space, mb_right]);
-	nu kinput("attack", ["X", mb_left]);
+	nu kinput("jump", [vk_space, mb_right, vk_up]);
+	nu kinput("attack", [mb_left]);
+	nu kinput("reload", ["R"]);
 	nu kinput("debug", ["Q"]);
 }
 

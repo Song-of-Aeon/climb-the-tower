@@ -1,12 +1,12 @@
 {
   "spriteId": {
-    "name": "s_meidle",
-    "path": "sprites/s_meidle/s_meidle.yy",
+    "name": "s_magazine",
+    "path": "sprites/s_magazine/s_magazine.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -32,7 +32,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "DEFINE",
+  "name": "o_magazine",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -21,6 +21,17 @@ jumpspeed = 3.2;
 grav = .1;
 leniance = 0;
 lencount = 10;
+magazines = 1;
+maxmagazines = 1;
+aerial = false;
+
+sprites = {
+	idle: s_meidle,
+	walk: s_mewalk,
+	up: s_meup,
+	upwalk: s_meupwalk,
+	down: s_medown,
+}
 
 state = st_standard //not for long
 //actionstate = st_7

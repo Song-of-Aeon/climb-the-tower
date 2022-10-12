@@ -3,6 +3,7 @@ function c_mapchange(map_, x, y, transitiontype=0, event=c_null) {
 	o_mapmanager.currentmap = map_;
 	df.x = x;
 	df.y = y;
+	df.magazines = df.maxmagazines;
 	event();
 }
 

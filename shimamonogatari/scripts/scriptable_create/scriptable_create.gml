@@ -18,8 +18,8 @@ function scriptable_of(object, step=NUMBER5, draw=NUMBER5) {
 	chump.image_yscale = object.image_yscale;
 	chump.image_angle = object.image_angle;
 	try {
-		chump.hspd = object.hspd;
-		chump.vspd = object.vspd;
+		chump.spd.h = object.spd.h;
+		chump.spd.v = object.spd.v;
 	}
 	return chump;
 }

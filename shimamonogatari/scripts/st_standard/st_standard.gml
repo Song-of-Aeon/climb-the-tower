@@ -7,7 +7,24 @@ function st_standard() {
 		textbox_create(txt_test);
 	}
 	
+	if left.hold dir = 180;
+	if right.hold dir = 0;
+	if down.hold dir = 270;
+	if up.hold dir = 90;
+	
+	
     hput = right.hold-left.hold;
+    vput = down.hold-up.hold;
+	
+	c_dosprites();
+	
+	if reload.hit && magazines {
+		magazines--;
+		var chump = instance_create(x, y, o_magazine);
+		chump.spd.h = spd.h*1.4;
+		//chump.spd.h = mouse_x < x ? -1 : 1;
+		chump.spd.v = -3;
+	}
     spd.h = lerp(spd.h, hput*walkspeed, .1);
     var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
