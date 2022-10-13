@@ -9,6 +9,7 @@ function c_input() {
 	//these guys are compounds that are per-instance of c_input
 	select = jump.hit;
 	back = attack.hit;
+	undo = ctrl.hold & zed.hit;
 }
 
 function c_inputload() {
@@ -20,7 +21,11 @@ function c_inputload() {
 	nu kinput("jump", [vk_space, mb_right, vk_up]);
 	nu kinput("attack", [mb_left]);
 	nu kinput("reload", ["R"]);
+	nu kinput("shift", [vk_shift]);
 	nu kinput("debug", ["Q"]);
+	
+	nu kinput("ctrl", [vk_control]);
+	nu kinput("zed", ["Z"]);
 }
 
 function kinput(name_, keys_) constructor {

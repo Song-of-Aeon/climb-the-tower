@@ -4,8 +4,8 @@ function st_standard() {
 	weapons[eqwp].step(attack);
 	
 	if debug.hit {
-		//textbox_create(txt_test);
-		c_spawnenemy(10 tiles, 10 tiles, en.impostor);
+		textbox_create(txt_test);
+		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
 	
 	if left.hold dir = 180;

@@ -1,5 +1,5 @@
 function map(name_, room_, step_=c_null, draw_=c_null) constructor {
-	name = name;
+	name = name_;
 	maproom = room_;
 	step = step_;
 	draw = draw_;

@@ -1,3 +1,4 @@
+
 count = 0;
 
 spd = {
@@ -41,3 +42,4 @@ ydraw = 310;
 
 global.me = id;
 #macro df global.me
+instance_create(0, 0, o_mapmanager);
