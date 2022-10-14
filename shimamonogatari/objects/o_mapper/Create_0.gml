@@ -36,3 +36,8 @@ selector[2][0] = 320/(1 tiles);
 selector[2][1] = 240/(1 tiles);
 
 guys = [];
+
+mousepos = new vec2();
+roomsize = new vec2();
+roomsize.x = selector[2][0] tiles;
+roomsize.y = selector[2][1] tiles;

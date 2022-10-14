@@ -22,7 +22,8 @@ function c_inputload() {
 	nu kinput("attack", [mb_left]);
 	nu kinput("reload", ["R"]);
 	nu kinput("shift", [vk_shift]);
-	nu kinput("debug", ["Q"]);
+	nu kinput("inventory", ["Q"]);
+	nu kinput("debug", ["R"]);
 	
 	nu kinput("ctrl", [vk_control]);
 	nu kinput("zed", ["Z"]);
