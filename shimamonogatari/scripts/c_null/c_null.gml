@@ -29,6 +29,7 @@ function c_null() {
 #macro elif else if
 #macro endif end
 #macro c cpp()
+#macro cycle mod_negative
 //#macro is ==
 
 #macro MY_X ISAAC.visiblex

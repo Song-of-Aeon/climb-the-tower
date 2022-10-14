@@ -11,4 +11,4 @@ if dude {
 //log(x, y, dude, active);
 
 
-log(x, y, x2, y2);
+//log(x, y, x2, y2);

@@ -65,4 +65,8 @@ function st_standard() {
 			dude.interaction();
 		}
 	}
+	if inventory.hit {
+		instance_create(0, 0, o_inventory);
+		c_settimescale(0);
+	}
 }

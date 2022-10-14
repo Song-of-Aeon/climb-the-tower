@@ -23,7 +23,7 @@ function c_inputload() {
 	nu kinput("reload", ["R"]);
 	nu kinput("shift", [vk_shift]);
 	nu kinput("inventory", ["Q"]);
-	nu kinput("debug", ["R"]);
+	nu kinput("debug", ["F"]);
 	
 	nu kinput("ctrl", [vk_control]);
 	nu kinput("zed", ["Z"]);

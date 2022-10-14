@@ -1,6 +1,8 @@
 selectionzone = 0;
 selectedtype = 0;
 selecteddata = 0;
+x = 160;
+y = 120;
 
 //datas = [[variable_struct_get_names(tl)], [array_get_indeces(mp)]];
 

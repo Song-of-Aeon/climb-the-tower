@@ -1,4 +1,4 @@
-
+c_input();
 count = 0;
 
 spd = {

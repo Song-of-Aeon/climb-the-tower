@@ -33,6 +33,9 @@ escapedistance = 50;
 designed = false;
 addvspd = 0;
 color = c_white;
+function c_getticks(){
+	return global.ticks;
+}
 
 event_perform_object(self,ev_step,0);
 

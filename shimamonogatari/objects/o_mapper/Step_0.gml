@@ -79,7 +79,7 @@ if !typing {
 				}
 			}
 			break;
-		case 2:
+		case 3:
 			if attack.hit {
 				room_goto(mp[datas[selectedtype][0][selector[selectedtype][0]]].maproom);
 				selector[2][0] = room_width/(1 tiles);
@@ -90,7 +90,7 @@ if !typing {
 				instance_destroy(DEFINE);
 			}
 			break;
-		case 3:
+		case 4:
 			room_goto(mp[sky_corridor].maproom);
 			instance_destroy();
 			break;
