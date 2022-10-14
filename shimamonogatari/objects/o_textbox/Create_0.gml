@@ -1,3 +1,5 @@
+global.fontcoefficient = .6;
+#macro fc global.fontcoefficient
 /*if instance_exists(o_uicontroller) {
 	o_uicontroller.UIElements = [];
 	global.MenuCursor.disabled = true;

@@ -31,7 +31,7 @@ function st_textnvl() {
 	shake = 0;
 	sizepos = 0;
 	pressing = 0;
-	fontsize = font_get_size(draw_get_font())*.8;
+	fontsize = font_get_size(draw_get_font())*fc;
 	backlogging = true;
 	atsound = 0;
 	atfunc = 0;
@@ -84,7 +84,7 @@ function st_textnvl() {
 		shake = 0;
 		sizepos = 0;
 		pressing = 0;
-		fontsize = font_get_size(draw_get_font())*.8;
+		fontsize = font_get_size(draw_get_font())*fc;
 		atsound = 0;
 		atfunc = 0;
 	}

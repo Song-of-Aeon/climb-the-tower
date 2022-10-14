@@ -53,7 +53,7 @@ if wait || (halting && !select) {
 	exit;
 }
 
-if attack.hold {
+if attack.hit {
     select = true;
 }
 if !advance {

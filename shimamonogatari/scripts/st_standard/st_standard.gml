@@ -4,7 +4,7 @@ function st_standard() {
 	weapons[eqwp].step(attack);
 	
 	if debug.hit {
-		textbox_create(txt_test);
+		textbox_create(txt_kotohime);
 		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
 	

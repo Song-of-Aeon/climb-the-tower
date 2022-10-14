@@ -1,3 +1,4 @@
+draw_set_font(ft_couriernew);
 function textline_next() {
 	do {
 		draw_set_font(font);
@@ -15,7 +16,7 @@ function textline_next() {
 				backlog = [];
 			}
 		}
-		var dudes = font_get_size(draw_get_font())*.8;
+		var dudes = font_get_size(draw_get_font())*fc;
 		var dudes2 = floor((width-margin*2)/dudes);
 		//log(dudes2);
 		msg[talkpos].text = lb_auto(msg[talkpos].text, dudes2);

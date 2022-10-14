@@ -6,14 +6,26 @@ function st_textadv() {
 	for (i=array_length(bg)-1; i>=0; i--) {
 		draw_sprite(bg[i], 0, 0, 0);
 	}
+	var xsize, ysize;
 	bglogic();
 	for (i=array_length(talker)-1; i>=0; i--) {
-		draw_sprite_ext(talker[i].sprite,
+		
+		xsize = sprite_get_width(talker[i].sprite);
+		ysize = sprite_get_height(talker[i].sprite);
+		
+		/*draw_sprite_ext(talker[i].sprite,
 		talker[i].index,
 		talker[i].x,
 		talker[i].y,
 		ineg(talker[i].position > SPRITEPOS.CENTER),
-		1, 0, make_color_hsv(0, 0, 255-(i>0)*100), talker[i].alpha*(talker[i].position <= SPRITEPOS.RIGHT));
+		1, 0, make_color_hsv(0, 0, 255-(i>0)*100), talker[i].alpha*(talker[i].position <= SPRITEPOS.RIGHT));*/
+		
+		draw_sprite_at_ext(talker[i].sprite,
+		talker[i].index,
+		talker[i].x,
+		talker[i].y,
+		xsize/3, ysize/3,
+		make_color_hsv(0, 0, 255-(i>0)*100), talker[i].alpha*(talker[i].position <= SPRITEPOS.RIGHT));
 	}
 	for (i=array_length(fg)-1; i>=0; i--) {
 		draw_sprite(fg[i], 0, 0, 0);
@@ -33,7 +45,7 @@ function st_textadv() {
 	shake = 0;
 	sizepos = 0;
 	pressing = 0;
-	fontsize = font_get_size(draw_get_font())*.8;
+	fontsize = font_get_size(draw_get_font())*fc;
 	atsound = 0;
 	atfunc = 0;
 	j = 0;
@@ -64,7 +76,7 @@ function st_textadv() {
 		var textoffsetx = cos((count+i*2)/(talkspeed*20))*wigglex+random(shake/2)-shake/4;
 		var textoffsety = sin((count+i*2)/(talkspeed*20))*wiggley+random(shake/2)-shake/4;
 		var textxpos = x+margin+(xpos+centerOffset)*(fontsize)-width/2;
-		var textypos = y+(fontsize)+(lb+nvlline)*(fontsize*2)+4;
+		var textypos = y+(fontsize)+(lb+nvlline)*(fontsize*2);
 		var thechar = string_hash_to_newline(string_char_at(msg[talkpos].text, i));
 	    draw_text_ext_transformed_colour(textxpos+textoffsetx, textypos+textoffsety, thechar, 0, 999, sizemult, sizemult, 0, clr, clr, clr, clr, 1);
 	    if string_char_at(msg[talkpos].text, i) = "#" {

@@ -25,6 +25,8 @@ lencount = 10;
 magazines = 1;
 maxmagazines = 1;
 aerial = false;
+hp = 12;
+maxhp = 12;
 
 sprites = {
 	idle: s_meidle,
