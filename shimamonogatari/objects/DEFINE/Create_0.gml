@@ -13,7 +13,7 @@ espd = {
 }
 //log(global.weapons)
 weapons = [
-	wp.nemesis,
+	wp.deagle,
 ]
 eqwp = 0;
 

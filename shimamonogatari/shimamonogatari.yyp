@@ -44,7 +44,7 @@
     {"id":{"name":"test_combo","path":"objects/test_combo/test_combo.yy",},"order":2,},
     {"id":{"name":"DEFINE","path":"objects/DEFINE/DEFINE.yy",},"order":2,},
     {"id":{"name":"string_invert","path":"scripts/string_invert/string_invert.yy",},"order":7,},
-    {"id":{"name":"wp_nemesis","path":"scripts/wp_nemesis/wp_nemesis.yy",},"order":13,},
+    {"id":{"name":"wp_deagle","path":"scripts/wp_deagle/wp_deagle.yy",},"order":13,},
     {"id":{"name":"s_bulbigcc","path":"sprites/s_bulbigcc/s_bulbigcc.yy",},"order":2,},
     {"id":{"name":"c_tilequantize","path":"scripts/c_tilequantize/c_tilequantize.yy",},"order":22,},
     {"id":{"name":"c_badpractice","path":"scripts/c_badpractice/c_badpractice.yy",},"order":0,},

@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "wp_nemesis",
+  "name": "wp_deagle",
   "tags": [],
   "resourceType": "GMScript",
 }

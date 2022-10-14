@@ -18,7 +18,7 @@ draw_text(10, 10, types[selectedtype]);
 var i;
 for (i=0; i<array_length(datas[selectedtype]); i++) {
 	draw_set_alpha(.4+(i == selecteddata && !typing)*.6);
-	if (selectedtype == 1 || selectedtype == 2) && i == 0 {
+	if (selectedtype == 1 || selectedtype == 3) && i == 0 {
 		draw_text(10, 25+i*15, mp[datas[selectedtype][i][selector[selectedtype][i]]].name);
 	} else {
 		draw_text(10, 25+i*15, datas[selectedtype][i][

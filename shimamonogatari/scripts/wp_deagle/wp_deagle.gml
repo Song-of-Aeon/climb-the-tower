@@ -28,5 +28,5 @@ weapongen({
 	},
 	ammo: 9,
 	ammomax: 9,
-	name: "nemesis",
+	name: "deagle",
 });
