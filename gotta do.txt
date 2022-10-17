@@ -1,0 +1,18 @@
+- characters
+- talking portraits
+- pixel spritesheets
+- environment spritesheets
+- backgrounds
+- sound effects
+- music
+- references
+- inventory system
+- map
+- bosses
+- monsters
+- ui and textbox
+- title screen
+- saving
+- cg
+- design areas
+- map editor

@@ -18,3 +18,6 @@ function c_spawnenemy(x, y, archetype) {
 }
 
 nu enemy("impostor", s_when_im, 16);
+
+//everybody wants to be
+//my enemy

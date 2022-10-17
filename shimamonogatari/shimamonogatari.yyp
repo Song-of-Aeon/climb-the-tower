@@ -230,8 +230,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"sky_corridor","path":"scripts/sky_corridor/sky_corridor.yy",},},
     {"roomId":{"name":"makeroomroom","path":"rooms/makeroomroom/makeroomroom.yy",},},
+    {"roomId":{"name":"sky_corridor","path":"scripts/sky_corridor/sky_corridor.yy",},},
     {"roomId":{"name":"template","path":"rooms/template/template.yy",},},
     {"roomId":{"name":"gusty_space","path":"rooms/gusty_space/gusty_space.yy",},},
     {"roomId":{"name":"rm_test_persistance","path":"rooms/rm_test_persistance/rm_test_persistance.yy",},},
