@@ -14,6 +14,8 @@ espd = {
 //log(global.weapons)
 weapons = [
 	wp.deagle,
+	wp.deagle,
+	wp.deagle,
 ]
 eqwp = 0;
 
@@ -30,6 +32,7 @@ maxhp = 12;
 
 sprites = {
 	idle: s_meidle,
+	//idle: s_witchidle,
 	walk: s_mewalk,
 	up: s_meup,
 	upwalk: s_meupwalk,

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Weapons.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "wp_",
+  "name": "st_drawui",
   "tags": [],
   "resourceType": "GMScript",
 }

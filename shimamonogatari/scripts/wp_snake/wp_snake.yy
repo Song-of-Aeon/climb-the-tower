@@ -6,7 +6,7 @@
     "path": "folders/Weapons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "wp_",
+  "name": "wp_snake",
   "tags": [],
   "resourceType": "GMScript",
 }

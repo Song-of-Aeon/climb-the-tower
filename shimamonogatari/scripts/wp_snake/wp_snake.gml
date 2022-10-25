@@ -7,5 +7,5 @@ weapongen({
 	},
 	ammo: 0,
 	ammomax: 0,
-	name: "namesis",
+	name: "snake", //but not that snake, like the snake kid
 });

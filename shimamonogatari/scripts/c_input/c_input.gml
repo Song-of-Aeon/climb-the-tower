@@ -10,6 +10,7 @@ function c_input() {
 	select = jump.hit;
 	back = attack.hit;
 	undo = ctrl.hold & zed.hit;
+	wep = [wp1, wp2, wp3];
 }
 
 function c_inputload() {
@@ -24,6 +25,10 @@ function c_inputload() {
 	nu kinput("shift", [vk_shift]);
 	nu kinput("inventory", ["Q"]);
 	nu kinput("debug", ["F"]);
+	
+	nu kinput("wp1", ["1", "Q"]);
+	nu kinput("wp2", ["2"]);
+	nu kinput("wp3", ["3", "E"]);
 	
 	nu kinput("ctrl", [vk_control]);
 	nu kinput("zed", ["Z"]);

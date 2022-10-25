@@ -4,9 +4,23 @@ function st_standard() {
 	weapons[eqwp].step(attack);
 	
 	if debug.hit {
-		//textbox_create(txt_kotohime);
-		c_spawnenemy(10 tiles, 10 tiles, en.impostor);
+		textbox_create(txt_kotohime);
+		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
+	//log(wep);
+	iterate wep to {
+		if wep[i].hit && array_length(weapons) >= i {
+			eqwp = i;
+			log("equipped");
+		}
+	}
+	//log(eqwp);
+	
+	/*if wp2.hit && array_length(weapons) < 6 {
+			eqwp = 1;
+			log("equipped");
+	}*/
+	
 	
 	if left.hold dir = 180;
 	if right.hold dir = 0;

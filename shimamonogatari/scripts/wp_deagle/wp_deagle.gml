@@ -24,9 +24,9 @@ weapongen({
 		}
 	},
 	draw: function() {
-		draw_text(10, 10, string(df.hp)+"/"+string(df.maxhp));
-		draw_text(10, 20, string(ammo)+"/"+string(ammomax));
-		draw_text(10, 30, string(df.magazines)+"/"+string(df.maxmagazines));
+		//draw_text(10, 10, string(df.hp)+"/"+string(df.maxhp));
+		//draw_text(10, 20, string(ammo)+"/"+string(ammomax));
+		//draw_text(10, 30, string(df.magazines)+"/"+string(df.maxmagazines));
 	},
 	ammo: 9,
 	ammomax: 9,

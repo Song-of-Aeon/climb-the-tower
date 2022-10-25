@@ -30,6 +30,8 @@ function c_null() {
 #macro endif end
 #macro c cpp()
 #macro cycle mod_negative
+#macro iterate for (var i=0; i<array_length(
+#macro to );i++)
 //#macro is ==
 
 #macro MY_X ISAAC.visiblex
