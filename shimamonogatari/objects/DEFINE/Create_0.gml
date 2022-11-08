@@ -14,7 +14,7 @@ espd = {
 //log(global.weapons)
 weapons = [
 	wp.deagle,
-	wp.deagle,
+	wp.revolver,
 	wp.deagle,
 ]
 eqwp = 0;

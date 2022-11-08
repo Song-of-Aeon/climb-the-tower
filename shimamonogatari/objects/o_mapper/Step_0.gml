@@ -97,9 +97,8 @@ if !typing {
 	}
 
 	if debug.hit {
-		/*c_saveroom(get_string("", ""));
-		log("did it");*/
-		
+		c_saveroom(get_string("", ""));
+		log("did it");
 	}
 }
 

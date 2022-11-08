@@ -4,10 +4,11 @@ function c_maketile(x, y, type) {
 	chump.type = type;
 	c_tilequantize(chump);
 	//yeah
+	return chump;
 }
 
 function c_changetile(target, type) {
 	target.sprite_index = type.sprite;
-	c_tilequantize(chump);
-	//yeah
+	c_tilequantize(target);
+	return target;
 }
