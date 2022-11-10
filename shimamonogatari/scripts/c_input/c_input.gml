@@ -24,15 +24,17 @@ function c_inputload() {
 	nu kinput("reload", ["R"]);
 	nu kinput("shift", [vk_shift]);
 	nu kinput("inventory", ["Q"]);
-	nu kinput("debug", ["F"]);
+	nu kinput("debug", ["G"]);
 	
 	nu kinput("alt", [mb_right]);
+	nu kinput("altwep", ["E"]);
 	nu kinput("slam", [vk_control, "S"]);
 	nu kinput("dash", [vk_shift]);
+	nu kinput("punch", ["F"]);
 	
 	nu kinput("wp1", ["1", "Q"]);
 	nu kinput("wp2", ["2"]);
-	nu kinput("wp3", ["3", "E"]);
+	nu kinput("wp3", ["3"]);
 	
 	nu kinput("ctrl", [vk_control]);
 	nu kinput("zed", ["Z"]);
