@@ -91,7 +91,10 @@ if !typing {
 			}
 			break;
 		case 4:
-			room_goto(mp[sky_corridor].maproom);
+			//room_goto(mp[sky_corridor].maproom);
+			//room_goto(mp[coinroom].maproom);
+			room_goto(coinroom);
+			o_mapmanager.currentmap = coinroom;
 			instance_destroy();
 			break;
 	}

@@ -4,6 +4,8 @@ spd += acc;
 direction = dir;
 //dir2hv(dir, spd);
 //log(direction, dir);
+
+
 if delay {
 	delay--;
 	/*hv2dir(hspd, vspd);

@@ -17,7 +17,7 @@ function c_spawnenemy(x, y, archetype) {
 	return chump;
 }
 
-nu enemy("impostor", s_when_im, 16);
+nu enemy("impostor", s_when_im, 100);
 
 //everybody wants to be
 //my enemy

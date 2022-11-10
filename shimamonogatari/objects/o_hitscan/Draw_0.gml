@@ -7,7 +7,17 @@ for (currentbehavior=0; currentbehavior<array_length(draws); currentbehavior++) 
 image_angle = direction-90;
 //image_angle = point_direction(xprevious, yprevious, x, y)-90;
 //
-image_yscale = (1000)/sprite_get_height(sprite_index);
+image_yscale = size/sprite_get_height(sprite_index);
+var dude = distabs(dir, size);
+while collision_line(x, y, x+dude.x, y+dude.y, o_solid, true, false) {
+	size--;
+	image_yscale = size/sprite_get_height(sprite_index);
+	if !size instance_destroy();
+	dude = distabs(dir, size);
+}
+image_yscale = size/sprite_get_height(sprite_index);
+//log(size);
+//image_yscale = size/sprite_get_height(sprite_index);
 if delay {
 	var wid = width/3;
 	image_xscale = (wid)/sprite_get_width(sprite_index);

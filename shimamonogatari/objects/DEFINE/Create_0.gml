@@ -13,9 +13,9 @@ espd = {
 }
 //log(global.weapons)
 weapons = [
-	wp.deagle,
-	wp.revolver,
-	wp.deagle,
+	[wp.deagle],
+	[wp.revolver, wp.coin],
+	[wp.deagle],
 ]
 eqwp = 0;
 
@@ -27,6 +27,7 @@ lencount = 10;
 magazines = 1;
 maxmagazines = 1;
 aerial = false;
+altpos = 0;
 hp = 12;
 maxhp = 12;
 
@@ -39,12 +40,12 @@ sprites = {
 	down: s_medown,
 }
 
-state = st_standard //not for long
+state = st_v1 //not for long
 //actionstate = st_7
 
 xdraw = -100;
 ydraw = 310;
-
+global.count = 0;
 global.me = id;
 #macro df global.me
 instance_create(0, 0, o_mapmanager);

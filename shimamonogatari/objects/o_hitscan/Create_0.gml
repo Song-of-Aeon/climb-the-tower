@@ -19,3 +19,4 @@ delay = 0;
 duration = 10;
 intangible = false;
 despawn = c_null;
+size = 1000;

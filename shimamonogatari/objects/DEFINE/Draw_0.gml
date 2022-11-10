@@ -1,4 +1,4 @@
 draw_self();
 c_drawinput();
-weapons[eqwp].draw();
+weapons[eqwp][altpos].draw();
 st_drawui();

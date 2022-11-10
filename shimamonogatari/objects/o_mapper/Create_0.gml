@@ -1,3 +1,4 @@
+instance_create(0, 0, o_mapmanager);
 selectionzone = 0;
 selectedtype = 0;
 selecteddata = 0;

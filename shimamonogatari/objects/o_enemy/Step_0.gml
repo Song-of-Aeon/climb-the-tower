@@ -5,6 +5,7 @@ hitboxradius = sprite_width/2*1.1;
 collidedbullets = ds_list_create();
 owlist = collision_circle_list(x, y, hitboxradius, o_bullet, false, false, collidedbullets, false);
 for (i=0; i<owlist; i++) {
+	log(collidedbullets);
 	ow = collidedbullets[|i];
 	if ow != noone && ow.friendly && !ow.intangible {
 		if inv {
@@ -23,6 +24,7 @@ for (i=0; i<owlist; i++) {
 			//STATS.damagedealt += takingdamage;
 			//if c_doenemyhook("onhit", id) exit;
 			hp -= takingdamage;
+			c_screenshake(takingdamage*2, 8);
 			//ds_list_add(nohit,ow);
 		}
 		if ow.destructible {
