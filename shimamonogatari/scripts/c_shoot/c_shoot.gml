@@ -25,11 +25,6 @@ function c_shoot(x, y, speed, direction, type, color=c_white, behavior=c_null, d
 		} else {
 			colorcover = s_null;
 		}
-		if friendly {
-			damage *= ISAAC.damage;
-			fxxscale = 1;
-			fxyscale = 1;
-		}
 		image_angle = direction-90;
 	}
 	if draw_ == u {

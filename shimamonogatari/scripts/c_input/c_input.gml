@@ -30,7 +30,7 @@ function c_inputload() {
 	nu kinput("altwep", ["E"]);
 	nu kinput("slam", [vk_control, "S"]);
 	nu kinput("dash", [vk_shift]);
-	nu kinput("punch", ["F"]);
+	nu kinput("punch", ["W"]);
 	
 	nu kinput("wp1", ["1", "Q"]);
 	nu kinput("wp2", ["2"]);

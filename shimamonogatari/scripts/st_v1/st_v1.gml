@@ -23,8 +23,9 @@ function st_v1() {
 	if altwep.hit altpos = cycle(altpos+1, array_length(weapons[eqwp]));
 	
 	if punch.hit {
-		var dude = distabs(point_mouse(), 12);
-		var boul = collision_circle(x+dude.x, y+dude.y, 12, o_bullet, true, false);
+		var parryrange = 8;
+		var dude = distabs(point_mouse(), 8);
+		var boul = collision_circle(x+dude.x, y+dude.y, 8, o_bullet, true, false);
 		if boul && boul.object_index != o_hitscan {
 			scriptable_create(u, function() {
 				draw_set_color(c_white);
@@ -40,6 +41,7 @@ function st_v1() {
 			c_shoot(x, y, 11, point_mouse(), bul.big, c_yellow, function() {
 				if collision_circle(x, y, 4, o_solid, true, false) || collision_circle(x, y, 4, o_enemy, true, false) {
 					c_shootcircle(x, y, 5, 0, 40, bul.circle, c_yellow, function() {
+						destructible = false;
 						c
 						spd -= .3;
 						if !spd instance_destroy();
