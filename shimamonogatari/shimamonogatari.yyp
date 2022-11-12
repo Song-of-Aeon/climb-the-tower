@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"c_reload","path":"scripts/c_reload/c_reload.yy",},"order":28,},
+    {"id":{"name":"x_genericbullets","path":"scripts/x_genericbullets/x_genericbullets.yy",},"order":2,},
     {"id":{"name":"weapongen","path":"scripts/weapongen/weapongen.yy",},"order":11,},
     {"id":{"name":"c_maketrigger","path":"scripts/c_maketrigger/c_maketrigger.yy",},"order":15,},
     {"id":{"name":"array_remove","path":"scripts/array_remove/array_remove.yy",},"order":7,},
@@ -145,7 +146,6 @@
     {"id":{"name":"coinroom","path":"rooms/coinroom/coinroom.yy",},"order":8,},
     {"id":{"name":"ncm","path":"scripts/ncm/ncm.yy",},"order":14,},
     {"id":{"name":"draw_sprite_at","path":"scripts/draw_sprite_at/draw_sprite_at.yy",},"order":6,},
-    {"id":{"name":"x_genericbullets","path":"scripts/x_genericbullets/x_genericbullets.yy",},"order":2,},
     {"id":{"name":"munction","path":"scripts/munction/munction.yy",},"order":12,},
     {"id":{"name":"s_linecc","path":"sprites/s_linecc/s_linecc.yy",},"order":10,},
     {"id":{"name":"fnt_example","path":"fonts/fnt_example/fnt_example.yy",},"order":6,},
@@ -195,6 +195,7 @@
     {"id":{"name":"rm_test_persistance","path":"rooms/rm_test_persistance/rm_test_persistance.yy",},"order":0,},
     {"id":{"name":"imgui","path":"objects/imgui/imgui.yy",},"order":4,},
     {"id":{"name":"draw_rectangle_width","path":"scripts/draw_rectangle_width/draw_rectangle_width.yy",},"order":5,},
+    {"id":{"name":"st_hurt","path":"scripts/st_hurt/st_hurt.yy",},"order":44,},
     {"id":{"name":"s_bird","path":"sprites/s_bird/s_bird.yy",},"order":3,},
     {"id":{"name":"s_bulstar","path":"sprites/s_bulstar/s_bulstar.yy",},"order":19,},
     {"id":{"name":"s_bulletpoint","path":"sprites/s_bulletpoint/s_bulletpoint.yy",},"order":13,},

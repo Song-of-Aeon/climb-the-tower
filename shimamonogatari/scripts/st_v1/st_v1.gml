@@ -38,18 +38,12 @@ function st_v1() {
 				}
 				c
 			});
-			c_shoot(x, y, 11, point_mouse(), bul.big, c_yellow, function() {
+			c_shoot(x, y, 11, point_mouse(), bul.circle, c_yellow, function() {
 				if collision_circle(x, y, 4, o_solid, true, false) || collision_circle(x, y, 4, o_enemy, true, false) {
-					c_shootcircle(x, y, 5, 0, 40, bul.circle, c_yellow, function() {
-						destructible = false;
-						c
-						spd -= .3;
-						if !spd instance_destroy();
-						color = make_color_hsv(40-count*2, 255, 255);
-					});
+					c_shoot(x, y, 0, 0, bul.explosion, c_white);
 					instance_destroy();
 				}
-			}, c_flatcolor);
+			}, c_flatcolor).friendly = NaN;
 			instance_destroy(boul);
 		}
 	}

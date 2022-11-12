@@ -20,6 +20,7 @@ function c_shoot(x, y, speed, direction, type, color=c_white, behavior=c_null, d
 		alpha = type.alpha;
 		rotate = type.rotate;
 		colorable = type.colorable;
+		onhit = method(global.me, type.onhit);
 		if type.colorable {
 			colorcover = asset_get_index(string(sprite_get_name(sprite_index)) + "cc");
 		} else {

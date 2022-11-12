@@ -48,4 +48,4 @@ weapongen({
 });
 
 global.hitscans = {};
-nu hitscan("normal", s_line, 5, false, true, true, 1);
+nu hitscan("normal", s_line, 5, false, true, 1);

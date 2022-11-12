@@ -1,7 +1,7 @@
 weapongen({
 	step: function(input, alt) {
 		if input.hit && !cooldown {
-			c_bang(DEFINE.x, DEFINE.y, point_direction(DEFINE.x, DEFINE.y, mouse_x, mouse_y), 4, 0, 20, hsn.normal, c_yellow, function() {
+			c_bang(df.x, df.y, point_mouse(), 4, 0, 20, hsn.normal, c_yellow, function() {
 				c
 				color = make_color_hsv(40, 255-count*24, 255);
 				width -= .5;
@@ -17,20 +17,16 @@ weapongen({
 			var chump = scriptable_create(function() {
 				if place_meeting(x, y, o_solid) instance_destroy();
 				var dude = collision_circle(x, y, 3, o_hitscan, false, false);
-				if dude log(x, y, dude.friendly, dude);
 				if dude && dude.friendly {
 					var myguy;
 					var dudes = tag_get_instances("coin");
-					myguy = {x: irandom(room_width), y: irandom(room_height)}
+					myguy = {x: irandom(room_width), y: irandom(room_height)};
 					if instance_exists(o_enemy) myguy = instance_nearest(x, y, o_enemy);
-					if array_length(dudes) {
-						log(dudes);
-						var i;
-						for (i=0; i<array_length(dudes); i++) {
-							if dudes[i] != id {
-								myguy = dudes[i];
-								break;
-							}
+					var i;
+					for (i=0; i<array_length(dudes); i++) {
+						if dudes[i] != id {
+							myguy = dudes[i];
+							break;
 						}
 					}
 					var laz = c_bang(x, y, point_direction(x, y, myguy.x, myguy.y), 4, 0, 20, hsn.normal, c_yellow, function() {
