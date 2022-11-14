@@ -4,8 +4,8 @@ function st_v1() {
 	weapons[eqwp][altpos].step(attack, alt);
 	
 	if debug.hit {
-		//textbox_create(txt_kotohime);
-		c_spawnenemy(10 tiles, 10 tiles, en.impostor);
+		textbox_create(txt_kotohime);
+		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
 	//log(wep);
 	iterate wep to {
