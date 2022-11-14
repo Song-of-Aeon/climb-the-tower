@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "m_null",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,
@@ -10,14 +14,10 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "m_null",
-  "duration": 0.0,
+  "soundFile": "m_null.ogg",
+  "duration": 0.001451,
   "parent": {
     "name": "Music",
     "path": "folders/Music.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "m_null",
-  "tags": [],
-  "resourceType": "GMSound",
 }
