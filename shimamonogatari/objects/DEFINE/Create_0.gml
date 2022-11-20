@@ -15,7 +15,7 @@ espd = {
 weapons = [
 	[wp.revolver, wp.coin],
 	[wp.shotgun, wp.snake],
-	[wp.deagle],
+	[wp[$"Polar Star"]],
 ]
 eqwp = 0;
 
@@ -30,6 +30,7 @@ aerial = false;
 altpos = 0;
 hp = 12;
 maxhp = 12;
+dir = 0;
 
 sprites = {
 	idle: s_meidle,

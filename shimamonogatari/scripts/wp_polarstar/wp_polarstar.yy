@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "wp_revolver",
+  "name": "wp_polarstar",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

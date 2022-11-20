@@ -31,8 +31,8 @@ switch selector[0] {
 if jump.hold {
 	roomsize.x = selector[2][0] tiles;
 	roomsize.y = selector[2][1] tiles;
-	x = clamp(x+(mouse_x-mousepos.x)/2, 160, roomsize.x-160);
-	y = clamp(y+(mouse_y-mousepos.y)/2, 120, roomsize.y-120);
+	x = clamp(x+(mouse_x-mousepos.x), 160, roomsize.x-160);
+	y = clamp(y+(mouse_y-mousepos.y), 120, roomsize.y-120);
 	mousepos.x = mouse_x;
 	mousepos.y = mouse_y;
 	//x += 2;
