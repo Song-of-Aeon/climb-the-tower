@@ -43,8 +43,8 @@ weapongen({
 					var laz = c_bang(x, y, point_direction(x, y, myguy.x, myguy.y), 4, 0, 20, hsn.normal, c_yellow, function() {
 						width -= .5;
 					});
-					laz.size = point_distance(x, y, myguy.x, myguy.y);
-					laz.damage = dude.damage*2;
+					//laz.size = point_distance(x, y, myguy.x, myguy.y);
+					laz.damage = dude.damage*1.5;
 					log(laz.damage, dude.damage);
 					laz.friendly = true;
 					laz.width = dude.width*1.5;

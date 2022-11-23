@@ -23,6 +23,7 @@ stamina = 0;
 slamduration = 0;
 slamming = false;
 sliding = false;
+punchdelay = 0;
 
 
 walkspeed = 1.9;
