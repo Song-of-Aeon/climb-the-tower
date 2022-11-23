@@ -6,7 +6,7 @@ weapongen({
 				c
 				color = make_color_hsv(40, 255-count*24, 255);
 				width -= .5;
-			});
+			}).damage = 5;
 			se_play(se_revolver);
 			cooldown = 1.31 sec;
 			charge = 0;
@@ -20,12 +20,14 @@ weapongen({
 		}
 		if alt.drop {
 			if charge >= 1 sec {
-				c_bang(df.x+dude.x, df.y+dude.y, point_direction(df.x+dude.x, df.y+dude.y, mouse_x, mouse_y), 6, 0, 35, hsn.normal, c_blue, function() {
+				var guy = c_bang(df.x+dude.x, df.y+dude.y, point_direction(df.x+dude.x, df.y+dude.y, mouse_x, mouse_y), 6, 0, 35, hsn.normal, c_blue, function() {
 					c
 					color = make_color_hsv(140, 255-count*24, 255);
 					width -= .5;
-					damage = 5;
-				}).multihit = 4;
+					
+				});
+				guy.damage = 5;
+				guy.multihit = 4;
 				se_play(se_revolver, .5);
 				chargecooldown = 5.25 sec;
 				recoil = 16;
@@ -54,4 +56,4 @@ weapongen({
 });
 
 global.hitscans = {};
-nu hitscan("normal", s_line, 5, false, true, 1);
+nu hitscan("normal", s_line, 99, false, true, 1);
