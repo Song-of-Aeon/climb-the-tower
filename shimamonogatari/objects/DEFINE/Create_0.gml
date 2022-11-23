@@ -18,6 +18,12 @@ weapons = [
 	[wp.nicole_dunlap, wp[$"Polar Star"]],
 ]
 eqwp = 0;
+dashing = false;
+stamina = 0;
+slamduration = 0;
+slamming = false;
+sliding = false;
+
 
 walkspeed = 1.9;
 jumpspeed = 3.2;
@@ -31,6 +37,7 @@ altpos = 0;
 hp = 12;
 maxhp = 12;
 dir = 0;
+inv = 0;
 
 sprites = {
 	idle: s_meidle,

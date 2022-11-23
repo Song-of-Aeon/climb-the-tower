@@ -1,6 +1,20 @@
 function st_v1() {
     //log(jump);
 	//log(weapons[eqwp]);
+	
+	//if down.hold dir = 270;
+	//if up.hold dir = 90;
+	if left.hold dir = 180;
+	if right.hold dir = 0;
+	
+	
+	
+    hput = right.hold-left.hold;
+    vput = down.hold-up.hold;
+	
+	inv--;
+	if !sliding stamina = min(stamina+.02, 3);
+	
 	weapons[eqwp][altpos].step(attack, alt);
 	
 	if debug.hit {
@@ -48,6 +62,60 @@ function st_v1() {
 		}
 	}
 	
+	if dash.hit && stamina >= 1 {
+		slamming = false;
+		sliding = false;
+		if hput == 0 {
+			if point_mouse() < 270 && dir == 180 sliding = -1 else dashing = 1;
+		} else {
+			dashing = hput;
+		}
+		dashing *= 8;
+		stamina--;
+		spd.v = 0;
+	}
+	
+	if aerial {
+		if slam.hit {
+			slamming = true;
+			spd.v = 5.5;
+			spd.h = 0;
+			dashing = false;
+		}
+	} else {
+		if slam.hit {
+			if hput == 0 {
+				if point_mouse() < 270 && dir == 180 sliding = -2.4 else sliding = 2.4;
+			} else {
+				sliding = hput*2.4//*(slamduration/60+1);
+			}
+		}
+		if slam.drop {
+			sliding = false;
+		}
+		aerial--;
+		if aerial < -30 {
+			slamduration = 0;
+		}
+	}
+	if dashing != 0 inv = true;
+	
+	if sliding != 0 {
+		spd.h = sliding+hput*.6;
+	} else if dashing != 0 {
+		spd.h = sign(dashing)*6;
+		dashing -= sign(dashing);
+		if dashing == 0 {
+			spd.h = hput*walkspeed;
+		}
+	} else if !slamming {
+		spd.h = lerp(spd.h, hput*walkspeed, .1);
+	}
+	
+	if slamming {
+		slamduration = min(slamduration+1, 240);
+	}
+	
 	//log(eqwp);
 	
 	/*if wp2.hit && array_length(weapons) < 6 {
@@ -56,14 +124,7 @@ function st_v1() {
 	}*/
 	
 	
-	if left.hold dir = 180;
-	if right.hold dir = 0;
-	if down.hold dir = 270;
-	if up.hold dir = 90;
 	
-	
-    hput = right.hold-left.hold;
-    vput = down.hold-up.hold;
 	
 	c_dosprites();
 	
@@ -75,27 +136,36 @@ function st_v1() {
 		//chump.spd.h = mouse_x < x ? -1 : 1;
 		chump.spd.v = -3;
 	}
-    spd.h = lerp(spd.h, hput*walkspeed, .1);
+    
     var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
         bbox_right: bbox_right-2,
         bbox_bottom:bbox_bottom+grav}
     var ymeeting = bread_collision(a,o_solid,COLTYPE.LESSTHANEQUALTO);
     if !ymeeting {
-        spd.v += grav;
-        leniance--;
+		if dashing == 0 {
+	        spd.v += grav;
+	        leniance--;
+		}
         aerial = true;
     } else {
         leniance = lencount;
         if aerial {
             aerial = false;
         }
+		if slamming {
+			slamming = false;
+			c_shoot(x, y, 0, 0, bul.explosion);
+			if slamduration < 120 slamduration = min(slamduration, 40);
+		}
         spd.v = 0;
     }
     if leniance > 0 {
         if (jump.hit) {
-            spd.v = -jumpspeed;
+            spd.v = -(jumpspeed+slamduration/30);
             leniance = 0;
+			sliding = false;
+			dashing = false;
         }
     }
     if spd.v < 0 {
@@ -117,4 +187,6 @@ function st_v1() {
 		instance_create(0, 0, o_inventory);
 		c_settimescale(0);
 	}
+	
+	
 }

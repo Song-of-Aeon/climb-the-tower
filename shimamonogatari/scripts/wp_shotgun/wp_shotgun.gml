@@ -48,7 +48,6 @@ weapongen({
 });
 
 nu bullet("explosion", s_bulbig, 1, false, true, 1, function() {
-	log("hi")
 	iterations++;
 	rescale(id, 3);
 	color = make_color_hsv(40-iterations*2, 255, 255);
