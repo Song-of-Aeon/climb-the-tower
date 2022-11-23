@@ -4,3 +4,4 @@ draw = draw_self;
 inv = 0;
 defense = 0;
 maxhp = 10;
+spd = new sped();

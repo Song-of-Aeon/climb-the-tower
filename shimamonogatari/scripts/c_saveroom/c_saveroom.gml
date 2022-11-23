@@ -40,7 +40,8 @@ function c_saveroom(name) {
 			var guy = file_text_open_write("InstanceCreationCode_"+myname+".gml");
 			switch object_index {
 				case o_solid:
-					file_text_write_string(guy, @"c_maketile("+st(x)+", "+st(y)+", tl[$\""+type.name+"\""+@"])
+					//file_text_write_string(guy, @"c_maketile("+st(x)+", "+st(y)+", tl[$\""+type.name+"\""+@"])
+					file_text_write_string(guy, "c_maketile(x, y, +tl[$\""+type.name+"\""+@"])
 instance_destroy();");
 					break;
 				case o_trigger:

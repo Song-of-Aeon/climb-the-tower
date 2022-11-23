@@ -1,2 +1,2 @@
-c_maketile(272, 64, tl[$"mistake"])
+c_maketile(x, y, +tl[$"impostor"])
 instance_destroy();

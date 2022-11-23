@@ -15,7 +15,7 @@ espd = {
 weapons = [
 	[wp.revolver, wp.coin],
 	[wp.shotgun, wp.snake],
-	[wp[$"Polar Star"]],
+	[wp.nicole_dunlap, wp[$"Polar Star"]],
 ]
 eqwp = 0;
 

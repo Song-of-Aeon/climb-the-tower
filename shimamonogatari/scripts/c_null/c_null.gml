@@ -32,6 +32,7 @@ function c_null() {
 #macro cycle mod_negative
 #macro iterate for (var i=0; i<array_length(
 #macro to );i++)
+#macro kys instance_destroy()
 //#macro is ==
 
 #macro MY_X ISAAC.visiblex
