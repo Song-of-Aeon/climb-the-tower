@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "point_me",
+  "name": "en_filth",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "convenience",
-    "path": "folders/Scripts/convenience.yy",
+    "name": "Enemies",
+    "path": "folders/Enemies.yy",
   },
 }

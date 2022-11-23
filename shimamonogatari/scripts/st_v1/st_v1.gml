@@ -5,7 +5,7 @@ function st_v1() {
 	
 	if debug.hit {
 		//textbox_create(txt_kotohime);
-		c_spawnenemy(10 tiles, 10 tiles, en.filth);
+		c_spawnenemy(10 tiles, 10 tiles, en.stray);
 	}
 	//log(wep);
 	iterate wep to {
