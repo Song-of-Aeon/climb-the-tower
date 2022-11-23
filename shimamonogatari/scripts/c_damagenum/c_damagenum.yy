@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "x_genericbullets",
+  "name": "c_damagenum",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "bullets",
-    "path": "folders/Entities/bullets.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

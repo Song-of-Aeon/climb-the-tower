@@ -1,3 +1,4 @@
+
 for (currentbehavior=0; currentbehavior<array_length(draws); currentbehavior++) {
 	var scr = draws[currentbehavior];
 	scr();
@@ -21,16 +22,19 @@ image_yscale = size/sprite_get_height(sprite_index);
 if delay {
 	var wid = width/3;
 	image_xscale = (wid)/sprite_get_width(sprite_index);
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha/3);
-	draw_sprite_ext(colorcover, image_index, x, y, image_xscale, image_yscale, image_angle, color, image_alpha/3);
+	if !frame1 {
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha/3);
+		draw_sprite_ext(colorcover, image_index, x, y, image_xscale, image_yscale, image_angle, color, image_alpha/3);
+	}
 } else {
 	var wid = width;
 	image_xscale = (wid)/sprite_get_width(sprite_index);
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-	draw_sprite_ext(colorcover, image_index, x, y, image_xscale, image_yscale, image_angle, color, image_alpha);
-	
+	if !frame1 {
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+		draw_sprite_ext(colorcover, image_index, x, y, image_xscale, image_yscale, image_angle, color, image_alpha);
+	}
 }
-
+frame1--;
 
 
 

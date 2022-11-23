@@ -24,8 +24,8 @@ weapongen({
 					c
 					color = make_color_hsv(140, 255-count*24, 255);
 					width -= .5;
-					damage = 14;
-				});
+					damage = 5;
+				}).multihit = 4;
 				se_play(se_revolver, .5);
 				chargecooldown = 5.25 sec;
 				recoil = 16;

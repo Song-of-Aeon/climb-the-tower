@@ -1,0 +1,1 @@
+draw_text_transformed_color(x, y, amount, 1.4+amount/20, 1.4+amount/20, decay, c_red, c_red, c_red, c_red, 2-decay/20);

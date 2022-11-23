@@ -20,3 +20,6 @@ duration = 10;
 intangible = false;
 despawn = c_null;
 size = 1000;
+hitlist = [];
+multihit = 1;
+frame1 = 0;

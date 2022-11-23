@@ -1,4 +1,4 @@
-nu enemy("filth", s_when_im, 100, function() {
+nu enemy("filth", s_when_im, 4, function() {
 	static grav = .14;
 	static aerial = false;
 	static charge = 0;

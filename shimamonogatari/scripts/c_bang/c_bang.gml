@@ -2,6 +2,7 @@ function c_bang(x, y, direction, width, delay, duration, type, color=c_black, be
 	var chump = instance_create(x, y, o_hitscan);
 	//log(layer_get_id("instances"));
 	chump.dir = direction;
+	chump.direction = chump.dir;
 	chump.width = width;
 	chump.delay = delay;
 	chump.duration = duration;

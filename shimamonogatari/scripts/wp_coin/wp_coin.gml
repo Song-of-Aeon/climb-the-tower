@@ -5,7 +5,7 @@ weapongen({
 				c
 				color = make_color_hsv(40, 255-count*24, 255);
 				width -= .5;
-				damage = 1.6;
+				damage = 2;
 			});
 			se_play(se_revolver, 1.8, .6);
 			cooldown = .49 sec;
@@ -17,7 +17,17 @@ weapongen({
 			var chump = scriptable_create(function() {
 				if place_meeting(x, y, o_solid) instance_destroy();
 				var dude = collision_circle(x, y, 3, o_hitscan, false, false);
-				if dude && dude.friendly {
+				if dude {
+					with dude {
+						var dude2 = distabs(dir, size);
+						while collision_line(x, y, x+dude2.x, y+dude2.y, o_, true, false) {
+							size--;
+							image_yscale = size/sprite_get_height(sprite_index);
+							if !size instance_destroy();
+							dude2 = distabs(dir, size);
+						}
+						image_yscale = size/sprite_get_height(sprite_index);
+					}
 					var myguy;
 					var dudes = tag_get_instances("coin");
 					myguy = {x: irandom(room_width), y: irandom(room_height)};
@@ -32,8 +42,10 @@ weapongen({
 					var laz = c_bang(x, y, point_direction(x, y, myguy.x, myguy.y), 4, 0, 20, hsn.normal, c_yellow, function() {
 						width -= .5;
 					});
-					laz.damage = dude.damage*1.5;
+					laz.damage = dude.damage*2;
+					laz.friendly = true;
 					laz.width = dude.width*1.5;
+					laz.multihit = dude.multihit;
 					dude.size = point_distance(dude.x, dude.y, x, y);
 					instance_destroy();
 				}
@@ -43,8 +55,10 @@ weapongen({
 			}, draw_self);
 			chump.sprite_index = s_magazine;
 			chump.spd = new vec2();
-			chump.spd.h = df.spd.h;
-			chump.spd.v = df.spd.v-3;
+			chump.spd.h = df.spd.h/3;
+			chump.spd.v = df.spd.v/3;
+			chump.speed = 3.4;
+			chump.direction = lerp_angle(point_mouse(), 90, .4);
 			chump.x = df.x;
 			chump.y = df.y;
 			tag("coin", chump);
