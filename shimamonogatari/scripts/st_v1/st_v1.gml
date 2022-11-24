@@ -13,15 +13,30 @@ function st_v1() {
     vput = down.hold-up.hold;
 	
 	inv--;
-	if !sliding stamina = min(stamina+.02, 3);
+	if !sliding stamina = min(stamina+.014, 3);
 	punchdelay--;
 	
 	weapons[eqwp][altpos].step(attack, alt);
 	
 	if debug.hit {
 		//textbox_create(txt_kotohime);
-		c_spawnenemy(10 tiles, 10 tiles, en.stray);
+		//c_spawnenemy(10 tiles, 10 tiles, en.filth);
+		repeat(5) {
+			c_spawnenemy((irandom(14)+3) tiles, (irandom(3)+3) tiles, en.filth);
+		}
+		repeat(5) {
+			c_spawnenemy((irandom(14)+3) tiles, (irandom(3)+3) tiles, en.stray);
+		}
 	}
+	if !--cameradelay {
+		camera_set_view_size(view_camera[0],
+			min(camera_get_view_width(view_camera[0])*1.03, 320),
+			min(camera_get_view_height(view_camera[0])*1.03, 240),
+		);
+	}
+	//camera_set_view_pos(view_camera[0], cameratarg.x, cameratarg.y);
+	camera_set_view_target(view_camera[0], id);
+	
 	//log(wep);
 	iterate wep to {
 		if wep[i].hit && array_length(weapons) >= i {
@@ -41,7 +56,7 @@ function st_v1() {
 		punchdelay = 40;
 		var parryrange = 8;
 		var dude = distabs(point_mouse(), 8);
-		c_shoot(x+dude.x, y+dude.y, 0, point_mouse(), bul.square, c_blue, function(){
+		c_shoot(x+dude.x, y+dude.y, 0, point_mouse(), bul.square, c_blue, function() {
 			var boul = collision_circle(x, y, 8, o_bullet, true, true);
 			if boul && boul.object_index != o_hitscan {
 				df.punchdelay = 0;
@@ -145,6 +160,7 @@ function st_v1() {
 		//chump.spd.h = mouse_x < x ? -1 : 1;
 		chump.spd.v = -3;
 	}
+	
     
     var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
@@ -164,6 +180,7 @@ function st_v1() {
         }
 		if slamming {
 			slamming = false;
+			//c_zoomhold(x, y, 2, 20);
 			c_shoot(x, y, 0, 0, bul.explosion);
 			if slamduration < 120 slamduration = min(slamduration, 40);
 		}
@@ -196,6 +213,4 @@ function st_v1() {
 		instance_create(0, 0, o_inventory);
 		c_settimescale(0);
 	}
-	
-	
 }

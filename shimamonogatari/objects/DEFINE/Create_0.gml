@@ -14,7 +14,7 @@ espd = {
 //log(global.weapons)
 weapons = [
 	[wp.revolver, wp.coin],
-	[wp.shotgun, wp.snake],
+	[wp.shotgun, wp.deagle],
 	[wp.nicole_dunlap, wp[$"Polar Star"]],
 ]
 eqwp = 0;
@@ -25,6 +25,8 @@ slamming = false;
 sliding = false;
 punchdelay = 0;
 
+cameratarg = new vec2();
+cameradelay = 0;
 
 walkspeed = 1.9;
 jumpspeed = 3.2;

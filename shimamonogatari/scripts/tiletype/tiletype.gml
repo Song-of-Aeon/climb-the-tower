@@ -1,4 +1,4 @@
-function tiletype(name_, sprite_, collision_, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=c_null, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
+function tiletype(name_, sprite_, collision_, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
 	name = name_;
 	sprite = sprite_;
 	collision = collision_;

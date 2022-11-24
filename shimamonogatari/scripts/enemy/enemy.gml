@@ -1,9 +1,10 @@
 global.enemies = {};
-function enemy(name_, sprite_, hp_,  step_=c_null, draw_=draw_self) constructor {
+function enemy(name_, sprite_, hp_,  step_=c_null, draw_=draw_self, create_=c_null) constructor {
 	sprite = sprite_;
 	hp = hp_;
-	step = munction(step_);
-	draw = munction(draw_);
+	step = step_;
+	draw = draw_;
+	create = create_;
 	variable_struct_set(global.enemies, name_, self);
 }
 
@@ -12,8 +13,9 @@ function c_spawnenemy(x, y, archetype) {
 	chump.hp = archetype.hp;
 	chump.maxhp = archetype.hp;
 	chump.sprite_index = archetype.sprite;
-	chump.step = archetype.step;
-	chump.draw = archetype.draw;
+	chump.step = method(chump, archetype.step);
+	chump.draw = method(chump, archetype.draw);
+	method(chump, archetype.create)();
 	return chump;
 }
 

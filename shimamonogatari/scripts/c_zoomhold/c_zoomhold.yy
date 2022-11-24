@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "tiletype",
+  "name": "c_zoomhold",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
