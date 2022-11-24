@@ -132,9 +132,9 @@ function st_v1() {
 		if dashing == 0 {
 			spd.h = hput*walkspeed;
 		}
-	} else if !slamming {
-		if abs(spd.h) > abs(walkspeed) && aerial {
-			if abs(spd.h) > abs(spd.h+hput) {
+	} else /*if !slamming*/ {
+		if abs(spd.h) > abs(walkspeed) && aerial && false {
+			if abs(spd.h) < abs(spd.h+hput) {
 				lerp(spd.h, hput*walkspeed, .1);
 			}
 		} else {
@@ -143,7 +143,7 @@ function st_v1() {
 	}
 	
 	if slamming {
-		slamduration = min(slamduration+1, 240);
+		slamduration = min(slamduration+1, 100);
 	}
 	
 	//log(eqwp);
@@ -166,12 +166,13 @@ function st_v1() {
 		//chump.spd.h = mouse_x < x ? -1 : 1;
 		chump.spd.v = -3;
 	}
-	
     
-    var a = {bbox_left: bbox_left+2,
-        bbox_top:bbox_top+grav,
+    var a = {
+		bbox_left: bbox_left+2,
+        bbox_top: bbox_top+grav,
         bbox_right: bbox_right-2,
-        bbox_bottom:bbox_bottom+grav}
+        bbox_bottom: bbox_bottom+grav
+	}
     var ymeeting = bread_collision(a,o_solid,COLTYPE.LESSTHANEQUALTO);
     if !ymeeting {
 		if dashing == 0 {
@@ -188,28 +189,44 @@ function st_v1() {
 			slamming = false;
 			//c_zoomhold(x, y, 2, 20);
 			c_shoot(x, y, 0, 0, bul.explosion);
-			if slamduration < 120 slamduration = min(slamduration, 40);
+			if slamduration < 60 slamduration = min(slamduration, 20);
 		}
         spd.v = 0;
+		walljumps = 3;
     }
-    if leniance > 0 {
-        if (jump.hit) {
-            spd.v = -(jumpspeed+slamduration/30);
-            leniance = 0;
-			sliding = false;
-			if dashing != 0 {
-				dashing = false;
-				spd.v *= .75;
-			}
-        }
+    if leniance > 0 && jump.hit {
+        spd.v = -(jumpspeed+slamduration/10);
+		log(slamduration/10);
+		slamduration = 0;
+        leniance = 0;
+		sliding = false;
+		if dashing != 0 {
+			dashing = false;
+			spd.v *= .75;
+		}
     }
-	log(dashing, sliding, slamming);
     if spd.v < 0 {
         if (jump.drop) {
             spd.v /= 2;
         }
     }
-    c_newcollision();
+    var xmeeting = c_widecollision(2);
+	//log(slamduration);
+	if xmeeting {
+		if aerial && walljumps && jump.hit {
+			walljumps--;
+			spd.v = -jumpspeed;
+			if xmeeting == 1 {
+				spd.h = -jumpspeed*2;
+			} else {
+				spd.h = jumpspeed*2;
+			}
+		}
+		if spd.v > 0 {
+			spd.v -= grav*.75;
+		}
+	}
+	c_newcollision();
     x += spd.h;
     y += spd.v;
 	

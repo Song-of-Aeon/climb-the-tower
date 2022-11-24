@@ -19,11 +19,12 @@ weapons = [
 ]
 eqwp = 0;
 dashing = false;
-stamina = 0;
+stamina = 3;
 slamduration = 0;
 slamming = false;
 sliding = false;
 punchdelay = 0;
+walljumps = 3;
 
 cameratarg = new vec2();
 cameradelay = 0;
