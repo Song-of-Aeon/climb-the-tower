@@ -13,12 +13,13 @@ weapongen({
 	},
 	draw: function() {
 		if DEFINE.dir == 0 {
-			draw_sprite(s_polarstar, 0, DEFINE.x+5, DEFINE.y+2);
+			//draw_sprite(s_polarstar, 0, DEFINE.x+5, DEFINE.y+2);
 		} else {
-			draw_sprite_ext(s_polarstar, 0, DEFINE.x-5, DEFINE.y+2, -1, 1, 0, c_white, 1);
+			//draw_sprite_ext(s_polarstar, 0, DEFINE.x-5, DEFINE.y+2, -1, 1, 0, c_white, 1);
 		}
 	},
 	ammo: 0,
 	ammomax: 0,
 	name: "Polar Star",
+	sprite: s_polarstar,
 });

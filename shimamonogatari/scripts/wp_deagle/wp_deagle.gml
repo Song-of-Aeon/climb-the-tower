@@ -31,4 +31,5 @@ weapongen({
 	ammo: 9,
 	ammomax: 9,
 	name: "deagle",
+	sprite: s_polarstar,
 });

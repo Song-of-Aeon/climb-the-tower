@@ -1,8 +1,9 @@
 weapongen({
 	step: function(input, alt) {
+		dude = distabs(point_mouse(), 12);
 		if input.hit && !cooldown {
 			repeat(12) {
-				c_shoot(df.x, df.y, 10+random(2), point_direction(df.x, df.y, mouse_x, mouse_y)+irandom(30)-15, bul.thin, c_yellow, function() {
+				c_shoot(df.x+dude.x, df.y+dude.y, 10+random(2), point_direction(df.x, df.y, mouse_x, mouse_y)+irandom(30)-15, bul.thin, c_yellow, function() {
 					if collision_circle(x, y, 4, o_solid, true, false) instance_destroy();
 					spd -= .5;
 					if !spd instance_destroy();
@@ -45,6 +46,7 @@ weapongen({
 	cooldown: 0,
 	charge: 0,
 	chargecooldown: 0,
+	sprite: s_shotgun,
 });
 
 nu bullet("explosion", s_bulbig, 1, false, true, 1, function() {

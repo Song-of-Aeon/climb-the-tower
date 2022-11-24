@@ -27,5 +27,6 @@ weapongen({
 	ammo: 0,
 	ammomax: 0,
 	name: "nicole_dunlap",
-	the_world: false
+	the_world: false,
+	sprite: s_deagle,
 });

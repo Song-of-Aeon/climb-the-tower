@@ -80,4 +80,5 @@ weapongen({
 	cooldown: 0,
 	coins: 4,
 	name: "coin",
+	sprite: s_polarstar,
 });
