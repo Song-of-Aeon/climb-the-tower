@@ -90,7 +90,7 @@ function st_v1() {
 		slamming = false;
 		sliding = false;
 		if hput == 0 {
-			if point_mouse() < 270 && dir == 180 sliding = -1 else dashing = 1;
+			if point_mouse() < 270 && dir == 180 dashing = -1 else dashing = 1;
 		} else {
 			dashing = hput;
 		}
@@ -133,7 +133,13 @@ function st_v1() {
 			spd.h = hput*walkspeed;
 		}
 	} else if !slamming {
-		spd.h = lerp(spd.h, hput*walkspeed, .1);
+		if abs(spd.h) > abs(walkspeed) && aerial {
+			if abs(spd.h) > abs(spd.h+hput) {
+				lerp(spd.h, hput*walkspeed, .1);
+			}
+		} else {
+			spd.h = lerp(spd.h, hput*walkspeed, .1);
+		}
 	}
 	
 	if slamming {
@@ -191,9 +197,13 @@ function st_v1() {
             spd.v = -(jumpspeed+slamduration/30);
             leniance = 0;
 			sliding = false;
-			dashing = false;
+			if dashing != 0 {
+				dashing = false;
+				spd.v *= .75;
+			}
         }
     }
+	log(dashing, sliding, slamming);
     if spd.v < 0 {
         if (jump.drop) {
             spd.v /= 2;

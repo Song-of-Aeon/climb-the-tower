@@ -11,8 +11,8 @@ weapongen({
 		}
 		cooldown = floor(cooldown-1);
 		if cooldown == 0 se_play(se_revclick, 1.2+random(.4));
-		//coins = min(coins+1/3/60, 4);
-		coins = 4;
+		coins = min(coins+1/3/60, 4);
+		//coins = 4;
 		if alt.hit && coins >= 1 {
 			var chump = scriptable_create(function() {
 				if place_meeting(x, y, o_solid) instance_destroy();

@@ -43,7 +43,6 @@ weapongen({
 		if chargecooldown draw_circle_width(df.x, df.y, chargecooldown/(5.25 sec)*320, 3, true);
 		draw_set_color(make_color_hsv(140, 128+sinmult(gc, 20, 128), 255));
 		if charge draw_circle_width(df.x, df.y, charge/2, 3, true);
-		
 	},
 	ammo: 0,
 	ammomax: 0,
