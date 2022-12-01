@@ -1,3 +1,5 @@
+//ADD INT KNOCKBACK AS AN ARGUMENT
+
 function bullet(name_, sprite_=s_mistake, damage_=1, destructible_=true, friendly_=false, alpha_=1, draw_=c_bulletdraw, rotate_=true, sound_=se_null, onhit_=st_hurt) constructor {
 	sound_ = se_null;
 	sprite = sprite_;

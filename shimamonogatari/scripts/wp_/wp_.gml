@@ -1,5 +1,5 @@
 weapongen({
-	step: function(input) {
+	step: function(input, alt) {
 		
 	},
 	draw: function() {

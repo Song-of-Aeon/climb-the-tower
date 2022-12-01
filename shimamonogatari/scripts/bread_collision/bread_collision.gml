@@ -21,20 +21,14 @@ enum COLTYPE{
 }
 
 function bread_collision_l(obj1,obj2){
-        if(obj1.bbox_left < obj2.bbox_right &&
-        obj1.bbox_right > obj2.bbox_left &&
-        obj1.bbox_top < obj2.bbox_bottom &&
-        obj1.bbox_bottom > obj2.bbox_top){
-            return true;
-        }
-        return false;
+	return (obj1.bbox_left < obj2.bbox_right &&
+    obj1.bbox_right > obj2.bbox_left &&
+    obj1.bbox_top < obj2.bbox_bottom &&
+    obj1.bbox_bottom > obj2.bbox_top);
 }
 function bread_collision_le(obj1,obj2){
-        if(obj1.bbox_left <= obj2.bbox_right &&
-        obj1.bbox_right >= obj2.bbox_left &&
-        obj1.bbox_top <= obj2.bbox_bottom &&
-        obj1.bbox_bottom >= obj2.bbox_top){
-            return true;
-        }
-        return false;
+    return (obj1.bbox_left <= obj2.bbox_right &&
+    obj1.bbox_right >= obj2.bbox_left &&
+    obj1.bbox_top <= obj2.bbox_bottom &&
+    obj1.bbox_bottom >= obj2.bbox_top);
 }

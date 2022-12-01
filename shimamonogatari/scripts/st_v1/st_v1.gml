@@ -111,8 +111,9 @@ function st_v1() {
 			if hput == 0 {
 				if point_mouse() < 270 && dir == 180 sliding = -2.4 else sliding = 2.4;
 			} else {
-				sliding = hput*2.4//*(slamduration/60+1);
+				sliding = hput*2.4;
 			}
+			sliding *= (slamduration/60+1);
 		}
 		if slam.drop {
 			sliding = false;
@@ -210,8 +211,8 @@ function st_v1() {
             spd.v /= 2;
         }
     }
-    var xmeeting = c_widecollision(2);
-	//log(slamduration);
+    var xmeeting = c_widecollision(8);
+	log(xmeeting);
 	if xmeeting {
 		if aerial && walljumps && jump.hit {
 			walljumps--;

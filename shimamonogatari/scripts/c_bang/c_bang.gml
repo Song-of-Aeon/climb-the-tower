@@ -11,11 +11,11 @@ function c_bang(x, y, direction, width, delay, duration, type, color=c_black, be
 	chump.color = color;
 	with chump {
 		sprite_index = type.sprite;
-		//image_blend = type.colour;
 		damage = type.damage;
 		destructible = type.destructible;
 		friendly = type.friendly;
 		alpha = type.alpha;
+		onhit = type.onhit;
 		if type.colorable {
 			colorcover = asset_get_index(string(sprite_get_name(sprite_index)) + "cc");
 		} else {

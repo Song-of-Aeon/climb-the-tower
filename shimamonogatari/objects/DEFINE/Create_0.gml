@@ -15,7 +15,7 @@ espd = {
 weapons = [
 	[wp.revolver, wp.coin],
 	[wp.shotgun, wp.deagle],
-	[wp.nicole_dunlap, wp[$"Polar Star"]],
+	[wp.bounceback, wp.nicole_dunlap],
 ]
 eqwp = 0;
 dashing = false;
