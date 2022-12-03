@@ -122,6 +122,7 @@
     {"id":{"name":"s_if_you","path":"sprites/s_if_you/s_if_you.yy",},"order":5,},
     {"id":{"name":"c_inputwo","path":"scripts/c_inputwo/c_inputwo.yy",},"order":8,},
     {"id":{"name":"template7","path":"rooms/template7/template7.yy",},"order":4,},
+    {"id":{"name":"s_v1lights","path":"sprites/s_v1lights/s_v1lights.yy",},"order":5,},
     {"id":{"name":"c_shoot","path":"scripts/c_shoot/c_shoot.yy",},"order":1,},
     {"id":{"name":"textbox_create","path":"scripts/textbox_create/textbox_create.yy",},"order":26,},
     {"id":{"name":"c_dosprites","path":"scripts/c_dosprites/c_dosprites.yy",},"order":31,},

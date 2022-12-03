@@ -213,7 +213,7 @@ function st_v1() {
         }
     }
     var xmeeting = c_widecollision(8);
-	log(xmeeting);
+	//log(xmeeting);
 	if xmeeting {
 		if aerial && walljumps && jump.hit {
 			walljumps--;

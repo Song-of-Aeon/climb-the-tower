@@ -16,6 +16,7 @@ weapons = [
 	[wp.revolver, wp.coin],
 	[wp.shotgun, wp.deagle],
 	[wp.bounceback, wp.nicole_dunlap],
+	[],
 ]
 eqwp = 0;
 dashing = false;
@@ -28,6 +29,16 @@ walljumps = 3;
 
 cameratarg = new vec2();
 cameradelay = 0;
+wingpos = [
+	new vec2(),
+	new vec2(),
+	new vec2(),
+	new vec2(),
+	new vec2(),
+	new vec2(),
+	new vec2(),
+	new vec2(),
+]
 
 walkspeed = 1.9;
 jumpspeed = 3.2;
@@ -43,13 +54,13 @@ maxhp = 12;
 dir = 0;
 inv = 0;
 
-sprites = {
+/*sprites = {
 	idle: s_meidle,
 	walk: s_mewalk,
 	up: s_meup,
 	upwalk: s_meupwalk,
 	down: s_medown,
-}
+}*/
 
 sprites = {
 	idle: s_v1,

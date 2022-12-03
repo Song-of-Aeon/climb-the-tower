@@ -8,6 +8,7 @@ function st_drawui() {
 	draw_set_halign(fa_center);
 	var altinteract = 0;
 	iterate weapons to {
+		if !array_length(weapons[i]) continue;
 		var using = i==eqwp;
 		if using altinteract = altpos else altinteract = 0;
 		var ammo = weapons[i][altinteract].ammo/weapons[i][altinteract].ammomax;

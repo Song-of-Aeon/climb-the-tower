@@ -13,7 +13,20 @@ function st_v1draw() {
 	iterate weapons to {
 		j=0
 	
+		
+		ang = mod_negative(point_mouse()-180+(i-(array_length(weapons)-1)/2)*20, 360);
+		dude = distabs_ext(ang, 6, 1, 1.5);
+		draw_sprite_ext(
+			s_v1wings, 0,
+			df.x+dude.x, df.y+dude.y, 1,
+			ineg(ang >= 90 && ang <= 270), ang, c_white, 1
+		);
 		if i == eqwp /*&& j == altpos*/ {
+			draw_sprite_ext(
+				s_v1wings, 1,
+				df.x+dude.x, df.y+dude.y, 1,
+				ineg(ang >= 90 && ang <= 270), ang, c_grey, 1
+			);
 			ang = point_mouse();
 			dude = distabs_ext(ang, 9, 1, 1);
 			draw_sprite_ext(
@@ -21,9 +34,17 @@ function st_v1draw() {
 				df.x-2*image_xscale+dude.x, df.y-3+dude.y, 1,
 				ineg(ang >= 90 && ang <= 270), ang, c_white, 1
 			);
+			
 		} else {
-			ang = mod_negative(point_mouse()-180+(i-(array_length(weapons)-1)/2)*20, 360);
-			dude = distabs_ext(ang, 6, 1, 1.5);
+			
+			/*dude = distabs_ext(ang+10, 11+sinmult(gc, 60, 2), 1, 1.5);
+			draw_sprite_ext(
+				weapons[i][0].sprite, 0,
+				df.x-2*image_xscale+dude.x, df.y-3+dude.y, 1,
+				ineg(ang >= 90 && ang <= 270), ang, c_grey, .4
+			);*/
+			
+			
 			draw_sprite_ext(
 				s_v1wings, 0,
 				df.x+dude.x, df.y+dude.y, 1,
@@ -47,8 +68,8 @@ function st_v1draw() {
 	var ang = point_mouse();
 	var theflip = ineg(ang >= 90 && ang <= 270);
 	draw_sprite_ext(s_v1gunarm, 2, x-2*image_xscale, y-4, theflip, image_yscale, point_mouse()+90, c_white, 1);
-	draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
-	draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
+	draw_sprite_ext(s_v1lights, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
 	faceangle = lerp_angle(faceangle, ang, .15);
 	draw_sprite_ext(s_v1face, 0, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);
 	draw_sprite_ext(s_v1face, 1, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);

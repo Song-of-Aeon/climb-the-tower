@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "DEFINE",
   "spriteId": {
-    "name": "s_meidle",
-    "path": "sprites/s_meidle/s_meidle.yy",
+    "name": "s_v1",
+    "path": "sprites/s_v1/s_v1.yy",
   },
   "solid": false,
   "visible": true,
