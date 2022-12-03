@@ -45,14 +45,23 @@ inv = 0;
 
 sprites = {
 	idle: s_meidle,
-	//idle: s_witchidle,
 	walk: s_mewalk,
 	up: s_meup,
 	upwalk: s_meupwalk,
 	down: s_medown,
 }
 
+sprites = {
+	idle: s_v1,
+	walk: s_v1,
+	up: s_v1,
+	upwalk: s_v1,
+	down: s_v1,
+}
+faceangle = 0;
+
 state = st_v1 //not for long
+drawstate = st_v1draw;
 //actionstate = st_7
 
 xdraw = -100;

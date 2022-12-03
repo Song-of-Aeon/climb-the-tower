@@ -55,11 +55,11 @@ function st_v1() {
 	if punch.hit && !punchdelay {
 		punchdelay = 40;
 		var parryrange = 8;
-		var dude = distabs(point_mouse(), 8);
-		c_shoot(x+dude.x, y+dude.y, 0, point_mouse(), bul.square, c_blue, function() {
+		var dude = distabs(point_mouse(), 12);
+		var parry = c_shoot(x+dude.x, y+dude.y, 0, point_mouse(), bul.small, c_blue, function() {
 			var boul = collision_circle(x, y, 8, o_bullet, true, true);
 			if boul && boul.object_index != o_hitscan {
-				df.punchdelay = 0;
+				df.punchdelay = 30;
 				scriptable_create(u, function() {
 					draw_set_color(c_white);
 					draw_set_alpha(.25);
@@ -78,11 +78,12 @@ function st_v1() {
 					}
 				}, c_flatcolor).friendly = NaN;
 				instance_destroy(boul);
-				kys
 			}
-			if count > 3 kys
-			c;
-		}).damage = 3;
+			kys
+		});
+		parry.damage = 3;
+		parry.destructible = false;
+		rescale(parry, 2);
 	}
 	
 	

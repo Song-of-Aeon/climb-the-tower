@@ -3,7 +3,7 @@ weapongen({
 		dude = distabs(point_mouse(), 12);
 		if input.hit && !cooldown {
 			repeat(12) {
-				c_shoot(df.x+dude.x, df.y+dude.y, 10+random(2), point_direction(df.x, df.y, mouse_x, mouse_y)+irandom(30)-15, bul.thin, c_yellow, function() {
+				c_shoot(x, y, 10+random(2), point_mouse()+irandom(30)-15, bul.thin, c_yellow, function() {
 					if collision_circle(x, y, 4, o_solid, true, false) instance_destroy();
 					spd -= .5;
 					if !spd instance_destroy();
@@ -18,7 +18,7 @@ weapongen({
 			charge = min(charge+1, 2 sec);
 		}
 		if alt.drop && !chargecooldown {
-			c_shoot(df.x, df.y, charge/20, point_mouse(), bul.circle, c_red, function() {
+			c_shoot(x, y, charge/20, point_mouse(), bul.circle, c_red, function() {
 				vspd += .1;
 				if collision_circle(x, y, 4, o_solid, true, false) || collision_circle(x, y, 4, o_enemy, true, false) {
 					c_screenshake(10, 8)

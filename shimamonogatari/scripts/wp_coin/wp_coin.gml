@@ -1,7 +1,7 @@
 weapongen({
 	step: function(input, alt) {
 		if input.hit && !cooldown {
-			c_bang(df.x, df.y, point_mouse(), 4, 0, 20, hsn.normal, c_yellow, function() {
+			c_bang(x, y, point_mouse(), 4, 0, 20, hsn.normal, c_yellow, function() {
 				c
 				color = make_color_hsv(40, 255-count*24, 255);
 				width -= .5;
@@ -59,9 +59,9 @@ weapongen({
 			chump.sprite_index = s_magazine;
 			chump.spd = new vec2();
 			chump.spd.h = df.spd.h/3;
-			chump.spd.v = df.spd.v/3;
-			chump.speed = 3.4;
-			chump.direction = lerp_angle(point_mouse(), 90, .4);
+			chump.spd.v = df.spd.v/3-1.4;
+			chump.speed = 2.5;
+			chump.direction = point_mouse();
 			chump.x = df.x;
 			chump.y = df.y;
 			tag("coin", chump);

@@ -1,5 +1,5 @@
 global.bullets = {};
-nu bullet("small", s_bulletsmall, 3, true, false, 1);
+nu bullet("small", s_bulletsmall, 3, true, true, 1);
 nu bullet("point", s_bulletpoint, 3, true, false, 1);
 nu bullet("square", s_bulletsquare, 3, true, true, 1);
 nu bullet("circle", s_bulletcircle, 3, true, true, 1);

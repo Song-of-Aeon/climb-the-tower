@@ -2,7 +2,7 @@ weapongen({
 	step: function(input, alt) {
 		dude = distabs(point_mouse(), 12-recoil);
 		if input.hit && !cooldown {
-			c_bang(df.x+dude.x, df.y+dude.y, point_direction(df.x, df.y, mouse_x, mouse_y), 4, 0, 20, hsn.normal, c_yellow, function() {
+			c_bang(x, y, point_mouse(), 4, 0, 20, hsn.normal, c_yellow, function() {
 				c
 				color = make_color_hsv(40, 255-count*24, 255);
 				width -= .5;
@@ -20,7 +20,7 @@ weapongen({
 		}
 		if alt.drop {
 			if charge >= 1 sec {
-				var guy = c_bang(df.x+dude.x, df.y+dude.y, point_direction(df.x, df.y, mouse_x, mouse_y), 6, 0, 35, hsn.normal, c_blue, function() {
+				var guy = c_bang(x, y, point_direction(df.x, df.y, mouse_x, mouse_y), 6, 0, 35, hsn.normal, c_blue, function() {
 					c
 					color = make_color_hsv(140, 255-count*24, 255);
 					width -= .5;
