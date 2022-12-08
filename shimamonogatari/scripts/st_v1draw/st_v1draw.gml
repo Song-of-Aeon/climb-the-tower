@@ -14,25 +14,19 @@ function st_v1draw() {
 		j=0
 	
 		
-		ang = mod_negative(point_mouse()-180+(i-(array_length(weapons)-1)/2)*20, 360);
+		ang = mod_negative(point_mouse()-180+(i-(array_length(weapons)-1)/2)*40, 360);
+		ang = lerp_angle(ang, 90-90*image_xscale, .6);
 		dude = distabs_ext(ang, 6, 1, 1.5);
 		draw_sprite_ext(
 			s_v1wings, 0,
 			df.x+dude.x, df.y+dude.y, 1,
 			ineg(ang >= 90 && ang <= 270), ang, c_white, 1
 		);
-		if i == eqwp /*&& j == altpos*/ {
+		if (i == eqwp && !image_xscale) || ((i+1)%array_length(weapons) == eqwp && image_xscale) /*&& j == altpos*/ {
 			draw_sprite_ext(
 				s_v1wings, 1,
 				df.x+dude.x, df.y+dude.y, 1,
 				ineg(ang >= 90 && ang <= 270), ang, c_grey, 1
-			);
-			ang = point_mouse();
-			dude = distabs_ext(ang, 9, 1, 1);
-			draw_sprite_ext(
-				weapons[i][altpos].sprite, 0,
-				df.x-2*image_xscale+dude.x, df.y-3+dude.y, 1,
-				ineg(ang >= 90 && ang <= 270), ang, c_white, 1
 			);
 			
 		} else {
@@ -43,13 +37,6 @@ function st_v1draw() {
 				df.x-2*image_xscale+dude.x, df.y-3+dude.y, 1,
 				ineg(ang >= 90 && ang <= 270), ang, c_grey, .4
 			);*/
-			
-			
-			draw_sprite_ext(
-				s_v1wings, 0,
-				df.x+dude.x, df.y+dude.y, 1,
-				ineg(ang >= 90 && ang <= 270), ang, c_white, 1
-			);
 			gpu_set_blendmode(bm_add);
 			draw_sprite_ext(
 				s_v1wings, 1,
@@ -60,11 +47,16 @@ function st_v1draw() {
 		}
 		
 	
-		for (j=0; j<array_length(weapons[i]); j++) {
-			weapons[i][j].x = df.x-2*image_xscale+dude.x;
-			weapons[i][j].y = df.y-3+dude.y;
-		}
 	}
+	ang = point_mouse();
+	dude = distabs_ext(ang, 9, 1, 1);
+	draw_sprite_ext(
+		weapons[eqwp][altpos].sprite, 0,
+		df.x-2*image_xscale+dude.x, df.y-3+dude.y, 1,
+		ineg(ang >= 90 && ang <= 270), ang, c_white, 1
+	);
+	weapons[eqwp][altpos].x = df.x-2*image_xscale+dude.x;
+	weapons[eqwp][altpos].y = df.y-3+dude.y;
 	var ang = point_mouse();
 	var theflip = ineg(ang >= 90 && ang <= 270);
 	draw_sprite_ext(s_v1gunarm, 2, x-2*image_xscale, y-4, theflip, image_yscale, point_mouse()+90, c_white, 1);
@@ -73,13 +65,5 @@ function st_v1draw() {
 	faceangle = lerp_angle(faceangle, ang, .15);
 	draw_sprite_ext(s_v1face, 0, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);
 	draw_sprite_ext(s_v1face, 1, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);
-	if !punchdelay {
-		draw_sprite_ext(s_v1arm, 0, x+2*image_xscale, y-4, -image_xscale, image_yscale, -spd.h*11, c_white, 1);
-	} else {
-		if punchdelay > 30 {
-			draw_sprite_ext(s_v1arm, 1, x+2*image_xscale, y-3, 1*((punchdelay-30)/5+1), theflip*((punchdelay-30)/5+1), ang, c_white, 1);
-		} else {
-			draw_sprite_ext(s_v1arm, 2, x+2*image_xscale, y-3, -1, theflip, ang, c_white, 1);
-		}
-	}
+	arm[eqarm].draw();
 }

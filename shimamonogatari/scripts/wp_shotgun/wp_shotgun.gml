@@ -1,7 +1,7 @@
 weapongen({
 	step: function(input, alt) {
 		dude = distabs(point_mouse(), 12);
-		if input.hit && !cooldown {
+		if input.hold && !cooldown {
 			repeat(12) {
 				c_shoot(x, y, 10+random(2), point_mouse()+irandom(30)-15, bul.thin, c_yellow, function() {
 					if collision_circle(x, y, 4, o_solid, true, false) instance_destroy();

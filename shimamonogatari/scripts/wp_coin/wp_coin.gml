@@ -1,6 +1,6 @@
 weapongen({
 	step: function(input, alt) {
-		if input.hit && !cooldown {
+		if input.hold && !cooldown {
 			c_bang(x, y, point_mouse(), 4, 0, 20, hsn.normal, c_yellow, function() {
 				c
 				color = make_color_hsv(40, 255-count*24, 255);

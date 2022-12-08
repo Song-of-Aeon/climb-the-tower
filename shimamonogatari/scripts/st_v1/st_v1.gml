@@ -52,40 +52,7 @@ function st_v1() {
 	}
 	if altwep.hit altpos = cycle(altpos+1, array_length(weapons[eqwp]));
 	
-	if punch.hit && !punchdelay {
-		punchdelay = 40;
-		var parryrange = 8;
-		var dude = distabs(point_mouse(), 12);
-		var parry = c_shoot(x+dude.x, y+dude.y, 0, point_mouse(), bul.small, c_blue, function() {
-			var boul = collision_circle(x, y, 8, o_bullet, true, true);
-			if boul && boul.object_index != o_hitscan {
-				df.punchdelay = 30;
-				scriptable_create(u, function() {
-					draw_set_color(c_white);
-					draw_set_alpha(.25);
-					draw_rectangle(0, 0, room_width, room_height, false);
-					draw_set_alpha(1);
-					if count {
-						c_hitpause(220);
-						instance_destroy();
-					}
-					c
-				});
-				c_shoot(x, y, 11, point_mouse(), bul.circle, c_yellow, function() {
-					if collision_circle(x, y, 4, o_solid, true, false) || collision_circle(x, y, 4, o_enemy, true, false) {
-						c_shoot(x, y, 0, 0, bul.explosion, c_white);
-						instance_destroy();
-					}
-				}, c_flatcolor).friendly = NaN;
-				instance_destroy(boul);
-			}
-			kys
-		});
-		parry.damage = 3;
-		parry.destructible = false;
-		rescale(parry, 2);
-	}
-	
+	arm[eqarm].step(punch);
 	
 	if dash.hit && stamina >= 1 {
 		slamming = false;

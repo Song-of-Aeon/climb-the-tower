@@ -17,8 +17,13 @@ weapons = [
 	[wp.shotgun, wp.deagle],
 	[wp.bounceback, wp.nicole_dunlap],
 	[],
+];
+arm = [
+	wp.feedbacker,
+	wp[$"Polar Star"],
 ]
 eqwp = 0;
+eqarm = 0;
 dashing = false;
 stamina = 3;
 slamduration = 0;
