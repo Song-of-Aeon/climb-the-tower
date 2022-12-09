@@ -12,59 +12,13 @@ weapongen({
 		cooldown = floor(cooldown-1);
 		if cooldown == 0 se_play(se_revclick, 1.2+random(.4));
 		coins = min(coins+1/3/60, 4);
-		//coins = 4;
+		coins = 4;
 		if alt.hit && coins >= 1 {
-			var chump = scriptable_create(function() {
-				if place_meeting(x, y, o_solid) instance_destroy();
-				var dude = collision_circle(x, y, 3, o_hitscan, false, false);
-				if dude {
-					if array_length(dude.hitlist) exit else array_push(dude.hitlist, id);
-					/*with dude {
-						var dude2 = distabs(dir, size);
-						while collision_line(x, y, x+dude2.x, y+dude2.y, o_, true, false) {
-							size--;
-							image_yscale = size/sprite_get_height(sprite_index);
-							if !size instance_destroy();
-							dude2 = distabs(dir, size);
-						}
-						image_yscale = size/sprite_get_height(sprite_index);
-					}*/
-					var myguy;
-					var dudes = tag_get_instances("coin");
-					myguy = {x: irandom(room_width), y: irandom(room_height)};
-					if instance_exists(o_enemy) myguy = instance_nearest(x, y, o_enemy);
-					var i;
-					for (i=0; i<array_length(dudes); i++) {
-						if dudes[i] != id {
-							myguy = dudes[i];
-							break;
-						}
-					}
-					var laz = c_bang(x, y, point_direction(x, y, myguy.x, myguy.y), 4, 0, 20, hsn.normal, c_yellow, function() {
-						width -= .5;
-					});
-					//laz.size = point_distance(x, y, myguy.x, myguy.y);
-					laz.damage = dude.damage*1.5;
-					log(laz.damage, dude.damage);
-					laz.friendly = true;
-					laz.width = dude.width*1.5;
-					laz.multihit = dude.multihit;
-					dude.size = point_distance(dude.x, dude.y, x, y);
-					instance_destroy();
-				}
-				spd.v += .07;
-				x += spd.h;
-				y += spd.v;
-			}, draw_self);
-			chump.sprite_index = s_magazine;
-			chump.spd = new vec2();
+			var chump = instance_create(df.x, df.y, o_coin);
 			chump.spd.h = df.spd.h/3;
 			chump.spd.v = df.spd.v/3-1.4;
 			chump.speed = 2.5;
 			chump.direction = point_mouse();
-			chump.x = df.x;
-			chump.y = df.y;
-			tag("coin", chump);
 			se_play(se_toss, .7+random(.6));
 			coins--;
 		}

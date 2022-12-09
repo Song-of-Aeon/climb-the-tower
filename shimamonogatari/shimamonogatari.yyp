@@ -146,6 +146,7 @@
     {"id":{"name":"m_null","path":"sounds/m_null/m_null.yy",},"order":2,},
     {"id":{"name":"wp_bounceback","path":"scripts/wp_bounceback/wp_bounceback.yy",},"order":9,},
     {"id":{"name":"doggo_big","path":"sprites/doggo_big/doggo_big.yy",},"order":1,},
+    {"id":{"name":"o_coin","path":"objects/o_coin/o_coin.yy",},"order":16,},
     {"id":{"name":"s_meupwalk","path":"sprites/s_meupwalk/s_meupwalk.yy",},"order":3,},
     {"id":{"name":"st_backlog","path":"scripts/st_backlog/st_backlog.yy",},"order":5,},
     {"id":{"name":"array_greatest","path":"scripts/array_greatest/array_greatest.yy",},"order":5,},
