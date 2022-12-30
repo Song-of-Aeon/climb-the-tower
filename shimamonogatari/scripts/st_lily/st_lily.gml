@@ -1,19 +1,13 @@
-function st_standard() {
+function st_lily() {
     //log(jump);
 	//log(weapons[eqwp]);
-	weapons[eqwp][altpos].step(attack, alt);
+	weapons[0][0].step(attack, alt);
 	
 	if debug.hit {
 		textbox_create(txt_kotohime);
 		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
 	//log(wep);
-	iterate wep to {
-		if wep[i].hit && array_length(weapons) >= i {
-			eqwp = i;
-			log("equipped");
-		}
-	}
 	//log(eqwp);
 	
 	/*if wp2.hit && array_length(weapons) < 6 {
@@ -33,14 +27,6 @@ function st_standard() {
 	
 	c_dospritesnotv1();
 	
-	if reload.hit && magazines {
-		se_play(se_toss);
-		magazines--;
-		var chump = instance_create(x, y, o_magazine);
-		chump.spd.h = spd.h*1.4;
-		//chump.spd.h = mouse_x < x ? -1 : 1;
-		chump.spd.v = -3;
-	}
     spd.h = lerp(spd.h, hput*walkspeed, .1);
     var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
@@ -78,9 +64,5 @@ function st_standard() {
 		if dude.interactable {
 			dude.interaction();
 		}
-	}
-	if inventory.hit {
-		instance_create(0, 0, o_inventory);
-		c_settimescale(0);
 	}
 }

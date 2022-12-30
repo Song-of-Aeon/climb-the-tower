@@ -13,10 +13,9 @@ espd = {
 }
 //log(global.weapons)
 weapons = [
-	[wp.revolver, wp.coin],
+	[wp.namesis, wp.coin],
 	[wp.shotgun, wp.deagle],
 	[wp.bounceback, wp.nicole_dunlap],
-	[],
 ];
 arm = [
 	wp.feedbacker,
@@ -74,10 +73,18 @@ sprites = {
 	upwalk: s_v1,
 	down: s_v1,
 }
+
+sprites = {
+	idle: s_lily,
+	walk: s_lily,
+	up: s_lily,
+	upwalk: s_lily,
+	down: s_lily,
+}
 faceangle = 0;
 
-state = st_v1 //not for long
-drawstate = st_v1draw;
+state = st_lily //not for long
+drawstate = st_lilydraw;
 //actionstate = st_7
 
 xdraw = -100;

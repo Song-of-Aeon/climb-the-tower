@@ -126,15 +126,6 @@ function st_v1() {
 	
 	
 	c_dosprites();
-	
-	if reload.hit && magazines {
-		se_play(se_toss);
-		magazines--;
-		var chump = instance_create(x, y, o_magazine);
-		chump.spd.h = spd.h*1.4;
-		//chump.spd.h = mouse_x < x ? -1 : 1;
-		chump.spd.v = -3;
-	}
     
     var a = {
 		bbox_left: bbox_left+2,

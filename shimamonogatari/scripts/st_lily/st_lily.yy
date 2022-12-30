@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "c_basiccollision",
+  "name": "st_lily",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
