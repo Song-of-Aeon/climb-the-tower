@@ -66,4 +66,4 @@ function st_v1draw() {
 	draw_sprite_ext(s_v1face, 0, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);
 	draw_sprite_ext(s_v1face, 1, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);
 	arm[eqarm].draw();
-}
+}               

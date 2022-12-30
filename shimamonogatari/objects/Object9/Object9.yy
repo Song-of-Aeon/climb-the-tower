@@ -1,7 +1,11 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "Object9",
   "spriteId": null,
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -24,8 +28,4 @@
     "name": "Scripts",
     "path": "folders/Scripts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "Object9",
-  "tags": [],
-  "resourceType": "GMObject",
 }

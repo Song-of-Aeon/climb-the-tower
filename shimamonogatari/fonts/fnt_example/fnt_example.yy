@@ -1,8 +1,12 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "fnt_example",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
   "pointRounding": 0,
+  "applyKerning": 0,
   "fontName": "04b_24",
   "styleName": "Regular",
   "size": 6.0,
@@ -20,6 +24,7 @@
     "path": "texturegroups/Default",
   },
   "ascenderOffset": 0,
+  "ascender": 0,
   "glyphs": {
     "32": {"x":0,"y":0,"w":0,"h":10,"character":32,"shift":2,"offset":0,},
     "33": {"x":7,"y":0,"w":1,"h":10,"character":33,"shift":2,"offset":0,},
@@ -128,8 +133,4 @@
     "name": "Example",
     "path": "folders/Misc/Example.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "fnt_example",
-  "tags": [],
-  "resourceType": "GMFont",
 }

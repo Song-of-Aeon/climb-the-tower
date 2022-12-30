@@ -263,17 +263,6 @@
     {"id":{"name":"st_textnvl","path":"scripts/st_textnvl/st_textnvl.yy",},"order":7,},
     {"id":{"name":"format_time","path":"scripts/format_time/format_time.yy",},"order":13,},
   ],
-  "Options": [
-    {"name":"Android","path":"options/android/options_android.yy",},
-    {"name":"HTML5","path":"options/html5/options_html5.yy",},
-    {"name":"iOS","path":"options/ios/options_ios.yy",},
-    {"name":"Linux","path":"options/linux/options_linux.yy",},
-    {"name":"macOS","path":"options/mac/options_mac.yy",},
-    {"name":"tvOS","path":"options/tvos/options_tvos.yy",},
-    {"name":"Windows","path":"options/windows/options_windows.yy",},
-    {"name":"operagx","path":"options/operagx/options_operagx.yy",},
-    {"name":"Main","path":"options/main/options_main.yy",},
-  ],
   "defaultScriptType": 1,
   "isEcma": false,
   "configs": {
@@ -353,10 +342,8 @@
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"pixel04b24.ttf","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sprite_add_test.png","CopyToMask":-1,"filePath":"datafiles",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"pixel04b24.ttf","CopyToMask":-1,"filePath":"datafiles",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sprite_add_test.png","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.1100.0.244",
+    "IDEVersion": "2023.100.0.259",
   },
 }

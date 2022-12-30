@@ -9,12 +9,13 @@ y = 120;
 
 //datas = [[o_solid, o_trigger]];
 
-types = ["facetile", "box trigger", "room size", "edit", "play"];
+types = ["facetile", "enemies", "box trigger", "room size", "edit", "play"];
 
 typing = true;
 
 
 datas[0] = [variable_struct_get_names(tl), ["funny", "unfunny"]];
+datas[1] = [variable_struct_get_names(en)];
 datas[1] = [array_get_indeces(mp), [], []];
 datas[2] = [[], []];
 datas[3] = [array_get_indeces(mp),];

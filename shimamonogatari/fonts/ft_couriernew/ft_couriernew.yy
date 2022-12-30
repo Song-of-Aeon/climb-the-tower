@@ -1,8 +1,12 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "ft_couriernew",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
   "pointRounding": 0,
+  "applyKerning": 0,
   "fontName": "RM2000Alt",
   "styleName": "Medium",
   "size": 11.0,
@@ -20,6 +24,7 @@
     "path": "texturegroups/Default",
   },
   "ascenderOffset": 0,
+  "ascender": 0,
   "glyphs": {
     "32": {"x":2,"y":2,"w":6,"h":12,"character":32,"shift":6,"offset":0,},
     "33": {"x":89,"y":44,"w":2,"h":12,"character":33,"shift":6,"offset":1,},
@@ -130,8 +135,4 @@
     "name": "Fonts",
     "path": "folders/Fonts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "ft_couriernew",
-  "tags": [],
-  "resourceType": "GMFont",
 }
