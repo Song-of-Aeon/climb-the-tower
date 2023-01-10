@@ -44,6 +44,10 @@ wingpos = [
 	new vec2(),
 ]
 
+accel = .1;
+frict = .1;
+airaccel = .1;
+airfrict = .1;
 walkspeed = 1.9;
 jumpspeed = 3.2;
 grav = .1;
@@ -76,10 +80,12 @@ sprites = {
 
 sprites = {
 	idle: s_lily,
-	walk: s_lily,
+	walk: s_lilyrun,
+	run: s_lilyfastrun,
 	up: s_lily,
 	upwalk: s_lily,
 	down: s_lily,
+	jump: s_lilyjump,
 }
 faceangle = 0;
 

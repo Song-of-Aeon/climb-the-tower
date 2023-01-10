@@ -14,7 +14,7 @@ types = ["facetile", "enemies", "box trigger", "room size", "edit", "play"];
 typing = true;
 
 
-datas[0] = [variable_struct_get_names(tl), ["funny", "unfunny"]];
+datas[0] = [variable_struct_get_names(tl), [-2, -1, 0, 1, 2]];
 datas[1] = [variable_struct_get_names(en)];
 datas[1] = [array_get_indeces(mp), [], []];
 datas[2] = [[], []];

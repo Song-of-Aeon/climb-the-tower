@@ -25,9 +25,13 @@ function st_lily() {
     hput = right.hold-left.hold;
     vput = down.hold-up.hold;
 	
-	c_dospritesnotv1();
+	c_dospriteslily();
 	
-    spd.h = lerp(spd.h, hput*walkspeed, .1);
+	if hput != 0 {
+		spd.h = lerp(spd.h, hput*walkspeed, aerial ? airaccel : accel);
+	} else {
+		spd.h = lerp(spd.h, hput*walkspeed, aerial ? airfrict : frict);
+	}
     var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
         bbox_right: bbox_right-2,
