@@ -87,6 +87,15 @@ sprites = {
 	down: s_lily,
 	jump: s_lilyjump,
 }
+sprites = {
+	idle: s_lily,
+	walk: s_lily,
+	run: s_lily,
+	up: s_lily,
+	upwalk: s_lily,
+	down: s_lily,
+	jump: s_lily,
+}
 faceangle = 0;
 
 state = st_lily //not for long
@@ -99,3 +108,14 @@ global.count = 0;
 global.me = id;
 #macro df global.me
 instance_create(0, 0, o_mapmanager);
+
+//lilystats
+walkspeed = 1.7;
+jumpspeed = 4.6;
+grav = .12
+leniance = 6;
+accel = .1;
+airaccel = .1;
+frict = .16;
+airfrict = .08;
+dashtime = 0;

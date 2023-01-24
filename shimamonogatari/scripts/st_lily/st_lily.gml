@@ -14,6 +14,23 @@ function st_lily() {
 			eqwp = 1;
 			log("equipped");
 	}*/
+	accel = .1;
+	if walkspeed > 1.7 {
+		dashtime--;
+		accel = 1;
+		if !dashtime {
+			walkspeed = lapp(walkspeed, 1.7, .04);
+		}
+	}
+	
+	if shift.hit {
+		walkspeed = 3.2;
+		dashtime = 60;
+	}
+	if shift.drop || left.hit || right.hit {
+		walkspeed = 1.7;
+		dashtime = 0;
+	}
 	
 	
 	if left.hold dir = 180;
@@ -32,7 +49,8 @@ function st_lily() {
 	} else {
 		spd.h = lerp(spd.h, hput*walkspeed, aerial ? airfrict : frict);
 	}
-    var a = {bbox_left: bbox_left+2,
+	spd.v += grav;
+    /*var a = {bbox_left: bbox_left+2,
         bbox_top:bbox_top+grav,
         bbox_right: bbox_right-2,
         bbox_bottom:bbox_bottom+grav}
@@ -47,7 +65,7 @@ function st_lily() {
             aerial = false;
         }
         spd.v = 0;
-    }
+    }*/
     if leniance > 0 {
         if (jump.hit) {
             spd.v = -jumpspeed;
@@ -59,9 +77,20 @@ function st_lily() {
             spd.v /= 2;
         }
     }
-    c_newcollision();
-    x += spd.h;
-    y += spd.v;
+    //c_newcollision();
+	var xtouching = move_and_collide(spd.h, 0, o_solid);
+	var ytouching = move_and_collide(0, spd.v, o_solid);
+	log(ytouching);
+	if array_length(ytouching) {
+		leniance = lencount;
+        aerial = false;
+		spd.v = 0;
+	} else {
+		leniance--;
+        aerial = true;
+	}
+    //x += spd.h;
+    //y += spd.v;
 	
 	var dude = collision_point(x, y, o_entity, false, false);
 	if dude && !aerial && down.hit {
