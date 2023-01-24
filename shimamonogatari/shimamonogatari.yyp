@@ -288,8 +288,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"makeroomroom","path":"rooms/makeroomroom/makeroomroom.yy",},},
     {"roomId":{"name":"coinroom","path":"rooms/coinroom/coinroom.yy",},},
+    {"roomId":{"name":"makeroomroom","path":"rooms/makeroomroom/makeroomroom.yy",},},
     {"roomId":{"name":"thezone","path":"rooms/thezone/thezone.yy",},},
     {"roomId":{"name":"sky_corridor","path":"rooms/sky_corridor/sky_corridor.yy",},},
     {"roomId":{"name":"template","path":"rooms/template/template.yy",},},

@@ -1,9 +1,8 @@
-function tiletype(name_, sprite_, index_, collision_, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
+function tiletype(name_, sprite_, index_, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
 	name = name_;
 	sprite = sprite_;
 	index = index_;
-	collision = collision_;
-	shape = shape_;
+	cover = shape_;
 	durability = durability_;
 	step = step_;
 	draw = draw_;

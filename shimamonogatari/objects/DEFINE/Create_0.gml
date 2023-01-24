@@ -13,7 +13,7 @@ espd = {
 }
 //log(global.weapons)
 weapons = [
-	[wp.namesis, wp.coin],
+	[wp.revolver, wp.coin],
 	[wp.shotgun, wp.deagle],
 	[wp.bounceback, wp.nicole_dunlap],
 ];
@@ -78,7 +78,7 @@ sprites = {
 	down: s_v1,
 }
 
-sprites = {
+/*sprites = {
 	idle: s_lily,
 	walk: s_lilyrun,
 	run: s_lilyfastrun,
@@ -95,11 +95,11 @@ sprites = {
 	upwalk: s_lily,
 	down: s_lily,
 	jump: s_lily,
-}
+}*/
 faceangle = 0;
 
-state = st_lily //not for long
-drawstate = st_lilydraw;
+state = st_v1 //not for long
+drawstate = st_v1draw;
 //actionstate = st_7
 
 xdraw = -100;
@@ -110,6 +110,7 @@ global.me = id;
 instance_create(0, 0, o_mapmanager);
 
 //lilystats
+/*
 walkspeed = 1.7;
 jumpspeed = 4.6;
 grav = .12
@@ -119,3 +120,4 @@ airaccel = .1;
 frict = .16;
 airfrict = .08;
 dashtime = 0;
+*/

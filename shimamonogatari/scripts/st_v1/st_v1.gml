@@ -29,10 +29,10 @@ function st_v1() {
 		}
 	}
 	if !--cameradelay {
-		camera_set_view_size(view_camera[0],
+		/*camera_set_view_size(view_camera[0],
 			min(camera_get_view_width(view_camera[0])*1.03, 320),
 			min(camera_get_view_height(view_camera[0])*1.03, 240),
-		);
+		);*/
 	}
 	//camera_set_view_pos(view_camera[0], cameratarg.x, cameratarg.y);
 	camera_set_view_target(view_camera[0], id);
@@ -126,22 +126,12 @@ function st_v1() {
 	
 	
 	c_dosprites();
-    
-    var a = {
-		bbox_left: bbox_left+2,
-        bbox_top: bbox_top+grav,
-        bbox_right: bbox_right-2,
-        bbox_bottom: bbox_bottom+grav
-	}
-    var ymeeting = bread_collision(a,o_solid,COLTYPE.LESSTHANEQUALTO);
-    if !ymeeting {
-		if dashing == 0 {
-	        spd.v += grav;
-	        leniance--;
-		}
-        aerial = true;
-    } else {
-        leniance = lencount;
+	
+	var xtouching = move_and_collide(spd.h, 0, o_solid);
+	var ytouching = move_and_collide(0, spd.v, o_solid);
+	log(ytouching);
+	if array_length(ytouching) {
+		leniance = lencount;
         if aerial {
             aerial = false;
         }
@@ -153,7 +143,15 @@ function st_v1() {
 		}
         spd.v = 0;
 		walljumps = 3;
-    }
+	} else {
+		if dashing == 0 {
+	        spd.v += grav;
+	        leniance--;
+		}
+        aerial = true;
+	}
+    
+    
     if leniance > 0 && jump.hit {
         spd.v = -(jumpspeed+slamduration/10);
 		log(slamduration/10);
@@ -170,13 +168,11 @@ function st_v1() {
             spd.v /= 2;
         }
     }
-    var xmeeting = c_widecollision(8);
-	//log(xmeeting);
-	if xmeeting {
+	if array_length(xtouching) {
 		if aerial && walljumps && jump.hit {
 			walljumps--;
 			spd.v = -jumpspeed;
-			if xmeeting == 1 {
+			if xtouching[0].x >= x {
 				spd.h = -jumpspeed*2;
 			} else {
 				spd.h = jumpspeed*2;
@@ -186,9 +182,9 @@ function st_v1() {
 			spd.v -= grav*.75;
 		}
 	}
-	c_newcollision();
-    x += spd.h;
-    y += spd.v;
+	//c_newcollision();
+    //x += spd.h;
+    //y += spd.v;
 	
 	var dude = collision_point(x, y, o_entity, false, false);
 	if dude && !aerial && down.hit {
