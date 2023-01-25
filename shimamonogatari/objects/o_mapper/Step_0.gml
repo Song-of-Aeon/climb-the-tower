@@ -1,10 +1,24 @@
 c_input();
 
+if reload.hit {
+	typing = !typing;
+}
+
+if typing {
+	selectedtype = mod_negative(selectedtype+right.hit-left.hit, array_length(menuoptions));
+} else {
+	iterate menuoptions to {
+		menuoptions[i].pos = cycle(menuoptions[i].pos+down.hit-up.hit, array_length(menuoptions[i].options));
+		menuoptions[i].opos[menuoptions[i].pos] = cycle(menuoptions[i].opos[menuoptions[i].pos]+right.hit-left.hit, array_length(menuoptions[i].options[menuoptions[i].pos]));
+		menuoptions[i].step();
+	}
+}
 
 
 
 
 
+exit;
 
 
 
@@ -20,7 +34,7 @@ c_input();
 
 //selecteddata = mod_negative(selecteddata+right.hit-left.hit, array_length(datas[selectedtype]));
 /*selectionzone = mod_negative(selectionzone+down.hit-up.hit, array_length(datas[0][selector[0]]));
-selector[selectionzone] = mod_negative(selector[selectionzone]+right.hit-left.hit, array_length(datas[selector[0]]))
+selector[selectionzone] = mod_negative(selector[selectionzone]+right.hit-left.hit, array_length(datas[selector[0]]));
 
 switch selector[0] {
 	case o_solid:
@@ -110,9 +124,6 @@ if undo {
 }
 
 
-if reload.hit {
-	typing = !typing;
-}
 
 if typing {
 	selectedtype = mod_negative(selectedtype+right.hit-left.hit, array_length(types));

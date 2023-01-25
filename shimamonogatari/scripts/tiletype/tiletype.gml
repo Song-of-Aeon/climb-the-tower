@@ -1,4 +1,4 @@
-function tiletype(name_, sprite_, index_, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
+function tiletype(name_, sprite_, index_, tileset_=TILESET.MISC, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
 	name = name_;
 	sprite = sprite_;
 	index = index_;
@@ -9,7 +9,7 @@ function tiletype(name_, sprite_, index_, shape_=TILESHAPE.SQUARE, durability_=i
 	ontouch = ontouch_;
 	onstay = onstay_;
 	onleave = onleave_;
-	tl[$name] = self;
+	tl[tileset_][$name] = self;
 }
 
 enum TILESHAPE {
@@ -29,4 +29,14 @@ enum TILESHAPE {
 	ULCS2,
 	URCS1,
 	URCS2,
+}
+
+enum TILESET {
+	MISC,
+	ISLE,
+	TOWER,
+	HELL,
+	GENSOKYO,
+	SNOW,
+	SIZE,
 }

@@ -17,7 +17,12 @@ draw_set_alpha(1);
 */
 
 //draw_text(10, 10, object_get_name(types[selectedtype]));
-draw_text(x-MIDWID+24, y-MIDHEI+10, types[selectedtype]);
+draw_text(x-MIDWID+24, y-MIDHEI+10, menuoptions[selectedtype].name);
+if !typing {
+	menuoptions[selectedtype].draw();
+}
+
+exit;
 
 var i;
 for (i=0; i<array_length(datas[selectedtype]); i++) {
