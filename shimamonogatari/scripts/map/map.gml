@@ -1,4 +1,4 @@
-function map(name_, room_, step_=c_null, draw_=c_null) constructor {
+/*function map(name_, room_, step_=c_null, draw_=c_null) constructor {
 	name = name_;
 	maproom = room_;
 	step = step_;
@@ -9,6 +9,16 @@ function map(name_, room_, step_=c_null, draw_=c_null) constructor {
 global.maps = [];
 //nu map("Sky Corridor", sky_corridor);
 nu map("Gusty Space", gusty_space);
-nu map("coinroom", coinroom);
+nu map("coinroom", coinroom);*/
+
+global.maps = {};
+
+global.maps.empty = {
+	roomsize: 512,
+	roomname: 288,
+	guys: [],
+	enemies: [],
+	triggers: [],
+}
 
 #macro mp global.maps

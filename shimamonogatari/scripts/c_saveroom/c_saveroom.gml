@@ -1,3 +1,45 @@
+function c_saveroom(filename) {
+	var theroom = {
+		roomsize: roomsize,
+		roomname: roomname,
+		guys: guys,
+		enemies: enemies,
+		triggers: triggers,
+	}
+	var thefile = file_text_open_write(filename+".aeon"); //awesome epic object notation
+	file_text_write_string(thefile, json_stringify(theroom));
+	file_text_close(thefile);
+}
+
+function c_loadroom(filename) {
+	var thefile = file_text_open_read(filename);
+
+	var theroom = json_parse(file_text_read_string(thefile));
+	file_text_close(thefile);
+	mp[$theroom.roomname] = theroom;
+}
+
+function c_loadmap(map_) {
+	with all {
+		if !persistent kys;
+	}
+	iterate map_.guys to {
+		var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, map_.guys[i]);
+		chump.links = map_.guys[i].links;
+		chump.depth = map_.guys[i].depth;
+	}
+	iterate map_.enemies to {
+		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links
+	}
+	/*iterate map_.triggers to {
+		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
+	}*/
+	o_mapmanager.currentmap = map_;
+}
+
+
+
+/*&
 function c_saveroom(name) {
 	global.doingguys = 0;
 	global.thename = name;

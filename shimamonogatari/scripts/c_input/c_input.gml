@@ -3,8 +3,8 @@ function c_input() {
 	var inputs = variable_struct_get_names(global.inputs);
 	for (i=0; i<array_length(inputs); i++) {
 		global.inputs[$inputs[i]].update();
-		variable_instance_set(id, inputs[i], global.inputs[$inputs[i]]);
-	} //yeah you heard me this only works on gameobjects
+		set_value(self, inputs[i], global.inputs[$inputs[i]]);
+	}
 	
 	//these guys are compounds that are per-instance of c_input
 	select = jump.hit;

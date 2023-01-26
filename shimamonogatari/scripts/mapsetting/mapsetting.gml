@@ -5,4 +5,5 @@ function mapsetting(name_, options_, step_, draw_) constructor {
 	draw = munction(draw_);
 	pos = 0;
 	opos = array_create(array_length(options));
+	count = 0;
 }

@@ -10,12 +10,14 @@ if typing {
 	iterate menuoptions to {
 		menuoptions[i].pos = cycle(menuoptions[i].pos+down.hit-up.hit, array_length(menuoptions[i].options));
 		menuoptions[i].opos[menuoptions[i].pos] = cycle(menuoptions[i].opos[menuoptions[i].pos]+right.hit-left.hit, array_length(menuoptions[i].options[menuoptions[i].pos]));
-		menuoptions[i].step();
 	}
 }
+menuoptions[selectedtype].step();
 
-
-
+c
+if ncm(60 sec) && array_length(guys) {
+	c_saveroom(roomname+"autosave");
+}
 
 
 exit;

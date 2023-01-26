@@ -1,4 +1,4 @@
-type = tl.mistake;
+type = tl[0].mistake;
 step = c_null;
 draw = draw_self;
 hp = infinity;
