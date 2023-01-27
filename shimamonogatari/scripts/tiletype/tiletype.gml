@@ -1,5 +1,4 @@
-function tiletype(name_, sprite_, index_, tileset_=TILESET.MISC, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
-	name = name_;
+function tiletype(sprite_, index_, tileset_=TILESET.MISC, shape_=TILESHAPE.SQUARE, durability_=infinity, step_=c_null, draw_=draw_self, ontouch_=c_null, onstay_=c_null, onleave_=c_null) constructor {
 	sprite = sprite_;
 	index = index_;
 	cover = shape_;
@@ -9,7 +8,7 @@ function tiletype(name_, sprite_, index_, tileset_=TILESET.MISC, shape_=TILESHAP
 	ontouch = ontouch_;
 	onstay = onstay_;
 	onleave = onleave_;
-	tl[tileset_][$name] = self;
+	tl[tileset_][index_] = self;
 }
 
 enum TILESHAPE {
@@ -37,6 +36,20 @@ enum TILESET {
 	TOWER,
 	HELL,
 	GENSOKYO,
+	CRATES,
+	CRATESDM,
 	SNOW,
 	SIZE,
 }
+
+global.tssprites = [
+	s_null,
+	s_null,
+	s_null,
+	s_null,
+	s_null,
+	s_cratezone,
+	s_null,
+	s_null,
+	s_null,
+]

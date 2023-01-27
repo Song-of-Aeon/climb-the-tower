@@ -4,7 +4,7 @@ weapongen({
 			df.punchdelay = 40;
 			var parryrange = 8;
 			var dude = distabs(point_mouse(), 12);
-			var parry = c_shoot(df.x+dude.x, df.y+dude.y, 0, point_direction(x, y, mouse_x, mouse_y), bul.small, c_blue, function() {
+			var parry = c_shoot(df.x+dude.x, df.y+dude.y, 0, point_mouse(), bul.small, c_blue, function() {
 				var boul = collision_circle(x, y, 8, o_bullet, true, true);
 				if boul && boul.object_index != o_hitscan {
 					df.punchdelay = 30;

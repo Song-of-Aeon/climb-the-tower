@@ -10,8 +10,11 @@ if ncm(60 sec) && array_length(guys) {
 }
 mousepos.x = mouse_x;
 mousepos.y = mouse_y;
+
+//if shift.hit log(guys);
+
 if shift.hold {
-	log(x, y);
+	//log(x, y);
 	x = clamp(x+right.hold*4-left.hold*2, 0, roomsize.x);
 	y = clamp(y+down.hold*4-up.hold*2, 0, roomsize.y);
 	//x += right.hold*2;
@@ -25,7 +28,12 @@ if shift.hold {
 			menuoptions[i].pos = cycle(menuoptions[i].pos+down.hit-up.hit, array_length(menuoptions[i].options));
 			menuoptions[i].opos[menuoptions[i].pos] = cycle(menuoptions[i].opos[menuoptions[i].pos]+right.hit-left.hit, array_length(menuoptions[i].options[menuoptions[i].pos]));
 		}
-		menuoptions[selectedtype].step();
+		try {
+			menuoptions[selectedtype].step();
+		} catch(e) {
+			log(e);
+			log("oopsie!");
+		}
 	}
 }
 

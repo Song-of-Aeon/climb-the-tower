@@ -1,7 +1,10 @@
 function c_saveroom(filename) {
+	if roomname == "" {
+		filename = "untitled";
+	}
 	var theroom = {
 		roomsize: roomsize,
-		roomname: roomname,
+		roomname: filename,
 		guys: guys,
 		enemies: enemies,
 		triggers: triggers,
@@ -24,21 +27,30 @@ function c_loadmap(map_) {
 	with all {
 		if !persistent kys;
 	}
-	iterate map_.guys to {
-		var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, map_.guys[i]);
-		chump.links = map_.guys[i].links;
-		chump.depth = map_.guys[i].depth;
+	with o_mapper {
+		guys = [];
+		iterate map_.guys to {
+			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, map_.guys[i]);
+			var newman = deep_copy(map_.guys[i]);
+			chump.links = newman.links;
+			chump.depth = newman.depth;
+			chump.thing = newman;
+			array_push(guys, newman);
+		}
+		log(guys);
+		log(map_.enemies);
+	
+		iterate map_.enemies to {
+			log("enemize");
+			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
+		}
+		enemies = map_.enemies;
+		//instance_create(10 tiles, 10 tiles, DEFINE);
+		/*iterate map_.triggers to {
+			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
+		}*/
+		o_mapmanager.currentmap = map_;
 	}
-	log(map_.enemies);
-	iterate map_.enemies to {
-		log("enemize");
-		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
-	}
-	instance_create(10 tiles, 10 tiles, DEFINE);
-	/*iterate map_.triggers to {
-		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
-	}*/
-	o_mapmanager.currentmap = map_;
 }
 
 

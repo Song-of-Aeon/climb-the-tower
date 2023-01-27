@@ -1,5 +1,5 @@
-global.gw = 320;
-global.gh = 240;
+global.gw = 512; //320
+global.gh = 288; //240
 
 enum TEXTTYPE {
 	ADV,

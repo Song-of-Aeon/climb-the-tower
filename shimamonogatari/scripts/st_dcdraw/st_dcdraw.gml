@@ -1,7 +1,7 @@
 function st_dcdraw() {
 	c_drawinput();
 	weapons[eqwp][altpos].draw();
-	st_drawui();
+	st_dcdrawui();
 	ang = point_mouse();
 	image_xscale = -ineg(ang >= 90 && ang <= 270);
 	ang = point_mouse();

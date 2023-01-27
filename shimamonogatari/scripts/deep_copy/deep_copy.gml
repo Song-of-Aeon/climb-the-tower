@@ -1,4 +1,14 @@
 function deep_copy(struct, antiwhiletrue=[]) {
+	switch typeof(struct) {
+		case "array":
+			var dude = [];
+			array_copy(dude, 0, struct, 0, array_length(struct));
+			return dude;
+		default:
+			return struct;
+			break;
+		case "struct":
+	}
 	var newone = {};
 	var oldstuff = variable_struct_get_names(struct);
 	var i;

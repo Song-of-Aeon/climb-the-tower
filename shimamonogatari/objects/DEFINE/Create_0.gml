@@ -56,8 +56,8 @@ magazines = 1;
 maxmagazines = 1;
 aerial = false;
 altpos = 0;
-hp = 12;
-maxhp = 12;
+hp = 10;
+maxhp = 100;
 dir = 0;
 inv = 0;
 

@@ -4,9 +4,9 @@ function string_extend_digits(str, integers, decimals=0) {
 	if decimals decimals++;
 	var i;
 	for (i=0; i<string_length(str); i++) {
-		if string_pos(".", str) <= i+1 {
+		if string_pos(".", str) <= i+1 && string_contains(str, ".") {
 			decs++;
-		} else if string_pos(".", str) > i+1 {
+		} else if string_pos(".", str) > i+1 || !string_contains(str, ".") {
 			ints++;
 		}
 	}

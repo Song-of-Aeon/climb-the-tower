@@ -12,8 +12,11 @@ menuoptions = [
 	draw_text(40, 60, options[1][opos[1]]);
 }),*/
 new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", "foreground"]], function() {
+	palette = new vec2(WIDTH*.8, HEIGHT*.6);
 	c_input();
-	options[1] = variable_struct_get_names(tl[opos[0]]);
+	options[1] = tl[opos[0]];
+	if !array_length(options[2]) exit;
+	if mouse_within(palette.x, palette.y, WIDTH, HEIGHT) exit;
 	if attack.hold {
 		var thelist = ds_list_create();
 		var dude = collision_point_list(c_tilequantizeval(mouse_x), c_tilequantizeval(mouse_y), o_solid, false, false, thelist, false);
@@ -28,7 +31,7 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 			}
 		}
 		ds_list_destroy(thelist);
-		var thing = deep_copy(tl[opos[0]][$options[1][opos[1]]]);
+		var thing = deep_copy(options[1][opos[1]]);
 		log(thing);
 		var chump = c_maketile(mouse_x, mouse_y, thing);
 		chump.thing = thing;
@@ -59,18 +62,28 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	var z=0;
 	draw_set_alpha((pos==z++)+.4);
 	draw_text(40, 40, opos[0]);
+	draw_set_alpha(1);
+	if !array_length(options[1]) exit;
 	draw_set_alpha((pos==z++)+.4);
-	var thing = tl[opos[0]][$options[1][opos[1]]];
+	var thing = options[1][opos[1]];
 	var friend2 = cycle(opos[1]-1, array_length(options[1]));
 	var friend3 = cycle(opos[1]+1, array_length(options[1]));
-	var thing2 = tl[opos[0]][$options[1][friend2]];
-	var thing3 = tl[opos[0]][$options[1][friend3]];
+	var thing2 = options[1][friend2];
+	var thing3 = options[1][friend3];
 	draw_sprite(thing.sprite, thing.index, 40, 60);
 	draw_sprite_ext(thing2.sprite, thing2.index, 20, 60, 1, 1, 0, c_white, .4);
 	draw_sprite_ext(thing3.sprite, thing3.index, 60, 60, 1, 1, 0, c_white, .4);
 	draw_set_alpha((pos==z++)+.4);
 	draw_text(40, 80, options[2][opos[2]]);
 	draw_set_alpha(1);
+	if !mouse_within(palette.x, palette.y, WIDTH, HEIGHT) draw_set_alpha(.4);
+	iterate options[1] to {
+		draw_sprite(global.tssprites[opos[0]], i, palette.x+i%6*16+8, palette.y+floor(i/6)*16+8);
+		if mouse_within(palette.x+i%6*16, palette.y+floor(i/6)*16, palette.x+i%6*16+16, palette.y+floor(i/6)*16+16) && attack.hit {
+			opos[1] = i;
+		}
+	}
+	draw_circle(window_mouse_get_x(), window_mouse_get_y(), 3, false);
 }),
 new mapsetting("entities", [["enemies"], ["lol"], ["enabled", "disabled"]], function() {
 	c_input();
@@ -181,16 +194,22 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 		c_loadmap(friend);
 		if opos[0] {
 			instance_destroy(o_mapper);
+			log("enemied");
 			with o_enemy {
-				log("enemied");
 				step = archetype.step;
 			}
 		} else {
-			roomname = friend.roomname;
-			roomsize = friend.roomsize;
-			guys = friend.guys;
-			enemies = friend.enemies;
-			triggers = friend.triggers;
+			log("unenemied");
+			with o_enemy {
+				step = c_null;
+			}
+			with o_mapper {
+				roomname = friend.roomname;
+				roomsize = friend.roomsize;
+				//guys = friend.guys;
+				//enemies = friend.enemies;
+				triggers = friend.triggers;
+			}
 		}
 	}
 }, function() {
@@ -222,6 +241,7 @@ y = 120;
 //datas = [[o_solid, o_trigger]];
 
 typing = true;
+log("NO GUYS");
 guys = [];
 enemies = [];
 triggers = [];
@@ -254,7 +274,7 @@ selector = [
 selector[2][0] = 320/(1 tiles);
 selector[2][1] = 240/(1 tiles);
 
-guys = [];
+//guys = [];
 
 mousepos = new vec2();
 roomsize = new vec2();

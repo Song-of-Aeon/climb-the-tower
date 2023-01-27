@@ -129,7 +129,7 @@ function st_v1() {
 	
 	var xtouching = move_and_collide(spd.h, 0, o_solid);
 	var ytouching = move_and_collide(0, spd.v, o_solid);
-	log(ytouching);
+	//log(ytouching);
 	if array_length(ytouching) {
 		leniance = lencount;
         if aerial {
