@@ -1,11 +1,13 @@
 weapongen({
 	step: function(input, alt) {
 		if input.hold && !cooldown {
+			log(point_mouse(u, u, u, u, self));
 			if chargeshot < 2 {
 				var bang = c_bang(x, y, point_mouse(u, u, u, u, self), 4, 0, 20, hsn.spike, chargeshot ? c_teal : c_yellow, function() {
 					c
 					color = make_color_hsv(hue, 255-count*24, 255);
 					width -= .5;
+					if count == 1 log(dir);
 				});
 				bang.damage = 5;
 				bang.hue = 110;
@@ -14,7 +16,7 @@ weapongen({
 					bang.hue = 40;
 				}
 			} else {
-				var guy = c_bang(x, y, point_direction(df.x, df.y, mouse_x, mouse_y), 6, 0, 35, hsn.normal, c_cyan, function() {
+				var guy = c_bang(x, y, point_mouse(u, u, u, u, self), 6, 0, 35, hsn.normal, c_cyan, function() {
 					c
 					color = make_color_hsv(140, 255-count*24, 255);
 					width -= .5;

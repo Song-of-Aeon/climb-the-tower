@@ -15,9 +15,8 @@ function st_v1() {
 	inv--;
 	if !sliding stamina = min(stamina+.014, 3);
 	punchdelay--;
-	
-	weapons[eqwp][altpos].step(attack, alt);
-	
+	if attack.hit log(point_mouse(), x, y, mouse_x, mouse_y);
+	//weapons[eqwp][altpos].step(attack, alt);
 	if debug.hit {
 		//textbox_create(txt_kotohime);
 		//c_spawnenemy(10 tiles, 10 tiles, en.filth);
