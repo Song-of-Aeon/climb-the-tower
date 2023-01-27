@@ -7,7 +7,12 @@ function st_v1() {
 	if left.hold dir = 180;
 	if right.hold dir = 0;
 	
-	
+	var i;
+	for (i=0; i<360; i++) {
+		var dude = distabs(i, WIDTH);
+		var friend = collision_line_first(x, y, x+dude.x, y+dude.y, o_solid, false, false);
+		if friend != noone friend.value += 24;
+	}
 	
     hput = right.hold-left.hold;
     vput = down.hold-up.hold;
@@ -35,6 +40,7 @@ function st_v1() {
 	}
 	//camera_set_view_pos(view_camera[0], cameratarg.x, cameratarg.y);
 	camera_set_view_target(view_camera[0], id);
+	camera_set_view_border(view_camera[0], WIDTH, HEIGHT);
 	
 	//log(wep);
 	iterate wep to {

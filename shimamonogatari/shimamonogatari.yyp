@@ -271,6 +271,7 @@
     {"id":{"name":"rousr_logo","path":"sprites/rousr_logo/rousr_logo.yy",},"order":3,},
     {"id":{"name":"o_magazine","path":"objects/o_magazine/o_magazine.yy",},"order":10,},
     {"id":{"name":"s_bulthincc","path":"sprites/s_bulthincc/s_bulthincc.yy",},"order":22,},
+    {"id":{"name":"collision_line_first","path":"scripts/collision_line_first/collision_line_first.yy",},"order":0,},
     {"id":{"name":"wp_feedbacker","path":"scripts/wp_feedbacker/wp_feedbacker.yy",},"order":10,},
     {"id":{"name":"s_8792116","path":"sprites/s_8792116/s_8792116.yy",},"order":0,},
     {"id":{"name":"s_bulletbullet","path":"sprites/s_bulletbullet/s_bulletbullet.yy",},"order":9,},

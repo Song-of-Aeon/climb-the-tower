@@ -6,3 +6,5 @@ hitboxradius = 8;
 inv = false;
 defense = 0;
 image_speed = 0;
+
+value = 256;

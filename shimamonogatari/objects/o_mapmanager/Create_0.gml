@@ -15,3 +15,5 @@ while file_name != "" { //took this shit from the DOCS i didnt feel like typing
 }
 file_find_close();
 //c_loadmap(mp.empty);
+
+depth = 9999;
