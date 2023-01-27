@@ -17,14 +17,16 @@ draw_set_alpha(1);
 */
 
 //draw_text(10, 10, object_get_name(types[selectedtype]));
-
+draw_circle(x, y, 3, false);
 draw_set_alpha(.4);
 for (i=-global.tilesize/2; i<roomsize.x; i+=global.tilesize) {
 	draw_set_color(make_color_hsv(i%256, 128, 255));
+	draw_set_alpha((abs(c_tilequantizeval(mouse_x)-i)<=8)+.4);
 	draw_line(i, 0, i, room_height);
 }
 for (i=-global.tilesize/2; i<roomsize.y; i+=global.tilesize) {
 	draw_set_color(make_color_hsv(i%256, 128, 255));
+	draw_set_alpha((abs(c_tilequantizeval(mouse_y)-i)<=8)+.4);
 	draw_line(0, i, room_width, i);
 }
 draw_set_color(c_white);

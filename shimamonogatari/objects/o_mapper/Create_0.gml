@@ -12,11 +12,11 @@ menuoptions = [
 	draw_text(40, 60, options[1][opos[1]]);
 }),*/
 new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", "foreground"]], function() {
-	palette = new vec2(WIDTH*.8, HEIGHT*.6);
+	palette = new vec2(WIDTH*1.8, HEIGHT);
 	c_input();
 	options[1] = tl[opos[0]];
 	if !array_length(options[2]) exit;
-	if mouse_within(palette.x, palette.y, WIDTH, HEIGHT) exit;
+	if mouse_within(palette.x, palette.y, WIDTH*2, HEIGHT*2) exit;
 	if attack.hold {
 		var thelist = ds_list_create();
 		var dude = collision_point_list(c_tilequantizeval(mouse_x), c_tilequantizeval(mouse_y), o_solid, false, false, thelist, false);
@@ -76,7 +76,7 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	draw_set_alpha((pos==z++)+.4);
 	draw_text(40, 80, options[2][opos[2]]);
 	draw_set_alpha(1);
-	if !mouse_within(palette.x, palette.y, WIDTH, HEIGHT) draw_set_alpha(.4);
+	if !mouse_within(palette.x, palette.y, WIDTH*2, HEIGHT*2) draw_set_alpha(.4);
 	iterate options[1] to {
 		draw_sprite(global.tssprites[opos[0]], i, palette.x+i%6*16+8, palette.y+floor(i/6)*16+8);
 		if mouse_within(palette.x+i%6*16, palette.y+floor(i/6)*16, palette.x+i%6*16+16, palette.y+floor(i/6)*16+16) && attack.hit {

@@ -15,8 +15,10 @@ mousepos.y = mouse_y;
 
 if shift.hold {
 	//log(x, y);
-	x = clamp(x+right.hold*4-left.hold*2, 0, roomsize.x);
-	y = clamp(y+down.hold*4-up.hold*2, 0, roomsize.y);
+	camera_set_view_target(view_camera[0], id);
+	camera_set_view_border(view_camera[0], 512, 288);
+	x = clamp(x+right.hold*4-left.hold*4, WIDTH/2, roomsize.x);
+	y = clamp(y+down.hold*4-up.hold*4, HEIGHT/2, roomsize.y);
 	//x += right.hold*2;
 	
 	//x += 2;
