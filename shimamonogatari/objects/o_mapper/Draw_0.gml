@@ -17,18 +17,17 @@ draw_set_alpha(1);
 */
 
 //draw_text(10, 10, object_get_name(types[selectedtype]));
-draw_text(x-MIDWID+24, y-MIDHEI+10, menuoptions[selectedtype].name);
-if !typing {
-	menuoptions[selectedtype].draw();
-}
 
 draw_set_alpha(.4);
-for (i=-global.tilesize/2; i<room_width; i+=global.tilesize) {
+for (i=-global.tilesize/2; i<roomsize.x; i+=global.tilesize) {
+	draw_set_color(make_color_hsv(i%256, 128, 255));
 	draw_line(i, 0, i, room_height);
 }
-for (i=-global.tilesize/2; i<room_height; i+=global.tilesize) {
+for (i=-global.tilesize/2; i<roomsize.y; i+=global.tilesize) {
+	draw_set_color(make_color_hsv(i%256, 128, 255));
 	draw_line(0, i, room_width, i);
 }
+draw_set_color(c_white);
 draw_set_alpha(1);
 draw_set_halign(fa_right);
 //draw_text(WIDTH-10, HEIGHT-20, st(c_tilequantizeval(mouse_x, -8)/global.tilesize+.5) + ", " + st(c_tilequantizeval(mouse_y, -8)/global.tilesize+.5));

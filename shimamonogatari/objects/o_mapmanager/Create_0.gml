@@ -14,4 +14,4 @@ while file_name != "" { //took this shit from the DOCS i didnt feel like typing
     file_name = file_find_next();
 }
 file_find_close();
-c_loadmap(mp.empty);
+//c_loadmap(mp.empty);

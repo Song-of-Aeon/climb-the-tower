@@ -1,7 +1,8 @@
 function c_maketile(x, y, type) {
 	var chump = instance_create(x, y, o_solid);
 	object_set_mask(chump, type.cover);
-	chump.sprite_index = type.sprite;
+	//chump.sprite_index = type.sprite;
+	chump.sprite_index = TT_SQUARE
 	chump.image_index = type.sprite;
 	chump.step = munction(type.step);
 	chump.draw = munction(type.draw);

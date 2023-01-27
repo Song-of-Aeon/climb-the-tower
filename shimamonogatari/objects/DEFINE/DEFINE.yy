@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "DEFINE",
   "spriteId": {
-    "name": "s_v1",
-    "path": "sprites/s_v1/s_v1.yy",
+    "name": "s_dc",
+    "path": "sprites/s_dc/s_dc.yy",
   },
   "spriteMaskId": null,
   "visible": true,

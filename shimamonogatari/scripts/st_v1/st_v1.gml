@@ -77,9 +77,9 @@ function st_v1() {
 	} else {
 		if slam.hit {
 			if hput == 0 {
-				if point_mouse() < 270 && dir == 180 sliding = -2.4 else sliding = 2.4;
+				if point_mouse() < 270 && dir == 180 sliding = -2.9 else sliding = 2.9;
 			} else {
-				sliding = hput*2.4;
+				sliding = hput*2.9;
 			}
 			sliding *= (slamduration/60+1);
 		}
@@ -123,7 +123,7 @@ function st_v1() {
 	}*/
 	
 	
-	
+	spd.v += grav;
 	
 	c_dosprites();
 	
@@ -145,7 +145,6 @@ function st_v1() {
 		walljumps = 3;
 	} else {
 		if dashing == 0 {
-	        spd.v += grav;
 	        leniance--;
 		}
         aerial = true;
@@ -168,7 +167,7 @@ function st_v1() {
             spd.v /= 2;
         }
     }
-	if array_length(xtouching) {
+	if array_length(xtouching) && !array_length(ytouching) && !leniance {
 		if aerial && walljumps && jump.hit {
 			walljumps--;
 			spd.v = -jumpspeed;

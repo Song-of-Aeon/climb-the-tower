@@ -20,6 +20,7 @@ function c_loadroom(filename) {
 }
 
 function c_loadmap(map_) {
+	log(map_);
 	with all {
 		if !persistent kys;
 	}
@@ -28,9 +29,12 @@ function c_loadmap(map_) {
 		chump.links = map_.guys[i].links;
 		chump.depth = map_.guys[i].depth;
 	}
+	log(map_.enemies);
 	iterate map_.enemies to {
-		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links
+		log("enemize");
+		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
 	}
+	instance_create(10 tiles, 10 tiles, DEFINE);
 	/*iterate map_.triggers to {
 		c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
 	}*/

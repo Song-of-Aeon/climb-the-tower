@@ -13,13 +13,12 @@ espd = {
 }
 //log(global.weapons)
 weapons = [
-	[wp.revolver, wp.coin],
+	[wp.spike, wp.coin],
 	[wp.shotgun, wp.deagle],
 	[wp.bounceback, wp.nicole_dunlap],
 ];
 arm = [
-	wp.feedbacker,
-	wp[$"Polar Star"],
+	wp.woodarm,
 ]
 eqwp = 0;
 eqarm = 0;
@@ -71,7 +70,7 @@ inv = 0;
 }*/
 
 sprites = {
-	idle: s_v1,
+	idle: s_dc,
 	walk: s_v1,
 	up: s_v1,
 	upwalk: s_v1,
@@ -99,7 +98,7 @@ sprites = {
 faceangle = 0;
 
 state = st_v1 //not for long
-drawstate = st_v1draw;
+drawstate = st_dcdraw;
 //actionstate = st_7
 
 xdraw = -100;
@@ -107,7 +106,7 @@ ydraw = 310;
 global.count = 0;
 global.me = id;
 #macro df global.me
-instance_create(0, 0, o_mapmanager);
+//instance_create(0, 0, o_mapmanager);
 
 //lilystats
 /*

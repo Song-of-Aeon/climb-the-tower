@@ -15,22 +15,6 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	c_input();
 	options[1] = variable_struct_get_names(tl[opos[0]]);
 	if attack.hold {
-		var dude = collision_point(c_tilequantizeval(mouse_x), c_tilequantizeval(mouse_y), o_solid, false, false);
-		if dude != noone {
-			instance_destroy(dude);
-		}
-		var thing = deep_copy(tl[opos[0]][$options[1][opos[1]]]);
-		log(thing);
-		var chump = c_maketile(mouse_x, mouse_y, thing);
-		chump.thing = thing;
-		thing.x = mouse_x;
-		thing.y = mouse_y;
-		thing.links = [];
-		thing.depth = opos[2]
-		array_push(o_mapper.guys, thing);
-	
-	}
-	if inventory.hold {
 		var thelist = ds_list_create();
 		var dude = collision_point_list(c_tilequantizeval(mouse_x), c_tilequantizeval(mouse_y), o_solid, false, false, thelist, false);
 		var i;
@@ -44,16 +28,38 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 			}
 		}
 		ds_list_destroy(thelist);
+		var thing = deep_copy(tl[opos[0]][$options[1][opos[1]]]);
+		log(thing);
+		var chump = c_maketile(mouse_x, mouse_y, thing);
+		chump.thing = thing;
+		chump.depth = opos[2];
+		thing.x = mouse_x;
+		thing.y = mouse_y;
+		thing.links = [];
+		thing.depth = opos[2];
+		array_push(o_mapper.guys, thing);
+	
+	}
+	if inventory.hold {
+		var thelist = ds_list_create();
+		var dude = collision_point_list(mouse_x, mouse_y, o_solid, false, false, thelist, false);
+		var i;
+		for (i=0; i<dude; i++) {
+			log(thelist[|i].depth, opos[2]);
+			if thelist[|i].depth == opos[2] {
+				log("deleting");
+				array_remove(o_mapper.guys, thelist[|i].thing);
+				instance_destroy(thelist[|i]);
+				log("deleted");
+			}
+		}
+		ds_list_destroy(thelist);
 	}
 }, function() {
-	//if !array_length(options[1]) exit;
 	var z=0;
 	draw_set_alpha((pos==z++)+.4);
 	draw_text(40, 40, opos[0]);
 	draw_set_alpha((pos==z++)+.4);
-	//log(tl);
-	//log(tl[opos[0]]);
-	//log(tl[opos[0]][$options[1][opos[1]]]);
 	var thing = tl[opos[0]][$options[1][opos[1]]];
 	var friend2 = cycle(opos[1]-1, array_length(options[1]));
 	var friend3 = cycle(opos[1]+1, array_length(options[1]));
@@ -66,25 +72,66 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	draw_text(40, 80, options[2][opos[2]]);
 	draw_set_alpha(1);
 }),
-new mapsetting("entities", [["enemies", "<TRA", "other"], ["lol"], ["enabled", "disabled"]], function() {
-	switch opos[0] {
-		case 0:
-			options = [options[0], variable_struct_get_names(en)];
-			break;
-		case 1:
-			options = [options[0], mp, array_create_order(100, 1), array_create_order(100, 1)];
-			break;
-		case 2:
-			options = [options[0]];
-			break;
+new mapsetting("entities", [["enemies"], ["lol"], ["enabled", "disabled"]], function() {
+	c_input();
+	options = [options[0], variable_struct_get_names(en)];
+	if attack.hit {
+		var thelist = ds_list_create();
+		var dude = collision_point_list(mouse_x, mouse_y, o_enemy, false, false, thelist, false);
+		var i;
+		for (i=0; i<dude; i++) {
+			log(thelist[|i].depth, opos[2]);
+			if thelist[|i].depth == opos[2] {
+				log("deleting");
+				array_remove(o_mapper.enemies, thelist[|i].thing);
+				instance_destroy(thelist[|i]);
+				log("deleted");
+			}
+		}
+		ds_list_destroy(thelist);
+		var thing = deep_copy(en[$options[1][opos[1]]]);
+		log(thing);
+		var chump = c_spawnenemy(mouse_x, mouse_y, thing);
+		chump.step = c_null;
+		chump.thing = thing;
+		chump.image_speed = 0;
+		thing.x = mouse_x;
+		thing.y = mouse_y;
+		thing.links = [];
+		log(thing);
+		array_push(o_mapper.enemies, thing);
 	}
 }, function() {
 	var z=0;
-	iterate options to {
-		draw_set_alpha((pos==z++)+.4);
-		draw_text(40, 20+z*20, options[i][opos[i]]);
-	}
+	draw_set_alpha((pos==z++)+.4);
+	draw_text(40, 20+z*20, options[0][opos[0]]);
+	var thing = en[$options[1][opos[1]]];
+	draw_set_alpha((pos==z++)+.4);
+	draw_sprite(thing.sprite, 0, 40, 60);
 }),
+new mapsetting("triggers", [["tra", "touch event", "link"], variable_struct_get_names(mp), array_create_order(100), array_create_order(100)], function() {
+	c_input();
+	if opos[0] < 2 {
+		if attack.hit {
+			mydude = c_maketrigger(mouse_x, mouse_y, mouse_x, mouse_y);
+			mydude.target = mp[$options[1][opos[1]]];
+			mydude.targetx = options[2][opos[2]] tiles;
+			mydude.targety = options[3][opos[3]] tiles;
+			c_tilequantize(mydude, -8, -8);
+			array_push(guys, mydude);
+		}
+		if attack.hold {
+			mydude.x2 = c_tilequantizeval(mouse_x, -8);
+			mydude.y2 = c_tilequantizeval(mouse_y, -8);
+		}
+		if inventory.hold {
+			var dude = collision_point(c_tilequantizeval(mouse_x, -8), c_tilequantizeval(mouse_y, -8), o_trigger, false, false);
+			if dude != noone {
+				instance_destroy(dude);
+			}
+		}
+	}
+}, function() {}),
 new mapsetting("map settings", [["name", "size"], ["lol"], ["lol"]], function() {
 	c
 	c_input();
@@ -97,8 +144,8 @@ new mapsetting("map settings", [["name", "size"], ["lol"], ["lol"]], function() 
 	} else {
 		options[1] = array_create_order(100, 1, 32);
 		options[2] = array_create_order(100, 1, 18);
-		o_mapper.roomsize.x = options[1][opos[1]]*global.tilesize;
-		o_mapper.roomsize.y = options[2][opos[2]]*global.tilesize;
+		o_mapper.roomsize.x = options[1][opos[1]] tiles;
+		o_mapper.roomsize.y = options[2][opos[2]] tiles;
 	}
 }, function() {
 	var z=0;
@@ -127,13 +174,31 @@ new mapsetting("save", [["really save?"]], function() {
 	draw_text(40, 20+z*20, options[0][opos[0]]);
 	draw_set_alpha(1);
 }),
-new mapsetting("load", [variable_struct_get_names(mp)], function() {
+new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp)], function() {
 	c_input();
-	if select c_loadmap(mp[$options[0][opos[0]]]);
+	if select {
+		var friend = mp[$options[1][opos[1]]];
+		c_loadmap(friend);
+		if opos[0] {
+			instance_destroy(o_mapper);
+			with o_enemy {
+				log("enemied");
+				step = archetype.step;
+			}
+		} else {
+			roomname = friend.roomname;
+			roomsize = friend.roomsize;
+			guys = friend.guys;
+			enemies = friend.enemies;
+			triggers = friend.triggers;
+		}
+	}
 }, function() {
 	var z=0;
 	draw_set_alpha((pos==z++)+.4);
 	draw_text(40, 20+z*20, options[0][opos[0]]);
+	draw_set_alpha((pos==z++)+.4);
+	draw_text(40, 20+z*20, options[1][opos[1]]);
 	draw_set_alpha(1);
 }),
 ];
@@ -162,7 +227,6 @@ enemies = [];
 triggers = [];
 
 mousepos = new vec2();
-roomsize = new vec2();
 
 exit;
 datas[0] = [variable_struct_get_names(tl), [-2, -1, 0, 1, 2]];
