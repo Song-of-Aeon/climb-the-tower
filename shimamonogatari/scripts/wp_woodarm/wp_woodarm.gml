@@ -38,13 +38,25 @@ weapongen({
 		with df {
 			var ang = point_mouse();
 			var theflip = ineg(ang >= 90 && ang <= 270);
-			if !punchdelay {
-				draw_sprite_ext(s_dcarm, 0, x+2*image_xscale, y-4, -image_xscale, image_yscale, -spd.h*11, c_white, 1);
-			} else {
-				if punchdelay > 30 {
-					draw_sprite_ext(s_dcarm, 1, x+2*image_xscale, y-3, 1*((punchdelay-30)/5+1), theflip*((punchdelay-30)/5+1), ang, c_white, 1);
+			if df.sliding != 0 {
+				if !punchdelay {
+					draw_sprite_ext(s_dcarm, 0, x+5*image_xscale, y+6, -image_xscale, image_yscale, -spd.h*11, c_white, 1);
 				} else {
-					draw_sprite_ext(s_dcarm, 2, x+2*image_xscale, y-3, -1, theflip, ang, c_white, 1);
+					if punchdelay > 30 {
+						draw_sprite_ext(s_dcarm, 1, x+5*image_xscale, y+6, 1*((punchdelay-30)/5+1), theflip*((punchdelay-30)/5+1), ang, c_white, 1);
+					} else {
+						draw_sprite_ext(s_dcarm, 2, x+5*image_xscale, y+6, -1, theflip, ang, c_white, 1);
+					}
+				}
+			} else {
+				if !punchdelay {
+					draw_sprite_ext(s_dcarm, 0, x+2*image_xscale, y-4, -image_xscale, image_yscale, -spd.h*11, c_white, 1);
+				} else {
+					if punchdelay > 30 {
+						draw_sprite_ext(s_dcarm, 1, x+2*image_xscale, y-3, 1*((punchdelay-30)/5+1), theflip*((punchdelay-30)/5+1), ang, c_white, 1);
+					} else {
+						draw_sprite_ext(s_dcarm, 2, x+2*image_xscale, y-3, -1, theflip, ang, c_white, 1);
+					}
 				}
 			}
 		}

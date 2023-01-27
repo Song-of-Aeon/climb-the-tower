@@ -53,7 +53,7 @@ function st_v1() {
 	
 	arm[eqarm].step(punch);
 	
-	if dash.hit && stamina >= 1 {
+	if dash.hit && stamina >= 1 && c_dontstopslide() {
 		slamming = false;
 		sliding = false;
 		if hput == 0 {
@@ -82,7 +82,7 @@ function st_v1() {
 			}
 			sliding *= (slamduration/60+1);
 		}
-		if slam.drop {
+		if slam.drop && c_dontstopslide() {
 			sliding = false;
 		}
 		aerial--;
@@ -91,9 +91,10 @@ function st_v1() {
 		}
 	}
 	if dashing != 0 inv = true;
-	
+	sprite_index = s_dc;
 	if sliding != 0 {
 		spd.h = sliding+hput*.6;
+		sprite_index = s_dcslide;
 	} else if dashing != 0 {
 		spd.h = sign(dashing)*6;
 		dashing -= sign(dashing);
@@ -150,7 +151,7 @@ function st_v1() {
 	}
     
     
-    if leniance > 0 && jump.hit {
+    if leniance > 0 && jump.hit && c_dontstopslide() {
         spd.v = -(jumpspeed+slamduration/10);
 		log(slamduration/10);
 		slamduration = 0;
