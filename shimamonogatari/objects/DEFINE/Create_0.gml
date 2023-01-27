@@ -13,7 +13,7 @@ espd = {
 }
 //log(global.weapons)
 weapons = [
-	[wp.spike, wp.coin],
+	[wp.javelin, wp.coin],
 	[wp.shotgun, wp.deagle],
 	[wp.bounceback, wp.nicole_dunlap],
 ];

@@ -10,7 +10,7 @@ image_angle = direction-90;
 //
 image_yscale = size/sprite_get_height(sprite_index);
 var dude = distabs(dir, size);
-while collision_line(x, y, x+dude.x, y+dude.y, o_solid, true, false) {
+while collision_line(x, y, x+dude.x, y+dude.y, o_solid, true, false) && size {
 	size--;
 	image_yscale = size/sprite_get_height(sprite_index);
 	if !size instance_destroy();
