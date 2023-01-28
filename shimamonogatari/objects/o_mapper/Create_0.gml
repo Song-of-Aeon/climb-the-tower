@@ -164,8 +164,8 @@ new mapsetting("map settings", [["name", "size"], ["lol"], ["lol"]], function() 
 		}
 		pos = 0;
 	} else {
-		options[1] = array_create_order(100, 1, 32);
-		options[2] = array_create_order(100, 1, 18);
+		options[1] = array_create_order(200, 1, 32);
+		options[2] = array_create_order(200, 1, 18);
 		o_mapper.roomsize.x = options[1][opos[1]] tiles;
 		o_mapper.roomsize.y = options[2][opos[2]] tiles;
 	}

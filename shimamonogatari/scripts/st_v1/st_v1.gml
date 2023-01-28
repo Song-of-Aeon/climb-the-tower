@@ -4,14 +4,22 @@ function st_v1() {
 	
 	//if down.hold dir = 270;
 	//if up.hold dir = 90;
+	if point_mouse() > 90 && point_mouse < 270 {
+		dir = 180;
+	} else dir = 0;
 	if left.hold dir = 180;
 	if right.hold dir = 0;
 	
 	var i;
-	for (i=0; i<360; i++) {
-		var dude = distabs(i, WIDTH);
-		var friend = collision_line_first(x, y, x+dude.x, y+dude.y, o_solid, false, false);
-		if friend != noone friend.value += 24;
+	for (i=0; i<360; i+=4) {
+		var dude = distabs(i, 160);
+		var idiot = ds_list_create();
+		var friend = collision_line_list(x, y, x+dude.x, y+dude.y, o_solid, false, false, idiot, false);
+		var j;
+		for (j=0; j<friend; j++) {
+			idiot[|j].value += 24;
+		}
+		ds_list_destroy(idiot);
 	}
 	
     hput = right.hold-left.hold;
@@ -71,7 +79,9 @@ function st_v1() {
 		stamina--;
 		spd.v = 0;
 	}
-	
+	if slam.drop && c_dontstopslide() {
+		sliding = false;
+	}
 	if aerial {
 		if slam.hit {
 			slamming = true;
@@ -87,9 +97,6 @@ function st_v1() {
 				sliding = hput*2.9;
 			}
 			sliding *= (slamduration/60+1);
-		}
-		if slam.drop && c_dontstopslide() {
-			sliding = false;
 		}
 		aerial--;
 		if aerial < -30 {
@@ -135,6 +142,12 @@ function st_v1() {
 	
 	var xtouching = move_and_collide(spd.h, 0, o_solid);
 	var ytouching = move_and_collide(0, spd.v, o_solid);
+	log(xtouching, ytouching, spd.h, spd.v, aerial);
+	log(x, y);
+	/*if !array_length(xtouching) && !array_length(ytouching) && xprevious == x && yprevious == y {
+		//x -= abs(spd.h);
+		//y += spd.v;
+	}*/
 	//log(ytouching);
 	if array_length(ytouching) {
 		leniance = lencount;
