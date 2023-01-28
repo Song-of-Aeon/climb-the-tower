@@ -1,7 +1,7 @@
 function c_maketile(x, y, type) {
 	
 	if type.sprite == prt_sdm {
-		switch type.index-1 {
+		switch type.index+1 {
 			case 17:
 			case 18:
 			case 29:
