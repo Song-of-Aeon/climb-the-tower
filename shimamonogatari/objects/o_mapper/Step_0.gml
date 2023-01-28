@@ -26,11 +26,9 @@ if shift.hold {
 	if typing {
 		selectedtype = mod_negative(selectedtype+right.hit-left.hit, array_length(menuoptions));
 	} else {
-		iterate menuoptions to {
-			menuoptions[i].pos = cycle(menuoptions[i].pos+down.hit-up.hit, array_length(menuoptions[i].options));
-			menuoptions[i].opos[menuoptions[i].pos] = cycle(menuoptions[i].opos[menuoptions[i].pos]+right.hit-left.hit, array_length(menuoptions[i].options[menuoptions[i].pos]));
-		}
 		try {
+			menuoptions[selectedtype].pos = cycle(menuoptions[selectedtype].pos+down.hit-up.hit, array_length(menuoptions[selectedtype].options));
+			menuoptions[selectedtype].opos[menuoptions[selectedtype].pos] = cycle(menuoptions[selectedtype].opos[menuoptions[selectedtype].pos]+right.hit-left.hit, array_length(menuoptions[selectedtype].options[menuoptions[selectedtype].pos]));
 			menuoptions[selectedtype].step();
 		} catch(e) {
 			log(e);

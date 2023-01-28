@@ -18,7 +18,7 @@ function c_spawnenemy(x, y, archetype) {
 	chump.draw = method(chump, archetype.draw);
 	chump.archetype = archetype;
 	c_tilequantize(chump);
-	method(chump, archetype.create)();
+	//method(chump, archetype.create)();
 	return chump;
 }
 
