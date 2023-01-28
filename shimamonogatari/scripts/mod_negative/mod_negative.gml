@@ -5,12 +5,9 @@ function mod_negative(val, modval) {
 		}
 		return val;
 	} else {
-		try {
-			return val % modval;
-		} catch(e) {
-			log(":[");
-			return 0;
+		if(modval == 0){
+			return 0
 		}
-		
+		return val % modval;		
 	}
 }
