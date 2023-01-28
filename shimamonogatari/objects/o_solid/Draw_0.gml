@@ -1,5 +1,6 @@
 //surface_set_target(global.gameplay);
 image_blend = make_color_hsv(0, 0, value);
+//log(draw);
 draw();
 if instance_exists(o_mapper) {
 	draw_set_color(c_white);

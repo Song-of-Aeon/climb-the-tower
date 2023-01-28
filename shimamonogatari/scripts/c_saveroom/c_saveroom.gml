@@ -5,9 +5,27 @@ function c_saveroom(filename) {
 	var theroom = {
 		roomsize: roomsize,
 		roomname: filename,
-		guys: guys,
-		enemies: enemies,
+		guys: deep_copy(guys),
+		enemies: deep_copy(enemies),
 		triggers: triggers,
+	}
+	with theroom {
+		
+		iterate guys to {
+			if typeof(guys[i].sprite) == "string" continue;
+			guys[i].sprite = sprite_get_name(guys[i].sprite);
+			guys[i].step = script_get_name(guys[i].step);
+			guys[i].draw = script_get_name(guys[i].draw);
+			guys[i].ontouch = script_get_name(guys[i].ontouch);
+			guys[i].onstay = script_get_name(guys[i].onstay);
+			guys[i].onleave = script_get_name(guys[i].onleave);
+		}
+		iterate enemies to {
+			if typeof(enemies[i].sprite) == "string" continue;
+			enemies[i].sprite = sprite_get_name(enemies[i].sprite);
+			enemies[i].step = script_get_name(enemies[i].step);
+			enemies[i].draw = script_get_name(enemies[i].draw);
+		}
 	}
 	var thefile = file_text_open_write(filename+".aeon"); //awesome epic object notation
 	file_text_write_string(thefile, json_stringify(theroom));
@@ -29,7 +47,26 @@ function c_loadmap(map_) {
 	}
 	with o_mapper {
 		guys = [];
+		enemies = [];
 		iterate map_.guys to {
+			if typeof(map_.guys[i].sprite) == "string" {
+				map_.guys[i].sprite = asset_get_index(map_.guys[i].sprite);
+			}
+			if typeof(map_.guys[i].step) == "string" {
+				map_.guys[i].step = script_get_index(map_.guys[i].step);
+			}
+			if typeof(map_.guys[i].draw) == "string" {
+				map_.guys[i].draw = script_get_index(map_.guys[i].draw);
+			}
+			if typeof(map_.guys[i].ontouch) == "string" {
+				map_.guys[i].ontouch = script_get_index(map_.guys[i].ontouch);
+			}
+			if typeof(map_.guys[i].onstay) == "string" {
+				map_.guys[i].onstay = script_get_index(map_.guys[i].onstay);
+			}
+			if typeof(map_.guys[i].onleave) == "string" {
+				map_.guys[i].onleave = script_get_index(map_.guys[i].onleave);
+			}
 			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, map_.guys[i]);
 			var newman = deep_copy(map_.guys[i]);
 			chump.links = newman.links;
@@ -42,9 +79,29 @@ function c_loadmap(map_) {
 	
 		iterate map_.enemies to {
 			log("enemize");
-			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
+			if typeof(map_.enemies[i].sprite) == "string" {
+				map_.enemies[i].sprite = asset_get_index(map_.enemies[i].sprite);
+			}
+			if typeof(map_.enemies[i].create) == "string" {
+				log(map_.enemies[i].create, script_get_index(map_.enemies[i].create));
+				map_.enemies[i].create = script_get_index(map_.enemies[i].create);
+			}
+			if typeof(map_.enemies[i].step) == "string" {
+				log(map_.enemies[i].step, script_get_index(map_.enemies[i].step));
+				map_.enemies[i].step = script_get_index(map_.enemies[i].step);
+			}
+			if typeof(map_.enemies[i].draw) == "string" {
+				log(map_.enemies[i].draw, script_get_index(map_.enemies[i].draw));
+				map_.enemies[i].draw = script_get_index(map_.enemies[i].draw);
+			}
+			var chump = c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]);
+			var newman = deep_copy(map_.enemies[i]);
+			chump.links = newman.links;
+			chump.thing = newman;
+			array_push(enemies, newman);
+			
 		}
-		enemies = map_.enemies;
+		//enemies = map_.enemies;
 		//instance_create(10 tiles, 10 tiles, DEFINE);
 		/*iterate map_.triggers to {
 			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;

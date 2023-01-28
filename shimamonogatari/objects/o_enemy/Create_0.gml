@@ -5,3 +5,5 @@ inv = 0;
 defense = 0;
 maxhp = 10;
 spd = new sped();
+count = 0;
+iterations = 0;

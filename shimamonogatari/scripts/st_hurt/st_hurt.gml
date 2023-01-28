@@ -10,6 +10,9 @@ function st_hurt() {
 	takingdamage = ow.damage-defense;
 	c_damagenum(id, takingdamage);
 	hp -= takingdamage;
+	if object_index != df {
+		c_healradius(x, y, takingdamage*15);
+	}
 	c_screenshake(takingdamage*2, 8);
 	if ow.destructible {
 		instance_destroy(ow);

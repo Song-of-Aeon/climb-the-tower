@@ -93,13 +93,10 @@ new mapsetting("entities", [["enemies"], ["lol"], ["enabled", "disabled"]], func
 		var dude = collision_point_list(mouse_x, mouse_y, o_enemy, false, false, thelist, false);
 		var i;
 		for (i=0; i<dude; i++) {
-			log(thelist[|i].depth, opos[2]);
-			if thelist[|i].depth == opos[2] {
-				log("deleting");
-				array_remove(o_mapper.enemies, thelist[|i].thing);
-				instance_destroy(thelist[|i]);
-				log("deleted");
-			}
+			log("deleting");
+			array_remove(o_mapper.enemies, thelist[|i].thing);
+			instance_destroy(thelist[|i]);
+			log("deleted");
 		}
 		ds_list_destroy(thelist);
 		var thing = deep_copy(en[$options[1][opos[1]]]);
@@ -113,6 +110,18 @@ new mapsetting("entities", [["enemies"], ["lol"], ["enabled", "disabled"]], func
 		thing.links = [];
 		log(thing);
 		array_push(o_mapper.enemies, thing);
+	}
+	if inventory.hold {
+		var thelist = ds_list_create();
+		var dude = collision_point_list(mouse_x, mouse_y, o_enemy, false, false, thelist, false);
+		var i;
+		for (i=0; i<dude; i++) {
+			log("deleting");
+			array_remove(o_mapper.enemies, thelist[|i].thing);
+			instance_destroy(thelist[|i]);
+			log("deleted");
+		}
+		ds_list_destroy(thelist);
 	}
 }, function() {
 	var z=0;
