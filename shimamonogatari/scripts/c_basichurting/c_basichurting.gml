@@ -8,8 +8,8 @@ function c_basichurting(friendly=true) {
 	for (i=0; i<owlist; i++) {
 		ow = collidedbullets[|i];
 		if ow != noone && ow.friendly == friendly && !ow.intangible {
+			c_bleed(x,y,35,ow.dir);
 			method(id, ow.onhit)();
-			c_bleed(x,y,10,ow.dir);
 		}
 	}
 }

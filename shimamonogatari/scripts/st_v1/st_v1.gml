@@ -142,8 +142,8 @@ function st_v1() {
 	
 	var xtouching = move_and_collide(spd.h, 0, o_solid);
 	var ytouching = move_and_collide(0, spd.v, o_solid);
-	log(xtouching, ytouching, spd.h, spd.v, aerial);
-	log(x, y);
+	//log(xtouching, ytouching, spd.h, spd.v, aerial);
+	//log(x, y);
 	/*if !array_length(xtouching) && !array_length(ytouching) && xprevious == x && yprevious == y {
 		//x -= abs(spd.h);
 		//y += spd.v;
