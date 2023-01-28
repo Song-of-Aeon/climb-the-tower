@@ -42,9 +42,9 @@ exception_unhandled_handler(function(ex){
 	return 0;
 });
 
-function ciel(value) {
+/*function ciel(value) {
 	return ceil(value);
-}
+}*/
 
 function string_split(str,splitter){
 	var theArray = [];

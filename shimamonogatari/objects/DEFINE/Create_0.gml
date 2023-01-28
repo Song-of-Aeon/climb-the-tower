@@ -11,6 +11,7 @@ espd = {
 	v: 0,
 	d: 0,
 }
+defense = 0;
 //log(global.weapons)
 weapons = [
 	[wp.javelin, wp.coin],
