@@ -9,6 +9,9 @@ function mod_negative(val, modval) {
 		}
 		return val;
 	} else {
-		return val % modval;
+		if(modval == 0){
+			return 0
+		}
+		return val % modval;		
 	}
 }
