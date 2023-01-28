@@ -64,5 +64,7 @@ weapongen({
 	chargecooldown: 0,
 	name: "javelin",
 	sprite: s_javelin,
+	x: 0,
+	y: 0,
 });
 nu hitscan("spike", s_pike, 99, false, true, 1);

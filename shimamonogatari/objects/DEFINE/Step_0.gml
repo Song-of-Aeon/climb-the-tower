@@ -13,3 +13,4 @@ if hp <= 0 {
 	state = c_null;
 	drawstate = c_null;
 }
+depth = -9;
