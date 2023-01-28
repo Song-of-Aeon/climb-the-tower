@@ -14,8 +14,10 @@ function c_spawnenemy(x, y, archetype) {
 	chump.hp = archetype.hp;
 	chump.maxhp = archetype.hp;
 	chump.sprite_index = archetype.sprite;
-	chump.step = method(chump, archetype.step);
-	chump.draw = method(chump, archetype.draw);
+	if(archetype.step != undefined)
+		chump.step = method(chump, archetype.step);
+	if(archetype.draw != undefined)
+		chump.draw = method(chump, archetype.draw);
 	chump.archetype = archetype;
 	c_tilequantize(chump);
 	//method(chump, archetype.create)();

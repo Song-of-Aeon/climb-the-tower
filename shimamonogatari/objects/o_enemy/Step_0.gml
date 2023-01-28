@@ -1,4 +1,5 @@
-step();
+if(step != undefined)
+	method(self,step)();
 
 inv--;
 hitboxradius = sprite_width/2*1.1;
