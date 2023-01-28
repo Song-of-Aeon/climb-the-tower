@@ -17,6 +17,7 @@
   "iosProps": false,
   "tvosProps": false,
   "androidProps": false,
+  "html5Props": false,
   "installdir": "",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","filename":"Imguigml.dll","origname":"","init":"","final":"","kind":1,"uncompress":false,"functions":[
@@ -855,6 +856,7 @@
         {"name":"_extImguiGML_set_scroll_here_y","path":"extensions/extImGuiGML/extImGuiGML.yy",},
       ],},
   ],
+  "HTML5CodeInjection": "",
   "classname": "",
   "tvosclassname": null,
   "tvosdelegatename": null,

@@ -12,7 +12,7 @@ menuoptions = [
 	draw_text(40, 60, options[1][opos[1]]);
 }),*/
 new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", "foreground"]], function() {
-	palette = new vec2(WIDTH*1.8, HEIGHT);
+	palette = new vec2(WIDTH*1.8, HEIGHT*.8);
 	c_input();
 	options[1] = tl[opos[0]];
 	if !array_length(options[2]) exit;

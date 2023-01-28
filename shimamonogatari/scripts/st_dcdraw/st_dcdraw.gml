@@ -1,5 +1,5 @@
 function st_dcdraw() {
-	c_drawinput();
+	//c_drawinput();
 	weapons[eqwp][altpos].step(attack, alt);
 	weapons[eqwp][altpos].draw();
 	st_dcdrawui();
@@ -51,4 +51,6 @@ function st_dcdraw() {
 		faceangle = lerp_angle(faceangle, ang, .15);
 		draw_sprite_ext(s_dcface, 0, x, y-8, 1, ineg(ang >= 90 && ang <= 270), faceangle, c_white, 1);
 	}
+	//draw_sprite(, 0, mouse_x, mouse_y);
+	window_set_cursor(s_cursor);
 }

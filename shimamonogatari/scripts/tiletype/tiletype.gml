@@ -37,7 +37,7 @@ enum TILESET {
 	HELL,
 	GENSOKYO,
 	CRATES,
-	CRATESDM,
+	SDM,
 	SNOW,
 	SIZE,
 }
@@ -49,7 +49,7 @@ global.tssprites = [
 	s_null,
 	s_null,
 	s_cratezone,
-	s_null,
+	prt_sdm,
 	s_null,
 	s_null,
 ]
