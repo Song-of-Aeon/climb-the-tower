@@ -5,7 +5,6 @@
 var camx = camera_get_view_x(view_camera[0]);
 var camy = camera_get_view_y(view_camera[0]);
 
-log(camx);
 
 if(reflective)
-surface_copy_part(reflectionSurface,0,0,application_surface,((x-camx)*2)-16,((y-camy)*2)-32-16,64,64);
+	surface_copy_part(reflectionSurface,0,0,application_surface,((x-camx)*2)-16,((y-camy)*2)-32-16,64,64);
