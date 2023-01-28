@@ -14,7 +14,7 @@ function st_v1() {
 	for (i=0; i<360; i+=4) {
 		var dude = distabs(i, 160);
 		var idiot = ds_list_create();
-		var friend = collision_line_list(x, y, x+dude.x, y+dude.y, o_solid, false, false, idiot, false);
+		var friend = collision_line_list(x, y, x+dude.x, y+dude.y, o_notsolid, false, false, idiot, false);
 		var j;
 		for (j=0; j<friend; j++) {
 			idiot[|j].value += 24;

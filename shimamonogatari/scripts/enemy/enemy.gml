@@ -22,7 +22,7 @@ function c_spawnenemy(x, y, archetype) {
 	return chump;
 }
 
-nu enemy("impostor", s_when_im, 100);
+nu enemy("impostor", s_when_the, 100);
 nu enemy("spawnpoint", s_v1, 9999, c_spawnpointstep);
 
 function c_spawnpointstep() {

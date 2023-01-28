@@ -25,6 +25,7 @@ function c_saveroom(filename) {
 			enemies[i].sprite = sprite_get_name(enemies[i].sprite);
 			enemies[i].step = script_get_name(enemies[i].step);
 			enemies[i].draw = script_get_name(enemies[i].draw);
+			enemies[i].create = script_get_name(enemies[i].create);
 		}
 	}
 	var thefile = file_text_open_write(filename+".aeon"); //awesome epic object notation

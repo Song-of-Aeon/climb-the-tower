@@ -6,7 +6,7 @@
   "volume": 1.0,
   "parentRoom": null,
   "views": [
-    {"inherit":false,"visible":true,"xview":0,"yview":0,"wview":512,"hview":288,"xport":0,"yport":0,"wport":1024,"hport":576,"hborder":160,"vborder":120,"hspeed":-1,"vspeed":-1,"objectId":null,},
+    {"inherit":false,"visible":true,"xview":0,"yview":0,"wview":512,"hview":288,"xport":0,"yport":0,"wport":1024,"hport":576,"objectId":null,"hborder":160,"vborder":120,"hspeed":-1,"vspeed":-1,},
   ],
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
