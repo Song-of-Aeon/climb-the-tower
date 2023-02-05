@@ -27,3 +27,4 @@ repeat(c_getticks()){
 
 	//image_alpha = clamp(image_alpha+((abs(hspd)+abs(vspd))/2+speed+.05)/10, 0, alpha);
 }
+depth = -9;

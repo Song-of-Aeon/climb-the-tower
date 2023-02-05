@@ -51,7 +51,7 @@ function st_v1() {
 	camera_set_view_border(view_camera[0], WIDTH, HEIGHT);
 	
 	//log(wep);
-	iterate wep to {
+	/*iterate wep to {
 		if wep[i].hit && array_length(weapons) >= i {
 			if eqwp != i {
 				eqwp = i;
@@ -63,7 +63,7 @@ function st_v1() {
 			}
 		}
 	}
-	if altwep.hit altpos = cycle(altpos+1, array_length(weapons[eqwp]));
+	if altwep.hit altpos = cycle(altpos+1, array_length(weapons[eqwp]));*/
 	
 	arm[eqarm].step(punch);
 	

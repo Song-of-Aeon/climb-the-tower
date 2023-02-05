@@ -1,4 +1,4 @@
-nu enemy("sakuya", s_mistake, 1000, c_sakuyastep);
+nu enemy("sakuya", s_akuya, 200, c_sakuyastep);
 
 function c_sakuyastep2() {
 	statish("timer", 0);
@@ -104,6 +104,16 @@ function c_sakuyastep2() {
 }
 
 function c_sakuyastep() {
+	
+	if df.x < 160 tiles {
+		x = -999;
+		exit;
+	}
+	itsover++;
+	if itsover > 30 sec {
+		room_goto(icarus);
+	}
+	show_debug_message("going");
 	statish("timer", 0);
 	statish("attack", -1);
 	statish("attackamount", 0);

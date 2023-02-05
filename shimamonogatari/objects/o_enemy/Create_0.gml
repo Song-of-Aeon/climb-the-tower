@@ -7,3 +7,5 @@ maxhp = 10;
 spd = new sped();
 count = 0;
 iterations = 0;
+farts = 0;
+itsover = 0;

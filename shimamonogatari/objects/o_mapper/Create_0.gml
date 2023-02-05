@@ -257,6 +257,15 @@ triggers = [];
 
 mousepos = new vec2();
 
+var friend = mp[$"sdm"];
+c_loadmap(friend);
+instance_destroy(o_mapper);
+log("enemied");
+with o_enemy {
+	step = archetype.step;
+}
+instance_create(10 tiles, 10 tiles, DEFINE);
+
 exit;
 datas[0] = [variable_struct_get_names(tl), [-2, -1, 0, 1, 2]];
 datas[1] = [variable_struct_get_names(en)];

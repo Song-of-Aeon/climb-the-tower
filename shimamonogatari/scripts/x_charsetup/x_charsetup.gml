@@ -1,3 +1,4 @@
+/*
 nu chardata("nothingman", "", s_null, se_null, 1);
 nu chardata("sans", "sans", s_null, se_null, 1, u, ft_comicsans);
 nu chardata("kotohime", "Kotohime", s_kotohime, se_null, .7);

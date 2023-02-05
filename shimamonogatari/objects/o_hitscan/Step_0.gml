@@ -21,3 +21,4 @@ if delay {
 	}
 }
 image_alpha = alpha;
+depth = -9;

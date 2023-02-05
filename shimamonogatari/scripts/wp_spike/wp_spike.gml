@@ -25,13 +25,13 @@ weapongen({
 				guy.damage = 5;
 				guy.multihit = 4;
 			}
-			se_play(se_revolver, 1-chargeshot*.25);
+			//se_play(se_revolver, 1-chargeshot*.25);
 			recoil = 6+chargeshot*5;
 			cooldown = 1.31 sec;
 			chargeshot = 0;
 		}
 		cooldown = floor(cooldown-1);
-		if cooldown == 0 se_play(se_revclick, 1.2+random(.4));
+		if cooldown == 0 //se_play(se_revclick, 1.2+random(.4));
 		coins = min(coins+1/3/60, 2-chargeshot);
 		if alt.hit && coins {
 			coins--;

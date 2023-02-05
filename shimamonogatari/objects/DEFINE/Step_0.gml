@@ -14,3 +14,7 @@ if hp <= 0 {
 	drawstate = c_null;
 }
 depth = -9;
+
+if y > room_height {
+	room_goto(icarus);
+}

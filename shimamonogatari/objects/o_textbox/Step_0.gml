@@ -1,95 +1,55 @@
 c_input();
-count++;
+wait--;
 
-if !txtprocessed {
-	margin = width/20;
-	//if !global.gameplay {
-	//c_savevn(msgscript, style);
-	//}
-    msgscript();
-	talksize = array_length(msg);
-	talkpos = 0;
-	//if msg[talkpos].bg != "UNCHANGED" bg = msg[talkpos].bg;
-	textline_next();
-	/*var dudes = font_get_size(draw_get_font())-1;
-	var dudes2 = floor((sprite_width-margin*2)/dudes);
-	msg[talkpos].text = lb_auto(msg[talkpos].text, dudes2);
-	talklength = string_length(msg[talkpos].text)+1;
-	drawing = ""
-	drawchars = 0;
-	msg[talkpos].event();
-	c_charpush(new talkchar(msg[talkpos].sprite, msg[talkpos].name, msg[talkpos].spritepos));
-	talkspeed = talker[0].textspeed;
-	var i;
-	for (i=0; i<array_length(talker[0].texteffects); i++) {
-		msg[talkpos].text = talker[0].texteffects + msg[talkpos.text];
-	}
-	if msg[talkpos].bg != "UNCHANGED" bg = msg[talkpos].bg;
-	didsounds = array_create(999);
-	didfuncs = array_create(999);
-	atsound = 0;
-	atfunc = 0;*/
-	txtprocessed = true;
-}
-
-var i;
-for (i=0; i<array_length(talker); i++) {
-	talker[i].x = lerp(talker[i].x, x+(talker[i].position-2)*width/5, .1);
-	if talker[i].position <= SPRITEPOS.RIGHT {
-		if !fading talker[i].alpha = 1 else
-			talker[i].alpha = max(talker[i].alpha+.1, 0);
-	} else {
-		if !fading talker[i].alpha = 0 else
-			talker[i].alpha = min(talker[i].alpha-.1, 0);
-	}
-}
-
-if attack.hold {
+if skip.hold {
+	select = true;
 	wait = 0;
 }
 
-if wait || (halting && !select) {
-	wait--;
+if interim {
+	textline_next();
 	exit;
 }
 
-if attack.hit {
-    select = true;
-}
-if !advance {
-	select = false;
-}
-if selecting {
-	select = true;
-	selecting = false;
+skip = select;
+if back halting = !halting;
+if select halting = false;
+
+var i;
+for (i=array_length(talkers)-1; i>=0; i--) {
+	talkers[i].step();
 }
 
+if wait || halting exit;
 
-if drawchars < talklength && !skipped {
-    skip = select;
-    drawchars += talkspeed;
-	if ncm(4+round((1/talkspeed)/4)) {
-		var guy = audio_play_sound(talker[0].talksound, 0, false);
-		audio_sound_gain(guy, .2, 0);
-		audio_sound_pitch(guy, random(1)+.5);
+count++;
+
+if charpos < string_length(msg[talkpos].text) {
+	var i;
+	for (i=0; i<talkspeed; i++) {
+		var flatpos = floor(charpos);
+		tevents[flatpos+i].event(tevents[flatpos+i].argstr);
+		tevents[flatpos+i].event = c_null;
 	}
-    if skip { //yeah almost
-		while drawchars <= talklength && string_copy(msg[talkpos].text, drawchars+specialchars, 2) != "|w" {
-			//log(string_copy(msg[talkpos].text, drawchars, 2))
-			drawchars++;
-		}
-    }
-    message_draw = string_copy(msg[talkpos].text, 0, drawchars);
+	charpos += talkspeed;
+	
+	if ncm(4+round((1/talkspeed)/4)) se_play(talkers[0].talksound, random(1)+.5, .25);
+	if skip charpos = string_length(msg[talkpos].text);
 } else {
 	isdone = true;
+	if !advance gotime = true;
     if select textboxes_complete();
 	if gotime {
 		gotime = false;
-        if (talkpos < talksize-1) {
+		if talkpos < array_length(msg)-1 {
 			textline_next();
-        } else {
+		} else {
 			endevent();
-            instance_destroy();
-        }
-    }
+			instance_destroy();
+		}
+	}
+}
+
+if !surface_exists(textsurf) {
+	textsurf = surface_create(room_width, room_height);
 }
