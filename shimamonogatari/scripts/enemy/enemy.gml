@@ -14,15 +14,17 @@ function c_spawnenemy(x, y, archetype) {
 	chump.hp = archetype.hp;
 	chump.maxhp = archetype.hp;
 	chump.sprite_index = archetype.sprite;
-	chump.step = method(chump, archetype.step);
-	chump.draw = method(chump, archetype.draw);
+	if(archetype.step != undefined)
+		chump.step = method(chump, archetype.step);
+	if(archetype.draw != undefined)
+		chump.draw = method(chump, archetype.draw);
 	chump.archetype = archetype;
 	c_tilequantize(chump);
 	//method(chump, archetype.create)();
 	return chump;
 }
 
-nu enemy("impostor", s_when_the, 100);
+nu enemy("impostor", s_if_you, 100);
 nu enemy("spawnpoint", s_v1, 9999, c_spawnpointstep);
 
 function c_spawnpointstep() {

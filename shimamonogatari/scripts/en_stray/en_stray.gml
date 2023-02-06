@@ -1,4 +1,4 @@
-nu enemy("stray", s_when_im, 4, function() {
+nu enemy("stray", s_mordy, 4, function() {
 	var closeness = point_distance(x, y, df.x, df.y);
 	if closeness < 40 && x < df.x && walktime < 90 {
 		if place_meeting(x-12, y, o_solid) && spd.v == 0 {

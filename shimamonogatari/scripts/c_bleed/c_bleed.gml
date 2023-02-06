@@ -3,7 +3,7 @@
 function c_bleed(x,y,amount,dir){
 	repeat(amount){
 		var blood = instance_create(x,y,o_blood);
-		blood.direction = dir + random_range(-20,20);
+		blood.direction = dir + random_range(-50,50);
 	}
 	
 }
