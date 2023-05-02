@@ -70,13 +70,13 @@ inv = 0;
 	down: s_medown,
 }*/
 
-sprites = {
+/*sprites = {
 	idle: s_dc,
 	walk: s_v1,
 	up: s_v1,
 	upwalk: s_v1,
 	down: s_v1,
-}
+}*/
 
 /*sprites = {
 	idle: s_lily,
@@ -98,7 +98,7 @@ sprites = {
 }*/
 faceangle = 0;
 
-state = st_v1 //not for long
+state = st_ky //not for long
 drawstate = st_dcdraw;
 //actionstate = st_7
 

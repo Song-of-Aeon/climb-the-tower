@@ -16,5 +16,5 @@ if hp <= 0 {
 depth = -9;
 
 if y > room_height {
-	room_goto(icarus);
+	//room_goto(icarus);
 }

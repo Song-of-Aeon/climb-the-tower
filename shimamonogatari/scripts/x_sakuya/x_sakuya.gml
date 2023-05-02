@@ -111,7 +111,7 @@ function c_sakuyastep() {
 	}
 	itsover++;
 	if itsover > 30 sec {
-		room_goto(icarus);
+		//room_goto(icarus);
 	}
 	show_debug_message("going");
 	statish("timer", 0);

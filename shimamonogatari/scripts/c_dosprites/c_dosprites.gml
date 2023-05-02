@@ -56,3 +56,9 @@ function c_dospriteslily() {
 		image_index = clamp((spd.v+jumpspeed)*2, 0, sprite_get_info(sprites.jump).num_subimages-1);
 	}
 }
+
+function c_dospritesky() {
+	if hput != 0 {
+		image_xscale = -hput;
+	}
+}

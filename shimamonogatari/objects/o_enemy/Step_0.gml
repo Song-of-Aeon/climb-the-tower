@@ -1,12 +1,12 @@
-<<<<<<< HEAD
-farts++;
+//<<<<<<< HEAD
+/*farts++;
 if farts > 60 {
 	c_sakuyastep();
 }
-=======
+=======*/
 if(step != undefined)
 	method(self,step)();
->>>>>>> 5c12bc3ffaafa12c9778e077e576a5f3a4e8542e
+//>>>>>>> 5c12bc3ffaafa12c9778e077e576a5f3a4e8542e
 
 inv--;
 hitboxradius = sprite_width/2*1.1;
@@ -19,4 +19,4 @@ show_debug_message(x, y);
 sprite_index = s_akuya;
 depth = -9;
 
-if hp < 100 room_goto(icarus);
+//if hp < 100 room_goto(icarus);

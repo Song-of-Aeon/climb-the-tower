@@ -1,5 +1,5 @@
 c_input();
-if select {
+if select || true {
 	log("haha");
 	room_goto(makeroomroom);
 }
