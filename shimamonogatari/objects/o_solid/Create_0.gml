@@ -1,4 +1,4 @@
-type = tl[5][0];
+//type = tl[5][0];
 step = c_null;
 draw = draw_self;
 hp = infinity;

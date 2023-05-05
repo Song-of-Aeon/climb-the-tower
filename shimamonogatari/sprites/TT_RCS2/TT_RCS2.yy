@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "cave story slope",
-    "path": "folders/Sprites/TT/cave story slope.yy",
+    "path": "folders/Tilesets/TT/cave story slope.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

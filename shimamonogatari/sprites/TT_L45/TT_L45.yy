@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "45 degree slope",
-    "path": "folders/Sprites/TT/45 degree slope.yy",
+    "path": "folders/Tilesets/TT/45 degree slope.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

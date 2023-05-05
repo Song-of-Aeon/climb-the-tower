@@ -61,4 +61,5 @@ function c_dospritesky() {
 	if hput != 0 {
 		image_xscale = -hput;
 	}
+	image_speed = 0;
 }

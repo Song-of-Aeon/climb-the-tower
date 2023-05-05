@@ -1,5 +1,5 @@
 function c_maketile(x, y, type) {
-	
+	log(type);
 	if type.sprite == prt_sdm {
 		switch type.index+1 {
 			case 17:
