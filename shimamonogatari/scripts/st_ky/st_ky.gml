@@ -39,14 +39,11 @@ function st_ky() {
         }
     }
     //c_newcollision();
-	log(spd.h, spd.v);
 	var xtouching = move_and_collide(spd.h, 0, o_solid);
-	log(spd.h, spd.v);
 	var ytouching = move_and_collide(0, spd.v, o_solid);
-	log(spd.h, spd.v);
-	log("and it");
-	log(xtouching);
-	log(ytouching);
+	//log("and it");
+	//log(xtouching);
+	//log(ytouching);
 	if array_length(ytouching) {
 		leniance = lencount;
         aerial = false;

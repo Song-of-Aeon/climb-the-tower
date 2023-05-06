@@ -264,6 +264,7 @@ new mapsetting("save", [["really save?"]], function() {
 }),
 new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp)], function() {
 	c_input();
+	options[1] = variable_struct_get_names(mp);
 	if select {
 		var friend = mp[$options[1][opos[1]]];
 		c_loadmap(friend);

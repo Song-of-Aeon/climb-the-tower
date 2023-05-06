@@ -145,6 +145,7 @@
     {"id":{"name":"test_display","path":"objects/test_display/test_display.yy",},},
     {"id":{"name":"wp_coin","path":"scripts/wp_coin/wp_coin.yy",},},
     {"id":{"name":"s_pikecc","path":"sprites/s_pikecc/s_pikecc.yy",},},
+    {"id":{"name":"x_intro","path":"scripts/x_intro/x_intro.yy",},},
     {"id":{"name":"instance_create","path":"scripts/instance_create/instance_create.yy",},},
     {"id":{"name":"s_bulthin","path":"sprites/s_bulthin/s_bulthin.yy",},},
     {"id":{"name":"TT_UR45","path":"sprites/TT_UR45/TT_UR45.yy",},},

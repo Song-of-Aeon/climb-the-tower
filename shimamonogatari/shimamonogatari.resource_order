@@ -115,6 +115,7 @@
     {"name":"test_display","order":4,"path":"objects/test_display/test_display.yy",},
     {"name":"wp_coin","order":4,"path":"scripts/wp_coin/wp_coin.yy",},
     {"name":"s_pikecc","order":18,"path":"sprites/s_pikecc/s_pikecc.yy",},
+    {"name":"x_intro","order":3,"path":"scripts/x_intro/x_intro.yy",},
     {"name":"instance_create","order":6,"path":"scripts/instance_create/instance_create.yy",},
     {"name":"s_bulthin","order":21,"path":"sprites/s_bulthin/s_bulthin.yy",},
     {"name":"TT_UR45","order":3,"path":"sprites/TT_UR45/TT_UR45.yy",},

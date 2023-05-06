@@ -3,6 +3,9 @@ function st_kydraw() {
 	weapons[eqwp][altpos].draw();
 	draw_set_color(c_white);
 	draw_set_font(ft_comicsans);
+	
+	exit;
+	
 	draw_text(48, 10, "1. jumpspeed: " + string(jumpspeed));
 	draw_text(48, 20, "2. gravity: " + string(grav));
 	draw_text(48, 30, "3. acceleration: " + string(accel));

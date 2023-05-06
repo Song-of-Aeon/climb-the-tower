@@ -5,6 +5,7 @@ function enemy(name_, sprite_, hp_,  step_=c_null, draw_=draw_self, create_=c_nu
 	step = step_;
 	draw = draw_;
 	create = create_;
+	name = name_;
 	variable_struct_set(global.enemies, name_, self);
 }
 
@@ -12,6 +13,7 @@ function c_spawnenemy(x, y, archetype) {
 	log(archetype);
 	var chump  = instance_create(x, y, o_enemy);
 	chump.hp = archetype.hp;
+	chump.name = archetype.name;
 	chump.maxhp = archetype.hp;
 	chump.sprite_index = archetype.sprite;
 	if(archetype.step != undefined)

@@ -6,7 +6,8 @@ function c_loadmap(map_) {
 	with o_mapper {
 		guys = [];
 		enemies = [];
-		iterate map_.guys to {
+		iterate map_.guys to { //bro just store their damn names
+			
 			if typeof(map_.guys[i].sprite) == "string" {
 				map_.guys[i].sprite = asset_get_index(map_.guys[i].sprite);
 			}
@@ -37,7 +38,12 @@ function c_loadmap(map_) {
 	
 		iterate map_.enemies to {
 			log("enemize");
-			if typeof(map_.enemies[i].sprite) == "string" {
+			var friend = en[$map_.enemies[i].name];
+			map_.enemies[i].sprite = friend.sprite;
+			map_.enemies[i].create = friend.create;
+			map_.enemies[i].step = friend.step;
+			map_.enemies[i].draw = friend.draw;
+			/*if typeof(map_.enemies[i].sprite) == "string" {
 				map_.enemies[i].sprite = asset_get_index(map_.enemies[i].sprite);
 			}
 			if typeof(map_.enemies[i].create) == "string" {
@@ -51,7 +57,7 @@ function c_loadmap(map_) {
 			if typeof(map_.enemies[i].draw) == "string" {
 				log(map_.enemies[i].draw, script_get_index(map_.enemies[i].draw));
 				map_.enemies[i].draw = script_get_index(map_.enemies[i].draw);
-			}
+			}*/
 			var chump = c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]);
 			var newman = deep_copy(map_.enemies[i]);
 			chump.links = newman.links;

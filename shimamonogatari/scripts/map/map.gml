@@ -13,7 +13,7 @@ nu map("coinroom", coinroom);*/
 
 global.maps = {};
 
-global.maps.empty = {
+/*global.maps.empty = {
 	roomsize: 512,
 	roomname: 288,
 	guys: [],
@@ -21,6 +21,6 @@ global.maps.empty = {
 	triggers: [],
 	spawn: new vec2(10 tiles, 10 tiles),
 	thumbnail: s_mistake,
-}
+}*/
 
 #macro mp global.maps
