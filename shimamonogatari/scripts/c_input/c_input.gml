@@ -19,7 +19,7 @@ function c_inputload() {
 	nu kinput("up", [vk_up, "W"]);
 	nu kinput("right", [vk_right, "D"]);
 	
-	nu kinput("jump", [vk_space, vk_up, "Z", vk_enter]);
+	nu kinput("jump", [vk_space, vk_up, "C", vk_enter]);
 	nu kinput("attack", [mb_left, "X"]);
 	nu kinput("reload", ["R"]);
 	nu kinput("shift", [vk_shift]);
@@ -38,6 +38,7 @@ function c_inputload() {
 	
 	nu kinput("ctrl", [vk_control]);
 	nu kinput("zed", ["Z"]);
+	nu kinput("yed", ["Y"]);
 	nu kinput("skip", [vk_control, gp_select]);
 }
 

@@ -13,23 +13,6 @@ espd = {
 }
 defense = 0;
 //log(global.weapons)
-weapons = [
-	[wp.javelin, wp.coin],
-	[wp.shotgun, wp.deagle],
-	[wp.bounceback, wp.nicole_dunlap],
-];
-arm = [
-	wp.woodarm,
-]
-eqwp = 0;
-eqarm = 0;
-dashing = false;
-stamina = 3;
-slamduration = 0;
-slamming = false;
-sliding = false;
-punchdelay = 0;
-walljumps = 3;
 
 cameratarg = new vec2();
 cameradelay = 0;
@@ -62,44 +45,77 @@ maxhp = 100;
 dir = 0;
 inv = 0;
 
-/*sprites = {
-	idle: s_meidle,
-	walk: s_mewalk,
-	up: s_meup,
-	upwalk: s_meupwalk,
-	down: s_medown,
-}*/
-
-/*sprites = {
-	idle: s_dc,
-	walk: s_v1,
-	up: s_v1,
-	upwalk: s_v1,
-	down: s_v1,
-}*/
-
-/*sprites = {
-	idle: s_lily,
-	walk: s_lilyrun,
-	run: s_lilyfastrun,
-	up: s_lily,
-	upwalk: s_lily,
-	down: s_lily,
-	jump: s_lilyjump,
+switch os_get_config() {
+	default:
+		sprites = {
+			idle: s_meidle,
+			walk: s_mewalk,
+			up: s_meup,
+			upwalk: s_meupwalk,
+			down: s_medown,
+		}
+		weapons = [
+			[wp.deagle],
+		];
+		state = st_standard;
+		drawstate = st_standarddraw;
+		break;
+	case "ultrakill":
+		sprites = {
+			idle: s_dc,
+			walk: s_v1,
+			up: s_v1,
+			upwalk: s_v1,
+			down: s_v1,
+		}
+		weapons = [
+			[wp.javelin, wp.coin],
+			[wp.shotgun, wp.deagle],
+			[wp.bounceback, wp.nicole_dunlap],
+		];
+		arm = [
+			wp.woodarm,
+		]
+		eqwp = 0;
+		eqarm = 0;
+		dashing = false;
+		stamina = 3;
+		slamduration = 0;
+		slamming = false;
+		sliding = false;
+		punchdelay = 0;
+		walljumps = 3;
+		state = st_v1;
+		drawstate = st_dcdraw;
+		break;
+	case "lily":
+		sprites = {
+			idle: s_lily,
+			walk: s_lilyrun,
+			run: s_lilyfastrun,
+			up: s_lily,
+			upwalk: s_lily,
+			down: s_lily,
+			jump: s_lilyjump,
+		}
+		walkspeed = 1.7;
+		jumpspeed = 4.6;
+		grav = .12
+		leniance = 6;
+		accel = .1;
+		airaccel = .1;
+		frict = .16;
+		airfrict = .08;
+		dashtime = 0;
+		state = st_lily;
+		drawstate = st_lilydraw;
+		break;
+	case "elsewhere":
+		state = st_ky;
+		drawstate = st_dcdraw;
+		break;
 }
-sprites = {
-	idle: s_lily,
-	walk: s_lily,
-	run: s_lily,
-	up: s_lily,
-	upwalk: s_lily,
-	down: s_lily,
-	jump: s_lily,
-}*/
 faceangle = 0;
-
-state = st_ky //not for long
-drawstate = st_dcdraw;
 //actionstate = st_7
 
 xdraw = -100;
@@ -111,13 +127,5 @@ global.me = id;
 
 //lilystats
 /*
-walkspeed = 1.7;
-jumpspeed = 4.6;
-grav = .12
-leniance = 6;
-accel = .1;
-airaccel = .1;
-frict = .16;
-airfrict = .08;
-dashtime = 0;
+
 */

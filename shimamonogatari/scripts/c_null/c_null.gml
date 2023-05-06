@@ -20,6 +20,10 @@ function c_null() {
 #macro c_evil 0x999900
 #macro c_pink 0xFF8FFF
 #macro c_cyan $ECD919
+#macro c_stop $FFA914
+#macro c_aolu $FF8080
+#macro c_gold $73D1FA
+#macro c_violet $E643A0
 #macro prog for
 #macro dial switch
 #macro stupidfalse false

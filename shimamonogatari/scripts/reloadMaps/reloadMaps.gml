@@ -7,8 +7,8 @@ function reloadMaps(){
 
 
 	var file_name = file_find_first("*.aeon", 0);
-	while file_name != "" { //took this shit from the DOCS i didnt feel like typing
-		log(file_name);
+	while file_name != "" /*&& !string_contains(file_name, "_hist_")*/ { //took this shit from the DOCS i didnt feel like typing
+		//log(file_name);
 	    c_loadroom(file_name);
 	    file_name = file_find_next();
 	}

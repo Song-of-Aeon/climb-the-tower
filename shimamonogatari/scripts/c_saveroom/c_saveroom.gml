@@ -1,12 +1,13 @@
 global.thumbnailsize = new vec2(200, 200);
 
-function c_saveroom(filename) {
+function c_saveroom(filename, roomname_=u, returnearly=false) {
+	if roomname_ == u roomname_ = filename;
 	if roomname == "" {
 		filename = "untitled";
 	}
 	var theroom = {
 		roomsize: roomsize,
-		roomname: filename,
+		roomname: roomname_,
 		guys: deep_copy(guys),
 		enemies: deep_copy(enemies),
 		triggers: triggers,
@@ -37,26 +38,16 @@ function c_saveroom(filename) {
 			enemies[i].create = script_get_name(enemies[i].create);
 		}
 	}
+	if returnearly {
+		return theroom;
+	}
 	var thefile = file_text_open_write(filename+".aeon"); //awesome epic object notation
 	file_text_write_string(thefile, json_stringify(theroom));
 	file_text_close(thefile);
+	log("saved!");
 }
 
-function c_loadroom(filename) {
-	var thefile = file_text_open_read(filename);
 
-	var theroom = json_parse(file_text_read_string(thefile));
-	file_text_close(thefile);
-	if get_value(mp, theroom.roomname) != undefined {
-		sprite_delete(mp[$theroom.roomname].thumbnail);
-	}
-	var surf = surface_create(global.thumbnailsize.x, global.thumbnailsize.y);
-	log(theroom.thumbnail);
-	var buff = buffer_base64_decode(theroom.thumbnail);
-	buffer_set_surface(buff, surf, 0);
-	theroom.thumbnail = sprite_create_from_surface(surf, 0, 0, global.thumbnailsize.x, global.thumbnailsize.y, false, false, 0, 0);
-	mp[$theroom.roomname] = theroom;
-}
 
 
 

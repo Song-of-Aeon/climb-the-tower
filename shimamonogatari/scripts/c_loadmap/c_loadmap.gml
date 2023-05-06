@@ -32,8 +32,8 @@ function c_loadmap(map_) {
 			chump.thing = newman;
 			array_push(guys, newman);
 		}
-		log(guys);
-		log(map_.enemies);
+		//log(guys);
+		//log(map_.enemies);
 	
 		iterate map_.enemies to {
 			log("enemize");

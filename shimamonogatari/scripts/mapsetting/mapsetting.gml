@@ -6,4 +6,7 @@ function mapsetting(name_, options_, step_, draw_) constructor {
 	pos = 0;
 	opos = array_create(array_length(options));
 	count = 0;
+	xdraw = o_mapper.elementxdraw;
+	ydraw = o_mapper.elementydraw;
+	interval = 32;
 }

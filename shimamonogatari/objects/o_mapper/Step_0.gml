@@ -1,5 +1,10 @@
 c_input();
 
+if !array_length(history) && surface_exists(application_surface) {
+	//c_pushhistory("initialized");
+	//created = true;
+}
+
 if reload.hit {
 	typing = !typing;
 }
@@ -7,11 +12,19 @@ if reload.hit {
 c
 if ncm(60 sec) && array_length(guys) {
 	c_saveroom(roomname+"autosave");
+	//c_loadroom(roomname+"autosave");
 }
 mousepos.x = mouse_x;
 mousepos.y = mouse_y;
 
 //if shift.hit log(guys);
+
+if ctrl.hold && zed.hit {
+	undo();
+}
+if ctrl.hold && yed.hit {
+	redo();
+}
 
 if shift.hold {
 	//log(x, y);
