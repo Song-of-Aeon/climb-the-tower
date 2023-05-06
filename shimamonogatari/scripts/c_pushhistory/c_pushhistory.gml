@@ -51,6 +51,7 @@ function undo() {
 				roomsize = friend.roomsize;
 				triggers = friend.triggers;
 				spawn = friend.spawn;
+				bg = global.backgrounds[$friend.bg];
 			}
 			undone++;
 			return true;
@@ -79,6 +80,7 @@ function redo() {
 			roomsize = friend.roomsize;
 			triggers = friend.triggers;
 			spawn = friend.spawn;
+			bg = global.backgrounds[$friend.bg];
 		}
 		return true;
 	}

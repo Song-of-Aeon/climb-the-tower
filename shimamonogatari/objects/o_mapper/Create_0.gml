@@ -187,6 +187,15 @@ new mapsetting("triggers", [["tra", "touch event", "link"], variable_struct_get_
 }, function() {
 	
 }),
+new mapsetting("background", [variable_struct_get_names(global.backgrounds)], function() {
+	c_input();
+	//log(variable_struct_get_names(global.backgrounds));
+	o_mapper.bg = global.backgrounds[$options[0][opos[0]]];
+}, function() {
+	var z=0;
+	draw_set_color(pos==z++ ? c_white : c_aolu);
+	draw_text(xdraw, ydraw+z*interval, options[0][opos[0]]);
+}),
 new mapsetting("map settings", [["name", "size", "spawn"], ["lol"], ["lol"]], function() {
 	c
 	c_input();
@@ -277,6 +286,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 				//enemies = friend.enemies;
 				triggers = friend.triggers;
 				spawn = friend.spawn;
+				bg = global.backgrounds[$friend.bg];
 				created = false;
 				actionnum = 0;
 				historycap = 30;
@@ -306,6 +316,7 @@ count = 0;
 
 roomsize = new vec2(512, 288);
 roomname = "untitled";
+bg = global.backgrounds.plain;
 
 
 selectionzone = 0;

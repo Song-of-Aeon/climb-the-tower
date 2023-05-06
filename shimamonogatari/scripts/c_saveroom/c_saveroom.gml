@@ -12,6 +12,7 @@ function c_saveroom(filename, roomname_=u, returnearly=false) {
 		enemies: deep_copy(enemies),
 		triggers: triggers,
 		spawn: spawn,
+		bg: bg.name,
 		thumbnail: s_mistake,
 	}
 	var surf = surface_create(global.thumbnailsize.x, global.thumbnailsize.y);

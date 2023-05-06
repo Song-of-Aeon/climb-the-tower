@@ -8,7 +8,7 @@ if !array_length(history) && surface_exists(application_surface) {
 if reload.hit {
 	typing = !typing;
 }
-
+global.currentbackground = bg;
 c
 if ncm(60 sec) && array_length(guys) {
 	c_saveroom(roomname+"autosave");

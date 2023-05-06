@@ -57,6 +57,7 @@
   "ResourceOrderSettings": [
     {"name":"enemy","order":31,"path":"scripts/enemy/enemy.yy",},
     {"name":"c_reload","order":27,"path":"scripts/c_reload/c_reload.yy",},
+    {"name":"o_persistent","order":20,"path":"objects/o_persistent/o_persistent.yy",},
     {"name":"x_genericbullets","order":2,"path":"scripts/x_genericbullets/x_genericbullets.yy",},
     {"name":"weapongen","order":12,"path":"scripts/weapongen/weapongen.yy",},
     {"name":"c_maketrigger","order":16,"path":"scripts/c_maketrigger/c_maketrigger.yy",},
@@ -366,6 +367,7 @@
     {"name":"txt_kotohime","order":2,"path":"scripts/txt_kotohime/txt_kotohime.yy",},
     {"name":"c_charpush","order":1,"path":"scripts/c_charpush/c_charpush.yy",},
     {"name":"txt_test","order":1,"path":"scripts/txt_test/txt_test.yy",},
+    {"name":"background","order":85,"path":"scripts/background/background.yy",},
     {"name":"s_85109157","order":94,"path":"sprites/s_85109157/s_85109157.yy",},
     {"name":"s_dcslide","order":5,"path":"sprites/s_dcslide/s_dcslide.yy",},
     {"name":"s_spacetext","order":4,"path":"sprites/s_spacetext/s_spacetext.yy",},

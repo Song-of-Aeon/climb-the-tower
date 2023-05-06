@@ -85,6 +85,7 @@
   "resources": [
     {"id":{"name":"enemy","path":"scripts/enemy/enemy.yy",},},
     {"id":{"name":"c_reload","path":"scripts/c_reload/c_reload.yy",},},
+    {"id":{"name":"o_persistent","path":"objects/o_persistent/o_persistent.yy",},},
     {"id":{"name":"x_genericbullets","path":"scripts/x_genericbullets/x_genericbullets.yy",},},
     {"id":{"name":"weapongen","path":"scripts/weapongen/weapongen.yy",},},
     {"id":{"name":"c_maketrigger","path":"scripts/c_maketrigger/c_maketrigger.yy",},},
@@ -419,6 +420,7 @@
     {"id":{"name":"txt_kotohime","path":"scripts/txt_kotohime/txt_kotohime.yy",},},
     {"id":{"name":"c_charpush","path":"scripts/c_charpush/c_charpush.yy",},},
     {"id":{"name":"txt_test","path":"scripts/txt_test/txt_test.yy",},},
+    {"id":{"name":"background","path":"scripts/background/background.yy",},},
     {"id":{"name":"s_85109157","path":"sprites/s_85109157/s_85109157.yy",},},
     {"id":{"name":"s_dcslide","path":"sprites/s_dcslide/s_dcslide.yy",},},
     {"id":{"name":"s_spacetext","path":"sprites/s_spacetext/s_spacetext.yy",},},
