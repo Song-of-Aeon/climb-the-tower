@@ -4,7 +4,8 @@ function st_ky() {
 	weapons[0][0].step(attack, alt);
 	
 	if debug.hit {
-		textbox_create(txt_kotohime);
+		//textbox_create(txt_kotohime);
+		blink();
 		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
 	accel = .1;

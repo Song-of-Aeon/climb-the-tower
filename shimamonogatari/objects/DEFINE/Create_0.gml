@@ -114,6 +114,14 @@ switch os_get_config() {
 		drawstate = st_lilydraw;
 		break;
 	case "elsewhere":
+		sprites = {
+			idle: s_ky,
+			walk: s_ky,
+			up: s_ky,
+			upwalk: s_ky,
+			down: s_ky,
+			jump: s_kyjump,
+		}
 		weapons = [
 			[wp.deagle],
 		];

@@ -61,5 +61,18 @@ function c_dospritesky() {
 	if hput != 0 {
 		image_xscale = -hput;
 	}
-	image_speed = 0;
+	if aerial {
+		image_speed = 0;
+		sprite_index = sprites.jump;
+		image_index = !!spd.v;
+	} else {
+		if hput != 0 {
+			sprite_index = sprites.walk;
+			image_speed = spd.h/12;
+		} else {
+			sprite_index = up.hold ? sprites.up : sprites.idle;
+			image_speed = 0;
+			image_index = 0;
+		}
+	}
 }
