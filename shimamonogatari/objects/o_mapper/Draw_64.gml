@@ -12,18 +12,16 @@ for (i=1; i<8; i++) {
 	draw_text(xdraw+i*170, ydraw, name);
 }
 draw_reset();
-draw_set_halign(fa_center);
 iterate historynames to {
 	draw_set_color(!i ? c_white : c_aolu);
-	draw_set_alpha(1/i);
-	draw_text(80, 400+i*32, historynames[array_length(historynames)-1-i]);
+	draw_set_alpha(1-i/5);
+	draw_text(elementxdraw, 514-i*32, historynames[array_length(historynames)-1-i]);
 }
 draw_reset();
-draw_set_halign(fa_center);
 draw_set_color(c_aolu);
 iterate futurenames to {
-	draw_set_alpha(1/i);
-	draw_text(80, 400-32-i*32, futurenames[array_length(futurenames)-1-i]);
+	draw_set_alpha(1-i/5);
+	draw_text(elementxdraw, 514+32+i*32, futurenames[array_length(futurenames)-1-i]);
 }
 draw_reset();
 if !typing {
@@ -32,7 +30,8 @@ if !typing {
 	var i;
 	for (i=0; i<200; i++) {
 		draw_set_alpha(2-i/100);
-		draw_point(elementxdraw-6, elementydraw+20+i);
+		draw_point(elementxdraw-10, elementydraw+20+i);
+		draw_point(elementxdraw-10, 600-i);
 	}
 }
 draw_reset();
