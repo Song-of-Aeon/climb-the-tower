@@ -154,7 +154,7 @@ new mapsetting("triggers", [["tra", "touch event", "link"], variable_struct_get_
 		}
 	}
 }, function() {}),
-new mapsetting("map settings", [["name", "size"], ["lol"], ["lol"]], function() {
+new mapsetting("map settings", [["name", "size", "spawn"], ["lol"], ["lol"]], function() {
 	c
 	c_input();
 	if !opos[0] {
@@ -163,11 +163,24 @@ new mapsetting("map settings", [["name", "size"], ["lol"], ["lol"]], function() 
 			o_mapper.roomname = get_string("you fear this place.", "");
 		}
 		pos = 0;
-	} else {
+		options[1] = [];
+		options[2] = [];
+	} else if opos[0] == 1 {
 		options[1] = array_create_order(200, 1, 32);
 		options[2] = array_create_order(200, 1, 18);
 		o_mapper.roomsize.x = options[1][opos[1]] tiles;
 		o_mapper.roomsize.y = options[2][opos[2]] tiles;
+	} else {
+		if attack.hold {
+			o_mapper.spawn.x = c_tilequantizeval(mouse_x);
+			o_mapper.spawn.y = c_tilequantizeval(mouse_y);
+			options[1] = [];
+			options[2] = [];
+		}
+		//options[1] = array_create_order(200, 1, 32);
+		//options[2] = array_create_order(200, 1, 18);
+		//o_mapper.spawn.x = options[1][opos[1]] tiles;
+		//o_mapper.spawn.y = options[2][opos[2]] tiles;
 	}
 }, function() {
 	var z=0;
@@ -176,11 +189,15 @@ new mapsetting("map settings", [["name", "size"], ["lol"], ["lol"]], function() 
 	if !opos[0] {
 		draw_set_alpha((pos==z++)+.4);
 		draw_text(40, 20+z*20, o_mapper.roomname + (count%60 < 30 ? "|" : ""));
-	} else {
+	} else if opos[0] == 1 {
 		draw_set_alpha((pos==z++)+.4);
 		draw_text(40, 20+z*20, options[1][opos[1]]);
 		draw_set_alpha((pos==z++)+.4);
 		draw_text(40, 20+z*20, options[2][opos[2]]);
+	} else {
+		draw_set_alpha(.4);
+		draw_text(40, 20+2*20, o_mapper.spawn.x/global.tilesize);
+		draw_text(40, 20+3*20, o_mapper.spawn.y/global.tilesize);
 	}
 	draw_set_alpha(1);
 }),
@@ -189,6 +206,7 @@ new mapsetting("save", [["really save?"]], function() {
 	if select {
 		log("balling");
 		with o_mapper {c_saveroom(roomname)};
+		reloadMaps();
 	}
 }, function() {
 	var z=0;
@@ -209,6 +227,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 			}
 		} else {
 			log("unenemied");
+			instance_destroy(DEFINE);
 			with o_enemy {
 				step = c_null;
 			}
@@ -218,6 +237,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 				//guys = friend.guys;
 				//enemies = friend.enemies;
 				triggers = friend.triggers;
+				spawn = friend.spawn;
 			}
 		}
 	}
@@ -228,6 +248,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 	draw_set_alpha((pos==z++)+.4);
 	draw_text(40, 20+z*20, options[1][opos[1]]);
 	draw_set_alpha(1);
+	draw_spr(200, 200, mp[$options[1][opos[1]]].thumbnail);
 }),
 ];
 
@@ -254,6 +275,7 @@ log("NO GUYS");
 guys = [];
 enemies = [];
 triggers = [];
+spawn = new vec2(-1 tiles, -1 tiles);
 
 mousepos = new vec2();
 

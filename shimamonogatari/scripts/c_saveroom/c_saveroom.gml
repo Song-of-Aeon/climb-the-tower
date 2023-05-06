@@ -1,3 +1,5 @@
+global.thumbnailsize = new vec2(200, 200);
+
 function c_saveroom(filename) {
 	if roomname == "" {
 		filename = "untitled";
@@ -8,9 +10,16 @@ function c_saveroom(filename) {
 		guys: deep_copy(guys),
 		enemies: deep_copy(enemies),
 		triggers: triggers,
+		spawn: spawn,
+		thumbnail: s_mistake,
 	}
+	var surf = surface_create(global.thumbnailsize.x, global.thumbnailsize.y);
+	surface_copy_part(surf, 0, 0, application_surface, 0, 0, global.thumbnailsize.x, global.thumbnailsize.y);
+	var buff = buffer_create(64, buffer_grow, 1);
+	buffer_get_surface(buff, surf, 0);
+	theroom.thumbnail = buffer_base64_encode(buff, 0, buffer_get_size(buff));
+	//log(thumbnail);
 	with theroom {
-		
 		iterate guys to {
 			if typeof(guys[i].sprite) == "string" continue;
 			guys[i].sprite = sprite_get_name(guys[i].sprite);
@@ -38,6 +47,14 @@ function c_loadroom(filename) {
 
 	var theroom = json_parse(file_text_read_string(thefile));
 	file_text_close(thefile);
+	if get_value(mp, theroom.roomname) != undefined {
+		sprite_delete(mp[$theroom.roomname].thumbnail);
+	}
+	var surf = surface_create(global.thumbnailsize.x, global.thumbnailsize.y);
+	log(theroom.thumbnail);
+	var buff = buffer_base64_decode(theroom.thumbnail);
+	buffer_set_surface(buff, surf, 0);
+	theroom.thumbnail = sprite_create_from_surface(surf, 0, 0, global.thumbnailsize.x, global.thumbnailsize.y, false, false, 0, 0);
 	mp[$theroom.roomname] = theroom;
 }
 

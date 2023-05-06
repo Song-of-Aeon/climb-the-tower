@@ -1,5 +1,5 @@
 function c_loadmap(map_) {
-	log(map_);
+	//log(map_);
 	with all {
 		if !persistent kys;
 	}
@@ -61,6 +61,9 @@ function c_loadmap(map_) {
 		}
 		//enemies = map_.enemies;
 		//instance_create(10 tiles, 10 tiles, DEFINE);
+		if !instance_exists(DEFINE) {
+			instance_create(map_.spawn.x, map_.spawn.y, DEFINE);
+		}
 		/*iterate map_.triggers to {
 			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
 		}*/

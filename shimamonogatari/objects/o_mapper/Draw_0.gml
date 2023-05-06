@@ -17,8 +17,9 @@ draw_set_alpha(1);
 */
 
 //draw_text(10, 10, object_get_name(types[selectedtype]));
-draw_circle(x, y, 3, false);
+//draw_circle(x, y, 3, false);
 draw_set_alpha(.4);
+draw_spr(spawn.x, spawn.y, s_when_im);
 for (i=-global.tilesize/2; i<roomsize.x; i+=global.tilesize) {
 	draw_set_color(make_color_hsv(i%256, 128, 255));
 	draw_set_alpha((abs(c_tilequantizeval(mouse_x)-i)<=8)+.4);

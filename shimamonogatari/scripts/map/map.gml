@@ -19,6 +19,8 @@ global.maps.empty = {
 	guys: [],
 	enemies: [],
 	triggers: [],
+	spawn: new vec2(10 tiles, 10 tiles),
+	thumbnail: s_mistake,
 }
 
 #macro mp global.maps
