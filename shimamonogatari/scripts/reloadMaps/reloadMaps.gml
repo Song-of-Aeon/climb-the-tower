@@ -5,7 +5,7 @@ function reloadMaps(){
 	///c_mapchange(mp[sky_corridor], 10 tiles, 10 tiles);
 	o_mapmanager.currentmap = noone;
 
-
+	//working_directory
 	var file_name = file_find_first("*.aeon", 0);
 	while file_name != "" /*&& !string_contains(file_name, "_hist_")*/ { //took this shit from the DOCS i didnt feel like typing
 		//log(file_name);

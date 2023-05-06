@@ -103,7 +103,7 @@ switch os_get_config() {
 		}
 		walkspeed = 1.7;
 		jumpspeed = 4.6;
-		grav = .12
+		grav = .12;
 		leniance = 6;
 		accel = .1;
 		airaccel = .1;
@@ -117,6 +117,14 @@ switch os_get_config() {
 		weapons = [
 			[wp.deagle],
 		];
+		grav = .16;
+		leniance = 10;
+		accel = .1;
+		airaccel = .04;
+		frict = .14;
+		airfrict = .01;
+		walkspeed = 2.3;
+		jumpspeed = 4;
 		state = st_ky;
 		drawstate = st_kydraw;
 		break;
