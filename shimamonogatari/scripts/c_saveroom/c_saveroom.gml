@@ -16,7 +16,7 @@ function c_saveroom(filename, roomname_=u, returnearly=false) {
 		thumbnail: s_mistake,
 	}
 	var surf = surface_create(global.thumbnailsize.x, global.thumbnailsize.y);
-	surface_copy_part(surf, 0, 0, application_surface, 0, 0, global.thumbnailsize.x, global.thumbnailsize.y);
+	surface_copy_part(surf, 0, 0, application_surface, spawn.x+(global.tilesize/2), spawn.y+(global.tilesize/2), global.thumbnailsize.x, global.thumbnailsize.y);
 	var buff = buffer_create(64, buffer_grow, 1);
 	buffer_get_surface(buff, surf, 0);
 	theroom.thumbnail = buffer_base64_encode(buff, 0, buffer_get_size(buff));

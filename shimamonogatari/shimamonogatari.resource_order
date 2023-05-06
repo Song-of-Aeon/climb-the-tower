@@ -53,6 +53,7 @@
     {"name":"island","order":78,"path":"folders/Scripts/island.yy",},
     {"name":"elsewhere","order":81,"path":"folders/Scripts/elsewhere.yy",},
     {"name":"lily","order":80,"path":"folders/Scripts/lily.yy",},
+    {"name":"ky","order":117,"path":"folders/Sprites/ky.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"enemy","order":31,"path":"scripts/enemy/enemy.yy",},
@@ -351,7 +352,6 @@
     {"name":"draw_outline","order":3,"path":"scripts/draw_outline/draw_outline.yy",},
     {"name":"s_javelincharge","order":20,"path":"sprites/s_javelincharge/s_javelincharge.yy",},
     {"name":"lb_auto","order":7,"path":"scripts/lb_auto/lb_auto.yy",},
-    {"name":"s_8691115163","order":100,"path":"sprites/s_8691115163/s_8691115163.yy",},
     {"name":"s_107155","order":92,"path":"sprites/s_107155/s_107155.yy",},
     {"name":"o_trigger","order":6,"path":"objects/o_trigger/o_trigger.yy",},
     {"name":"s_858893104128","order":65,"path":"sprites/s_858893104128/s_858893104128.yy",},

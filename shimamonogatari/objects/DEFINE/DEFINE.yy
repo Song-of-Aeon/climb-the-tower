@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_dc",
-    "path": "sprites/s_dc/s_dc.yy",
+    "name": "s_ky",
+    "path": "sprites/s_ky/s_ky.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -45,6 +45,9 @@ maxhp = 100;
 dir = 0;
 inv = 0;
 
+eqwp = 0;
+altpos = 0;
+
 switch os_get_config() {
 	default:
 		sprites = {
@@ -111,8 +114,11 @@ switch os_get_config() {
 		drawstate = st_lilydraw;
 		break;
 	case "elsewhere":
+		weapons = [
+			[wp.deagle],
+		];
 		state = st_ky;
-		drawstate = st_dcdraw;
+		drawstate = st_kydraw;
 		break;
 }
 faceangle = 0;

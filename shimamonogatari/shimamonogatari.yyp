@@ -72,6 +72,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"island","folderPath":"folders/Scripts/island.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"elsewhere","folderPath":"folders/Scripts/elsewhere.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"lily","folderPath":"folders/Scripts/lily.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ky","folderPath":"folders/Sprites/ky.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"pixel04b24.ttf","CopyToMask":-1,"filePath":"datafiles",},
@@ -401,7 +402,7 @@
     {"id":{"name":"s_javelincharge","path":"sprites/s_javelincharge/s_javelincharge.yy",},},
     {"id":{"name":"lb_auto","path":"scripts/lb_auto/lb_auto.yy",},},
     {"id":{"name":"s_lily","path":"sprites/s_lily/s_lily.yy",},},
-    {"id":{"name":"s_8691115163","path":"sprites/s_8691115163/s_8691115163.yy",},},
+    {"id":{"name":"s_ky","path":"sprites/s_ky/s_ky.yy",},},
     {"id":{"name":"c_dontstopslide","path":"scripts/c_dontstopslide/c_dontstopslide.yy",},},
     {"id":{"name":"s_107155","path":"sprites/s_107155/s_107155.yy",},},
     {"id":{"name":"o_trigger","path":"objects/o_trigger/o_trigger.yy",},},
