@@ -92,6 +92,9 @@ switch os_get_config() {
 		drawstate = st_dcdraw;
 		break;
 	case "lily":
+		weapons = [
+			[wp.deagle],
+		];
 		sprites = {
 			idle: s_lily,
 			walk: s_lilyrun,
@@ -126,7 +129,7 @@ switch os_get_config() {
 			[wp.deagle],
 		];
 		grav = .16;
-		leniance = 10;
+		leniance = 12;
 		accel = .1;
 		airaccel = .04;
 		frict = .14;
