@@ -34,9 +34,10 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	}
 	if attack.hold {
 		var thelist = ds_list_create();
-		var dude = collision_point_list(c_tilequantizeval(mouse_x), c_tilequantizeval(mouse_y), o_solid, false, false, thelist, false);
+		var dude = collision_point_list(c_tilequantizeval(mouse_x), c_tilequantizeval(mouse_y), o_notsolid, false, false, thelist, false);
 		var i;
 		for (i=0; i<dude; i++) {
+			//log(i);
 			////log(thelist[|i].depth, opos[2]);
 			if thelist[|i].depth == opos[2] {
 				////log("deleting");
@@ -62,7 +63,7 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	}
 	if inventory.hold {
 		var thelist = ds_list_create();
-		var dude = collision_point_list(mouse_x, mouse_y, o_solid, false, false, thelist, false);
+		var dude = collision_point_list(mouse_x, mouse_y, o_notsolid, false, false, thelist, false);
 		var i;
 		for (i=0; i<dude; i++) {
 			////log(thelist[|i].depth, opos[2]);

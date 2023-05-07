@@ -287,11 +287,7 @@ function c_sakuyastep() {
 }
 
 
-function statish(name, initialvalue) {
-	if get_value(self, name) == undefined {
-		set_value(self, name, initialvalue);
-	}
-}
+
 
 function c_tryteleport(playerdist, ang=0, variation=359) {
 	var dude;

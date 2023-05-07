@@ -1,13 +1,13 @@
 //surface_set_target(global.gameplay);
-image_blend = make_color_hsv(0, 0, value);
+//image_blend = make_color_hsv(0, 0, value);
 //log(draw);
-if(!surface_exists(bloodOverlay)){
+/*if(!surface_exists(bloodOverlay)){
 	setBloodOverlay();
 	setBloodMask()
 	setReflectionOverlay()
-}
-if(reflective)
-draw_surface_ext(reflectionSurface,x-8,y+8,0.5,-0.5,0,c_white,1);
+}*/
+//if(reflective)
+//draw_surface_ext(reflectionSurface,x-8,y+8,0.5,-0.5,0,c_white,1);
 
 draw();
 exit;

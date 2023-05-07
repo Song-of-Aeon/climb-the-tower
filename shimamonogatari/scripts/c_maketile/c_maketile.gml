@@ -70,7 +70,11 @@ function c_maketile(x, y, type) {
 				break;
 		}
 	} else {
-		var chump = instance_create(x, y, o_solid);
+		if type.cover == TT_NONE {
+			var chump = instance_create(x, y, o_notsolid);
+		} else {
+			var chump = instance_create(x, y, o_solid);
+		}
 	}
 	//object_set_mask(chump, type.cover);
 	mask_index = type.cover;

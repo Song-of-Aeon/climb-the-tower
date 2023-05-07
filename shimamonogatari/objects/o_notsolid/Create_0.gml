@@ -1,4 +1,4 @@
-type = tl[5][0];
+//type = tl[5][0];
 step = c_null;
 draw = draw_self;
 hp = infinity;
@@ -9,7 +9,9 @@ image_speed = 0;
 reflective = false;
 value = 256;
 bloodOverlay = -1;
-function setBloodOverlay(){
+count = 0;
+iterations = 0;
+/*function setBloodOverlay(){
 	bloodOverlay = surface_create(16,16);
 	surface_set_target(bloodOverlay)
 		draw_clear_alpha(c_black,0.)
@@ -31,4 +33,4 @@ function setBloodMask(){
 }
 function setReflectionOverlay(){
 	reflectionSurface = surface_create(32,32);
-}
+}*/
