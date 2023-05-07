@@ -1,6 +1,8 @@
 //type = tl[5][0];
 step = c_null;
 draw = draw_self;
+count = 0;
+iterations = 0;
 hp = infinity;
 hitboxradius = 8;
 inv = false;
@@ -12,7 +14,7 @@ bloodOverlay = -1;
 function setBloodOverlay(){
 	bloodOverlay = surface_create(16,16);
 	surface_set_target(bloodOverlay)
-		draw_clear_alpha(c_black,0.)
+	draw_clear_alpha(c_black,0.)
 	surface_reset_target()
 }
 

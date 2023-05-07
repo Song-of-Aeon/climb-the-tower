@@ -22,7 +22,7 @@ nu background("b", function() {
 nu background("impostor", function() {
 	draw_clear(c_black);
 	draw_set_alpha(.2);
-	draw_sprite_tiled(s_when_the, 0, gc/3, gc/3);
+	draw_sprite_tiled(s_when_the, 0, gc/7, gc/7);
 	draw_set_alpha(1);
 });
 

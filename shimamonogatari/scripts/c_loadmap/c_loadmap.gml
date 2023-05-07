@@ -74,5 +74,6 @@ function c_loadmap(map_) {
 			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
 		}*/
 		o_mapmanager.currentmap = map_;
+		global.currentbackground = global.backgrounds[$map_.bg];
 	}
 }

@@ -28,14 +28,15 @@ function st_ky() {
 		spd.h = lerp(spd.h, hput*walkspeed, aerial ? airfrict : frict);
 	}
 	spd.v += grav;
-    if leniance > 0 {
-        if (jump.hit) {
-            spd.v = -jumpspeed;
+    if leniance {
+        if jump.hit {
+			if aerial spd.h += spd.v*image_xscale*-2;
+            spd.v -= jumpspeed;
             leniance = 0;
         }
     }
     if spd.v < 0 {
-        if (jump.drop) {
+        if jump.drop {
             spd.v /= 2;
         }
     }
