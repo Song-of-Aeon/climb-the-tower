@@ -9,3 +9,4 @@ count = 0;
 iterations = 0;
 farts = 0;
 itsover = 0;
+variation = 0;

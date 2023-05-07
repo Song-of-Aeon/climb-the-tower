@@ -43,6 +43,13 @@ function st_ky() {
     //c_newcollision();
 	var xtouching = move_and_collide(spd.h, 0, o_solid);
 	var ytouching = move_and_collide(0, spd.v, o_solid);
+	var nottouching = ds_list_create();
+	collision_rectangle_list(bbox_left, bbox_top, bbox_right, bbox_bottom, o_notsolid, false, false, nottouching, false);
+	nottouching = ds_list_to_array(nottouching);
+	touchers = array_union(xtouching, ytouching, nottouching);
+	iterate touchers to {
+		touchers[i].ontouch();
+	}
 	//log("and it");
 	//log(xtouching);
 	//log(ytouching);

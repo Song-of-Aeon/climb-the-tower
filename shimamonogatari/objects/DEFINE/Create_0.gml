@@ -134,7 +134,7 @@ switch os_get_config() {
 		airaccel = .04;
 		frict = .14;
 		airfrict = .01;
-		walkspeed = 1.65;
+		walkspeed = 1.9;
 		jumpspeed = 4;
 		state = st_ky;
 		drawstate = st_kydraw;

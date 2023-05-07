@@ -8,7 +8,7 @@ function c_loadmap(map_) {
 		enemies = [];
 		iterate map_.guys to { //bro just store their damn names
 			
-			if typeof(map_.guys[i].sprite) == "string" {
+			/*if typeof(map_.guys[i].sprite) == "string" {
 				map_.guys[i].sprite = asset_get_index(map_.guys[i].sprite);
 			}
 			if typeof(map_.guys[i].step) == "string" {
@@ -25,8 +25,8 @@ function c_loadmap(map_) {
 			}
 			if typeof(map_.guys[i].onleave) == "string" {
 				map_.guys[i].onleave = script_get_index(map_.guys[i].onleave);
-			}
-			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, map_.guys[i]);
+			}*/
+			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, tl[map_.guys[i].tileset][map_.guys[i].index]);
 			var newman = deep_copy(map_.guys[i]);
 			chump.links = newman.links;
 			chump.depth = newman.depth;
@@ -61,6 +61,8 @@ function c_loadmap(map_) {
 			var chump = c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]);
 			var newman = deep_copy(map_.enemies[i]);
 			chump.links = newman.links;
+			chump.depth = newman.depth;
+			chump.variation = newman.variation;
 			chump.thing = newman;
 			array_push(enemies, newman);
 			
@@ -75,5 +77,6 @@ function c_loadmap(map_) {
 		}*/
 		o_mapmanager.currentmap = map_;
 		global.currentbackground = global.backgrounds[$map_.bg];
+		global.currentspawn = map_.spawn;
 	}
 }

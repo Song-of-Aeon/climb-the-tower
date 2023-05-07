@@ -8,6 +8,7 @@ function tiletype(sprite_, index_, tileset_=TILESET.SIZE, shape_=TILESHAPE.SQUAR
 	ontouch = ontouch_;
 	onstay = onstay_;
 	onleave = onleave_;
+	tileset = tileset_;
 	tl[tileset_][index_] = self;
 }
 

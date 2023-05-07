@@ -23,20 +23,36 @@ function c_saveroom(filename, roomname_=u, returnearly=false) {
 	//log(thumbnail);
 	with theroom {
 		iterate guys to {
-			if typeof(guys[i].sprite) == "string" continue;
+			guys[i] = {
+				x: guys[i].x,
+				y: guys[i].y,
+				tileset: guys[i].tileset,
+				index: guys[i].index,
+				links: guys[i].links,
+				depth: guys[i].depth,
+			}
+			/*if typeof(guys[i].sprite) == "string" continue;
 			guys[i].sprite = sprite_get_name(guys[i].sprite);
 			guys[i].step = script_get_name(guys[i].step);
 			guys[i].draw = script_get_name(guys[i].draw);
 			guys[i].ontouch = script_get_name(guys[i].ontouch);
 			guys[i].onstay = script_get_name(guys[i].onstay);
-			guys[i].onleave = script_get_name(guys[i].onleave);
+			guys[i].onleave = script_get_name(guys[i].onleave);*/
 		}
 		iterate enemies to {
-			if typeof(enemies[i].sprite) == "string" continue;
+			enemies[i] = {
+				x: enemies[i].x,
+				y: enemies[i].y,
+				name: enemies[i].name,
+				links: enemies[i].links,
+				depth: enemies[i].depth,
+				variation: enemies[i].variation,
+			}
+			/*if typeof(enemies[i].sprite) == "string" continue;
 			enemies[i].sprite = sprite_get_name(enemies[i].sprite);
 			enemies[i].step = script_get_name(enemies[i].step);
 			enemies[i].draw = script_get_name(enemies[i].draw);
-			enemies[i].create = script_get_name(enemies[i].create);
+			enemies[i].create = script_get_name(enemies[i].create);*/
 		}
 	}
 	if returnearly {

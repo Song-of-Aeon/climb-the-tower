@@ -82,6 +82,9 @@ function c_maketile(x, y, type) {
 	chump.image_index = type.index;
 	chump.step = munction(type.step);
 	chump.draw = munction(type.draw);
+	chump.ontouch = munction(type.ontouch);
+	chump.onstay = munction(type.onstay);
+	chump.onleave = munction(type.onleave);
 	log(type.draw);
 	chump.hp = type.durability;
 	chump.hitboxradius = sprite_get_width(type.sprite)/2;
