@@ -159,34 +159,83 @@ new mapsetting("entities", [["enemies"], ["lol"], ["enabled", "disabled"]], func
 	draw_set_alpha((pos==z++)+.4);
 	draw_sprite(thing.sprite, 0, xdraw, ydraw+60);
 }),
-new mapsetting("triggers", [["tra", "touch event", "link"], variable_struct_get_names(mp), array_create_order(100), array_create_order(100)], function() {
+new mapsetting("triggers", [["tra", "touch event", "set spawn"], variable_struct_get_names(mp), array_create_order(100), array_create_order(100)], function() {
 	c_input();
-	if opos[0] < 2 {
+	if !opos[0] {
+		options[1] = variable_struct_get_names(mp);
+		options[2] = array_create_order(100);
+		options[3] = array_create_order(100);
 		if attack.hit {
-			c_pushhistory("placed trigger");
-			mydude = c_maketrigger(mouse_x, mouse_y, mouse_x, mouse_y);
-			mydude.target = mp[$options[1][opos[1]]];
-			mydude.targetx = options[2][opos[2]] tiles;
-			mydude.targety = options[3][opos[3]] tiles;
+			c_pushhistory("placed tra");
+			mydude = c_maketrigger(mouse_x, mouse_y, mouse_x, mouse_y, c_triggerwarp);
+			mydude.target = options[1][opos[1]];
+			mydude.targetx = options[2][opos[2]] tiles -1;
+			mydude.targety = options[3][opos[3]] tiles -1;
 			c_tilequantize(mydude, -8, -8);
-			array_push(o_mapper.guys, mydude);
+			array_push(o_mapper.triggers, mydude);
 		}
 		if attack.hold {
 			mydude.x2 = c_tilequantizeval(mouse_x, -8);
 			mydude.y2 = c_tilequantizeval(mouse_y, -8);
 		}
-		if inventory.hit {
-			c_pushhistory("removed triggers");
+	} else if opos[0] == 1 {
+		options[1] = [""];
+		options[2] = [""];
+		options[3] = [""];
+		statish("myscript", c_null);
+		if select {
+			myscript = script_get_index(get_string("tell me a story.", script_get_name(myscript)));
 		}
-		if inventory.hold {
-			var dude = collision_point(c_tilequantizeval(mouse_x, -8), c_tilequantizeval(mouse_y, -8), o_trigger, false, false);
-			if dude != noone {
-				instance_destroy(dude);
-			}
+		if attack.hit {
+			c_pushhistory("placed trigger");
+			mydude = c_maketrigger(mouse_x, mouse_y, mouse_x, mouse_y, myscript);
+			c_tilequantize(mydude, -8, -8);
+			array_push(o_mapper.triggers, mydude);
+		}
+		if attack.hold {
+			mydude.x2 = c_tilequantizeval(mouse_x, -8);
+			mydude.y2 = c_tilequantizeval(mouse_y, -8);
+		}
+	} else if opos[0] == 2 {
+		options[1] = [""];
+		options[2] = [""];
+		options[3] = [""];
+		if attack.hit {
+			c_pushhistory("placed spawnsetter");
+			mydude = c_maketrigger(mouse_x, mouse_y, mouse_x, mouse_y, myscript);
+			c_tilequantize(mydude, -8, -8);
+			array_push(o_mapper.triggers, mydude);
+		}
+		if attack.hold {
+			mydude.x2 = c_tilequantizeval(mouse_x, -8);
+			mydude.y2 = c_tilequantizeval(mouse_y, -8);
 		}
 	}
+	if inventory.hit {
+		c_pushhistory("removed tras");
+	}
+	if inventory.hold {
+		var thelist = ds_list_create();
+		var dude = collision_point_list(mouse_x, mouse_y, o_trigger, false, false, thelist, false);
+		var i;
+		for (i=0; i<dude; i++) {
+			log("deleting");
+			array_remove(o_mapper.triggers, thelist[|i]);
+			instance_destroy(thelist[|i]);
+			log("deleted");
+		}
+		ds_list_destroy(thelist);
+	}
 }, function() {
-	
+	var z=0;
+	draw_set_color(pos==z++ ? c_white : c_aolu);
+	draw_text(xdraw, ydraw+z*interval, options[z-1][opos[z-1]]);
+	draw_set_color(pos==z++ ? c_white : c_aolu);
+	draw_text(xdraw, ydraw+z*interval, options[z-1][opos[z-1]]);
+	draw_set_color(pos==z++ ? c_white : c_aolu);
+	draw_text(xdraw, ydraw+z*interval, options[z-1][opos[z-1]]);
+	draw_set_color(pos==z++ ? c_white : c_aolu);
+	draw_text(xdraw, ydraw+z*interval, options[z-1][opos[z-1]]);
 }),
 new mapsetting("background", [variable_struct_get_names(global.backgrounds)], function() {
 	c_input();
@@ -203,7 +252,7 @@ new mapsetting("map settings", [["name", "size", "spawn"], ["lol"], ["lol"]], fu
 	if !opos[0] {
 		if select {
 			//log("ha");
-			o_mapper.roomname = get_string("you fear this place.", "");
+			o_mapper.roomname = get_string("you fear this place.", o_mapper.roomname);
 		}
 		pos = 0;
 		options[1] = [];
@@ -286,7 +335,7 @@ new mapsetting("load", [["edit mode", "play game"], variable_struct_get_names(mp
 				roomsize = friend.roomsize;
 				//guys = friend.guys;
 				//enemies = friend.enemies;
-				triggers = friend.triggers;
+				//triggers = friend.triggers;
 				spawn = friend.spawn;
 				bg = global.backgrounds[$friend.bg];
 				created = false;

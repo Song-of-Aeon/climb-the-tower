@@ -8,3 +8,6 @@ leave = c_null;
 active = false;
 step = c_null;
 log("help????");
+target = "asteroid";
+targetx = 10 tiles;
+targety = 10 tiles;

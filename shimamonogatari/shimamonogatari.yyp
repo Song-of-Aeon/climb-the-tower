@@ -137,6 +137,7 @@
     {"id":{"name":"s_86110","path":"sprites/s_86110/s_86110.yy",},},
     {"id":{"name":"s_bulletcircle","path":"sprites/s_bulletcircle/s_bulletcircle.yy",},},
     {"id":{"name":"s_8590101","path":"sprites/s_8590101/s_8590101.yy",},},
+    {"id":{"name":"c_triggerwarp","path":"scripts/c_triggerwarp/c_triggerwarp.yy",},},
     {"id":{"name":"o_textbox","path":"objects/o_textbox/o_textbox.yy",},},
     {"id":{"name":"se_null","path":"sounds/se_null/se_null.yy",},},
     {"id":{"name":"TT_RCS1","path":"sprites/TT_RCS1/TT_RCS1.yy",},},

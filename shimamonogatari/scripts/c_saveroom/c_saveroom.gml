@@ -10,7 +10,7 @@ function c_saveroom(filename, roomname_=u, returnearly=false) {
 		roomname: roomname_,
 		guys: deep_copy(guys),
 		enemies: deep_copy(enemies),
-		triggers: triggers,
+		triggers: deep_copy(triggers),
 		spawn: spawn,
 		bg: bg.name,
 		thumbnail: s_mistake,
@@ -53,6 +53,23 @@ function c_saveroom(filename, roomname_=u, returnearly=false) {
 			enemies[i].step = script_get_name(enemies[i].step);
 			enemies[i].draw = script_get_name(enemies[i].draw);
 			enemies[i].create = script_get_name(enemies[i].create);*/
+		}
+		
+		iterate triggers to {
+			triggers[i] = {
+				x: triggers[i].x,
+				y: triggers[i].y,
+				x2: triggers[i].x2,
+				y2: triggers[i].y2,
+				target: triggers[i].target,
+				targetx: triggers[i].targetx,
+				targety: triggers[i].targety,
+				enter: script_get_name(triggers[i].enter),
+				stay: script_get_name(triggers[i].stay),
+				leave: script_get_name(triggers[i].leave),
+				step: script_get_name(triggers[i].step),
+			}
+			log(triggers[i]);
 		}
 	}
 	if returnearly {

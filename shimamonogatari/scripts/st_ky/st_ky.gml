@@ -5,7 +5,8 @@ function st_ky() {
 	
 	if debug.hit {
 		//textbox_create(txt_kotohime);
-		blink();
+		//blink();
+		c_loadmap(mp[$"asteroid"]);
 		//c_spawnenemy(10 tiles, 10 tiles, en.impostor);
 	}
 	accel = .1;
@@ -41,6 +42,8 @@ function st_ky() {
         }
     }
     //c_newcollision();
+	var oldtouching = deep_copy(touchers);
+	
 	var xtouching = move_and_collide(spd.h, 0, o_solid);
 	var ytouching = move_and_collide(0, spd.v, o_solid);
 	var nottouching = ds_list_create();
@@ -48,7 +51,13 @@ function st_ky() {
 	nottouching = ds_list_to_array(nottouching);
 	touchers = array_union(xtouching, ytouching, nottouching);
 	iterate touchers to {
-		touchers[i].ontouch();
+		touchers[i].onstay();
+		if !instance_exists(touchers[i]) continue;
+		if !array_contains(oldtouching, touchers[i]) touchers[i].ontouch();
+	}
+	iterate oldtouching to {
+		if !instance_exists(oldtouching[i]) continue;
+		if !array_contains(touchers, oldtouching[i]) oldtouching[i].onleave();
 	}
 	//log("and it");
 	//log(xtouching);

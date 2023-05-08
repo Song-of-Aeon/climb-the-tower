@@ -1,5 +1,5 @@
 function c_maketile(x, y, type) {
-	log(type);
+	//log(type);
 	if type.sprite == prt_sdm {
 		switch type.index+1 {
 			case 17:
@@ -85,7 +85,7 @@ function c_maketile(x, y, type) {
 	chump.ontouch = munction(type.ontouch);
 	chump.onstay = munction(type.onstay);
 	chump.onleave = munction(type.onleave);
-	log(type.draw);
+	//log(type.draw);
 	chump.hp = type.durability;
 	chump.hitboxradius = sprite_get_width(type.sprite)/2;
 	chump.type = type;

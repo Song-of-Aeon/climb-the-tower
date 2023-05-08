@@ -142,7 +142,7 @@ switch os_get_config() {
 }
 faceangle = 0;
 //actionstate = st_7
-
+touchers = [];
 xdraw = -100;
 ydraw = 310;
 global.count = 0;

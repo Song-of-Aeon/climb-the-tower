@@ -3,9 +3,15 @@ function c_loadmap(map_) {
 	with all {
 		if !persistent kys;
 	}
+	var dissolve = false;
+	if !instance_exists(o_mapper) {
+		instance_create(-10, -10, o_mapper);
+		dissolve = true;
+	}
 	with o_mapper {
 		guys = [];
 		enemies = [];
+		triggers = [];
 		iterate map_.guys to { //bro just store their damn names
 			
 			/*if typeof(map_.guys[i].sprite) == "string" {
@@ -72,11 +78,27 @@ function c_loadmap(map_) {
 		if !instance_exists(DEFINE) {
 			instance_create(map_.spawn.x, map_.spawn.y, DEFINE);
 		}
-		/*iterate map_.triggers to {
-			c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
-		}*/
+		iterate map_.triggers to {
+			//c_spawnenemy(map_.enemies[i].x, map_.enemies[i].y, map_.enemies[i]).links = map_.enemies[i].links;
+			log(map_.triggers[i]);
+			chump = c_maketrigger(
+				map_.triggers[i].x,
+				map_.triggers[i].y,
+				map_.triggers[i].x2,
+				map_.triggers[i].y2,
+				script_get_index(map_.triggers[i].enter),
+				script_get_index(map_.triggers[i].stay),
+				script_get_index(map_.triggers[i].leave),
+				script_get_index(map_.triggers[i].step)
+			);
+			chump.target = map_.triggers[i].target;
+			chump.targetx = map_.triggers[i].targetx;
+			chump.targety = map_.triggers[i].targety;
+			array_push(triggers, chump);
+		}
 		o_mapmanager.currentmap = map_;
 		global.currentbackground = global.backgrounds[$map_.bg];
 		global.currentspawn = map_.spawn;
 	}
+	if dissolve instance_destroy(o_mapper);
 }

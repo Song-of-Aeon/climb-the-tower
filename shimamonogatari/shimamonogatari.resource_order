@@ -107,6 +107,7 @@
     {"name":"s_86110","order":47,"path":"sprites/s_86110/s_86110.yy",},
     {"name":"s_bulletcircle","order":11,"path":"sprites/s_bulletcircle/s_bulletcircle.yy",},
     {"name":"s_8590101","order":38,"path":"sprites/s_8590101/s_8590101.yy",},
+    {"name":"c_triggerwarp","order":90,"path":"scripts/c_triggerwarp/c_triggerwarp.yy",},
     {"name":"o_textbox","order":4,"path":"objects/o_textbox/o_textbox.yy",},
     {"name":"se_null","order":1,"path":"sounds/se_null/se_null.yy",},
     {"name":"TT_RCS1","order":2,"path":"sprites/TT_RCS1/TT_RCS1.yy",},

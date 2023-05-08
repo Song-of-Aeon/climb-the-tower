@@ -1,3 +1,7 @@
+/// @desc Creates a deep copy of any structlike object (gamobject, global, struct, etc)
+/// @param {Any} struct Description
+/// @param {array<any>} [antiwhiletrue]=[] Description
+/// @returns {struct} Description
 function deep_copy(struct, antiwhiletrue=[]) {
 	switch typeof(struct) {
 		case "array":

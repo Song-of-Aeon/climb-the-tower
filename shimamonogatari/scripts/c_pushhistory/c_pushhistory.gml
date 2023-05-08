@@ -49,7 +49,7 @@ function undo() {
 			with o_mapper {
 				roomname = friend.roomname;
 				roomsize = friend.roomsize;
-				triggers = friend.triggers;
+				//triggers = friend.triggers;
 				spawn = friend.spawn;
 				bg = global.backgrounds[$friend.bg];
 			}
@@ -78,7 +78,7 @@ function redo() {
 		with o_mapper {
 			roomname = friend.roomname;
 			roomsize = friend.roomsize;
-			triggers = friend.triggers;
+			//triggers = friend.triggers;
 			spawn = friend.spawn;
 			bg = global.backgrounds[$friend.bg];
 		}

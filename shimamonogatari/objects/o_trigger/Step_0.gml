@@ -12,3 +12,5 @@ if dude {
 
 
 //log(x, y, x2, y2);
+
+//log(targetx, targety);
