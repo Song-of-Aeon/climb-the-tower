@@ -34,3 +34,4 @@ function setBloodMask(){
 function setReflectionOverlay(){
 	reflectionSurface = surface_create(32,32);
 }
+//mask_index = TT_LCS2;

@@ -10,6 +10,7 @@ if(reflective)
 draw_surface_ext(reflectionSurface,x-8,y+8,0.5,-0.5,0,c_white,1);
 */
 draw();
+//draw_spr(x, y, TT_LCS2);
 /*exit;
 surface_set_target(bloodOverlay); //mask blood surface using the solid's texture
 gpu_set_colorwriteenable(0,0,0,1);

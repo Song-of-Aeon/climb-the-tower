@@ -154,3 +154,6 @@ global.me = id;
 /*
 
 */
+
+camera_set_view_target(view_camera[0], global.me);
+camera_set_view_border(view_camera[0], MIDWID, MIDHEI);

@@ -56,8 +56,11 @@ enum TILESET {
 
 global.tssprites = [
 	prt_elsewhere,
-	s_null,
+	prt_perception,
 	prt_sdm,
 	s_null,
 	s_null,
 ]
+
+global.tiletypes = array_create_deref(TILESET.SIZE, []);
+#macro tl global.tiletypes

@@ -1,3 +1,6 @@
+camera_set_view_target(view_camera[0], self);
+camera_set_view_border(view_camera[0], 144, 256);
+
 actionnum = 0;
 historycap = 30;
 undone = 0;
@@ -24,7 +27,7 @@ menuoptions = [
 }),*/
 new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", "foreground"]], function() {
 	statish("tilecount", 0);
-	palette = new vec2(WIDTH*1.8, HEIGHT*.8);
+	palette = new vec2(WIDTH*1.665, HEIGHT*.4);
 	c_input();
 	options[1] = tl[opos[0]];
 	if !array_length(options[2]) exit;
@@ -86,6 +89,8 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	if !array_length(options[1]) exit;
 	//draw_set_alpha();
 	var thing = options[1][opos[1]];
+	//log(tl[TILESET.TOWER]);
+	//log(thing);
 	//var friend2 = cycle(opos[1]-1, array_length(options[1]));
 	//var friend3 = cycle(opos[1]+1, array_length(options[1]));
 	//var thing2 = options[1][friend2];
@@ -99,9 +104,10 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 	draw_text(xdraw, ydraw+z*interval, options[2][opos[2]]);
 	draw_set_alpha(1);
 	if !mouse_within(palette.x, palette.y, WIDTH*2, HEIGHT*2) draw_set_alpha(.4);
+	var rowamount = 10;
 	iterate options[1] to {
-		draw_sprite(global.tssprites[opos[0]], i, palette.x+i%6*16+8, palette.y+floor(i/6)*16+8);
-		if mouse_within(palette.x+i%6*16, palette.y+floor(i/6)*16, palette.x+i%6*16+16, palette.y+floor(i/6)*16+16) && attack.hit {
+		draw_sprite(global.tssprites[opos[0]], i, palette.x+i%rowamount*16+8, palette.y+floor(i/rowamount)*16+8);
+		if mouse_within(palette.x+i%rowamount*16, palette.y+floor(i/rowamount)*16, palette.x+i%rowamount*16+16, palette.y+floor(i/rowamount)*16+16) && attack.hit {
 			opos[1] = i;
 		}
 	}

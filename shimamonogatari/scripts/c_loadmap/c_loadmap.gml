@@ -96,7 +96,7 @@ function c_loadmap(map_) {
 			chump.targety = map_.triggers[i].targety;
 			array_push(triggers, chump);
 		}
-		o_mapmanager.currentmap = map_;
+		global.currentmap = map_;
 		global.currentbackground = global.backgrounds[$map_.bg];
 		global.currentspawn = map_.spawn;
 	}
