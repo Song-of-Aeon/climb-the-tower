@@ -52,9 +52,9 @@ new mapsetting("tiles", [tl, ["lol"], ["background", "behind", "main", "front", 
 		ds_list_destroy(thelist);
 		var thing = deep_copy(options[1][opos[1]]);
 		////log(thing);
-		var chump = c_maketile(mouse_x, mouse_y, thing);
+		var chump = c_maketile(mouse_x, mouse_y, thing, opos[2]);
 		chump.thing = thing;
-		chump.depth = opos[2];
+		//chump.depth = opos[2];
 		thing.x = mouse_x;
 		thing.y = mouse_y;
 		thing.links = [];

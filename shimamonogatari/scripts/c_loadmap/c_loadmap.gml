@@ -32,10 +32,10 @@ function c_loadmap(map_) {
 			if typeof(map_.guys[i].onleave) == "string" {
 				map_.guys[i].onleave = script_get_index(map_.guys[i].onleave);
 			}*/
-			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, tl[map_.guys[i].tileset][map_.guys[i].index]);
+			var chump = c_maketile(map_.guys[i].x, map_.guys[i].y, tl[map_.guys[i].tileset][map_.guys[i].index], newman.depth);
 			var newman = deep_copy(map_.guys[i]);
 			chump.links = newman.links;
-			chump.depth = newman.depth;
+			//chump.depth = newman.depth;
 			chump.thing = newman;
 			array_push(guys, newman);
 		}

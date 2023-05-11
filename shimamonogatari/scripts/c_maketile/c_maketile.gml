@@ -1,4 +1,4 @@
-function c_maketile(x, y, type) {
+function c_maketile(x, y, type, depth_) {
 	//log(type);
 	if type.sprite == prt_sdm {
 		switch type.index+1 {
@@ -70,7 +70,7 @@ function c_maketile(x, y, type) {
 				break;
 		}
 	} else {
-		if type.cover == TT_NONE {
+		if type.cover == TT_NONE || depth_ != 0 {
 			var chump = instance_create(x, y, o_notsolid);
 		} else {
 			var chump = instance_create(x, y, o_solid);
@@ -85,6 +85,7 @@ function c_maketile(x, y, type) {
 	chump.ontouch = munction(type.ontouch);
 	chump.onstay = munction(type.onstay);
 	chump.onleave = munction(type.onleave);
+	chump.depth = depth_;
 	//log(type.draw);
 	chump.hp = type.durability;
 	chump.hitboxradius = sprite_get_width(type.sprite)/2;
