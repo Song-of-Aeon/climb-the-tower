@@ -28,6 +28,10 @@ function undo() {
 		//reloadMaps();
 		if !array_length(history) return false;
 		if !undone {
+			c_pushhistory("started undo");
+			var friend = array_pop(history);
+			array_push(future, friend);
+			array_push(futurenames, array_pop(historynames));
 			//array_pop(history);
 			//array_pop(historynames);
 		}
@@ -65,10 +69,9 @@ function undo() {
 function redo() {
 	with o_mapper {
 		if !array_length(future) return false;
-			
 		//var friend = history[array_length(history)-undone];
 		var friend = array_pop(future);
-		array_push(history, friend)
+		array_push(history, friend);
 		array_push(historynames, array_pop(futurenames));
 		c_loadmap(friend);
 		instance_destroy(DEFINE);

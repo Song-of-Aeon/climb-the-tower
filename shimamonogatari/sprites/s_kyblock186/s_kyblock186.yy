@@ -1,12 +1,12 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "s_kyblock",
-  "bbox_bottom": 21,
+  "name": "s_kyblock186",
+  "bbox_bottom": 15,
   "bbox_left": 0,
-  "bbox_right": 7,
+  "bbox_right": 15,
   "bbox_top": 0,
-  "bboxMode": 0,
+  "bboxMode": 2,
   "collisionKind": 0,
   "collisionTolerance": 0,
   "ConfigValues": {
@@ -20,13 +20,13 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 22,
+  "height": 16,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"71da6bd6-fe48-4679-9989-77cea9241da2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 9,
+  "origin": 4,
   "parent": {
     "name": "ky",
     "path": "folders/Sprites/ky.yy",
@@ -57,13 +57,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0778d29d-02f5-48fa-9425-a3b171327f3b","path":"sprites/s_kyblock/s_kyblock.yy",},},},"Disabled":false,"id":"4c9defc3-bb62-496d-8c55-ba05f01c4ed0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0778d29d-02f5-48fa-9425-a3b171327f3b","path":"sprites/s_kyblock186/s_kyblock186.yy",},},},"Disabled":false,"id":"0d08eed9-b984-41dc-8c67-6f18cbb2773c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 4,
-    "yorigin": 7,
+    "xorigin": 8,
+    "yorigin": 8,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -73,5 +73,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 8,
+  "width": 16,
 }

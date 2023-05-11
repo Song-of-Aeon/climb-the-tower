@@ -125,6 +125,15 @@ switch os_get_config() {
 			down: s_ky,
 			jump: s_kyjump,
 		}
+		/*sprites = {
+			idle: s_kyblock,
+			walk: s_kyblock,
+			up: s_kyblock,
+			upwalk: s_kyblock,
+			down: s_kyblock,
+			jump: s_kyblock,
+		}*/
+		sprite_index = s_kyblock;
 		weapons = [
 			[wp.deagle],
 		];
@@ -141,6 +150,8 @@ switch os_get_config() {
 		break;
 }
 faceangle = 0;
+spriteindex = 0;
+imageindex = 0;
 //actionstate = st_7
 touchers = [];
 xdraw = -100;

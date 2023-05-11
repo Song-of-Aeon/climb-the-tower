@@ -111,6 +111,7 @@
     {"id":{"name":"prt_perception","path":"sprites/prt_perception/prt_perception.yy",},},
     {"id":{"name":"en_stray","path":"scripts/en_stray/en_stray.yy",},},
     {"id":{"name":"s_8697145","path":"sprites/s_8697145/s_8697145.yy",},},
+    {"id":{"name":"s_kyblock186","path":"sprites/s_kyblock186/s_kyblock186.yy",},},
     {"id":{"name":"c_basichurting","path":"scripts/c_basichurting/c_basichurting.yy",},},
     {"id":{"name":"script_get_index","path":"scripts/script_get_index/script_get_index.yy",},},
     {"id":{"name":"clampneg","path":"scripts/clampneg/clampneg.yy",},},

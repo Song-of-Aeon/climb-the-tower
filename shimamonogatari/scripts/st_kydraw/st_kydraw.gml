@@ -1,5 +1,6 @@
 function st_kydraw() {
-	draw_self();
+	//draw_self();
+	draw_sprite_ext(spriteindex, imageindex, x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
 	weapons[eqwp][altpos].draw();
 	draw_set_color(c_white);
 	draw_set_font(ft_comicsans);

@@ -63,16 +63,17 @@ function c_dospritesky() {
 	}
 	if aerial {
 		image_speed = 0;
-		sprite_index = sprites.jump;
-		image_index = !!spd.v;
+		spriteindex = sprites.jump;
+		imageindex = !!spd.v;
 	} else {
 		if hput != 0 {
-			sprite_index = sprites.walk;
+			spriteindex = sprites.walk;
 			image_speed = spd.h/12;
 		} else {
-			sprite_index = up.hold ? sprites.up : sprites.idle;
+			spriteindex = up.hold ? sprites.up : sprites.idle;
 			image_speed = 0;
-			image_index = 0;
+			imageindex = 0;
 		}
 	}
+	imageindex = cycle(imageindex+image_speed, sprite_get_number(spriteindex));
 }

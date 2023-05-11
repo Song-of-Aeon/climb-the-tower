@@ -83,6 +83,7 @@
     {"name":"prt_perception","order":9,"path":"sprites/prt_perception/prt_perception.yy",},
     {"name":"en_stray","order":1,"path":"scripts/en_stray/en_stray.yy",},
     {"name":"s_8697145","order":82,"path":"sprites/s_8697145/s_8697145.yy",},
+    {"name":"s_kyblock186","order":3,"path":"sprites/s_kyblock186/s_kyblock186.yy",},
     {"name":"c_basichurting","order":45,"path":"scripts/c_basichurting/c_basichurting.yy",},
     {"name":"script_get_index","order":64,"path":"scripts/script_get_index/script_get_index.yy",},
     {"name":"clampneg","order":9,"path":"scripts/clampneg/clampneg.yy",},
