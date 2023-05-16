@@ -47,7 +47,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6c83b5d5-24f4-40b0-8f28-871136b0eed9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "lily",
     "path": "folders/Sprites/lily.yy",
@@ -108,7 +108,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 24,
-    "yorigin": 24,
+    "yorigin": 30,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

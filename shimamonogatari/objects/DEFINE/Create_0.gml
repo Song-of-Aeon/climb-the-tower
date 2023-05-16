@@ -115,6 +115,7 @@ switch os_get_config() {
 		dashtime = 0;
 		state = st_lily;
 		drawstate = st_lilydraw;
+		sprite_index = s_kyblock;
 		break;
 	case "elsewhere":
 		sprites = {
