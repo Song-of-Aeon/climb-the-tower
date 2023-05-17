@@ -77,7 +77,7 @@ function c_maketile(x, y, type, depth_) {
 		}
 	}
 	//object_set_mask(chump, type.cover);
-	mask_index = type.cover;
+	chump.mask_index = type.cover;
 	chump.sprite_index = type.sprite;
 	chump.image_index = type.index;
 	chump.step = munction(type.step);
