@@ -156,7 +156,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"12aede21-726c-4610-8b2a-d08076a33b1f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 1,
   "parent": {
     "name": "Fonts",
     "path": "folders/Fonts.yy",
@@ -326,7 +326,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 6,
-    "yorigin": 14,
+    "yorigin": 0,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
